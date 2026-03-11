@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סדנת לבבות שמחים - בטון פולימירי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Secular+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #3a3530;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .flyer {
+            width: 148mm;
+            height: 210mm;
+            background: linear-gradient(170deg,
+                #f5ede4 0%,
+                #ede0d4 25%,
+                #d9c8b8 55%,
+                #c4b09a 80%,
+                #b09880 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #3d2f22;
+        }
+
+        /* Texture overlay */
+        .texture {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(100,80,60,0.15) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Decorative border */
+        .border-frame {
+            position: absolute;
+            inset: 8px;
+            border: 1.5px solid rgba(120, 90, 60, 0.3);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .border-frame::before {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 0.5px solid rgba(120, 90, 60, 0.15);
+            border-radius: 1px;
+        }
+
+        /* Corner ornaments */
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+        }
+        .corner svg { width: 100%; height: 100%; }
+        .corner.tl { top: 14px; right: 14px; }
+        .corner.tr { top: 14px; left: 14px; }
+        .corner.bl { bottom: 14px; right: 14px; }
+        .corner.br { bottom: 14px; left: 14px; }
+
+        /* Hero image area - concrete vessel illustration */
+        .vessel-container {
+            margin-top: 28px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        /* Small pot left */
+        .pot-small {
+            position: relative;
+            bottom: 0;
+        }
+        .pot-small .pot-body {
+            width: 30px;
+            height: 32px;
+            background: linear-gradient(135deg, #b0a090 0%, #8c7c6c 40%, #7a6a5a 100%);
+            border-radius: 3px 3px 8px 8px / 3px 3px 10px 10px;
+            position: relative;
+            box-shadow: inset -4px 0 8px rgba(0,0,0,0.2), inset 3px 0 6px rgba(255,255,255,0.15);
+        }
+        .pot-small .pot-rim {
+            width: 36px;
+            height: 6px;
+            background: linear-gradient(90deg, #9a8a7a, #b0a090, #9a8a7a);
+            border-radius: 50%;
+            margin: 0 auto -2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .pot-small .plant {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+        }
+
+        /* Main large vessel in center */
+        .vessel-main {
+            position: relative;
+        }
+        .vessel-main .vessel-body {
+            width: 58px;
+            height: 70px;
+            background: linear-gradient(135deg,
+                #c8b8a8 0%,
+                #a89888 30%,
+                #8c7c6c 60%,
+                #786858 100%);
+            border-radius: 5px 5px 18px 18px / 5px 5px 22px 22px;
+            position: relative;
+            box-shadow:
+                inset -6px 0 12px rgba(0,0,0,0.25),
+                inset 5px 0 10px rgba(255,255,255,0.18),
+                0 6px 20px rgba(0,0,0,0.2);
+        }
+        /* Decorative texture lines on vessel */
+        .vessel-main .vessel-body::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            right: 10px;
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+        .vessel-main .vessel-body::after {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 14px;
+            right: 14px;
+            height: 1px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+        }
+        .vessel-main .vessel-neck {
+            width: 38px;
+            height: 14px;
+            background: linear-gradient(90deg, #a89888, #c0b0a0, #a89888);
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            top: 2px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .vessel-main .vessel-rim {
+            width: 46px;
+            height: 8px;
+            background: linear-gradient(90deg, #9a8a7a, #b8a898, #9a8a7a);
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Bowl right */
+        .bowl {
+            position: relative;
+            bottom: 0;
+        }
+        .bowl .bowl-body {
+            width: 42px;
+            height: 22px;
+            background: linear-gradient(135deg, #c0a888 0%, #9a8068 40%, #866856 100%);
+            border-radius: 0 0 12px 12px;
+            position: relative;
+            box-shadow: inset -4px 0 8px rgba(0,0,0,0.2), inset 3px 0 6px rgba(255,255,255,0.12);
+        }
+        .bowl .bowl-rim {
+            width: 48px;
+            height: 7px;
+            background: linear-gradient(90deg, #a08878, #c0a890, #a08878);
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+        }
+        .bowl .bowl-base {
+            width: 22px;
+            height: 5px;
+            background: linear-gradient(90deg, #8a7868, #a08878, #8a7868);
+            border-radius: 0 0 4px 4px;
+            margin: 0 auto;
+        }
+
+        /* Ground/surface line */
+        .surface-line {
+            width: 130px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(100,80,60,0.4), rgba(100,80,60,0.4), transparent);
+            margin-top: 2px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Floating particles / dust */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(180, 150, 110, 0.4);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-12px) rotate(180deg); opacity: 0.7; }
+        }
+
+        /* Quote / tagline */
+        .tagline {
+            margin-top: 14px;
+            font-family: 'Secular One', sans-serif;
+            font-size: 28px;
+            color: #5c3d22;
+            text-align: center;
+            line-height: 1.25;
+            z-index: 2;
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+            padding: 0 20px;
+        }
+
+        .tagline .heart {
+            color: #c05040;
+            font-size: 24px;
+        }
+
+        /* Workshop name */
+        .workshop-name {
+            margin-top: 6px;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 5px;
+            color: #8a6a50;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        /* Divider */
+        .divider {
+            width: 110px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #a0785a, transparent);
+            margin: 12px auto;
+            position: relative;
+            z-index: 2;
+        }
+        .divider::before {
+            content: '❖';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #a0785a;
+            font-size: 9px;
+            background: linear-gradient(170deg, #ede0d4, #d9c8b8);
+            padding: 0 8px;
+        }
+
+        /* Workshop title block */
+        .title-block {
+            z-index: 2;
+            text-align: center;
+            padding: 0 22px;
+        }
+
+        .subtitle-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #9a7860;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .main-title {
+            font-family: 'Secular One', sans-serif;
+            font-size: 22px;
+            color: #3d2f22;
+            line-height: 1.35;
+        }
+
+        .main-title .accent {
+            display: block;
+            font-size: 16px;
+            color: #7a5a3a;
+            font-family: 'Heebo', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+
+        /* Description */
+        .description {
+            margin-top: 10px;
+            font-size: 12.5px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: #5a4030;
+            text-align: center;
+            padding: 0 24px;
+            z-index: 2;
+        }
+
+        /* What you take home */
+        .take-home {
+            margin-top: 10px;
+            z-index: 2;
+            background: rgba(255,255,255,0.35);
+            border: 1px solid rgba(160,120,90,0.2);
+            border-radius: 4px;
+            padding: 8px 18px;
+            width: calc(100% - 50px);
+            backdrop-filter: blur(2px);
+        }
+
+        .take-home-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #7a5a3a;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .take-home-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .take-home-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11.5px;
+            color: #4a3525;
+            font-weight: 300;
+        }
+
+        .take-home-item::before {
+            content: '◆';
+            color: #a0785a;
+            font-size: 7px;
+            flex-shrink: 0;
+        }
+
+        /* Details */
+        .details {
+            z-index: 2;
+            text-align: center;
+            margin-top: 8px;
+            padding: 0 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #5a4030;
+            font-weight: 400;
+        }
+
+        .detail-icon {
+            font-size: 14px;
+            width: 22px;
+            text-align: center;
+            color: #9a6a4a;
+        }
+
+        /* CTA */
+        .cta-section {
+            margin-top: auto;
+            margin-bottom: 18px;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 36px;
+            background: linear-gradient(135deg, #8c6040, #6a4428);
+            border-radius: 30px;
+            color: #f5ede4;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(100, 60, 30, 0.35);
+        }
+
+        .contact-info {
+            margin-top: 7px;
+            font-size: 12px;
+            color: #7a5a3a;
+            font-weight: 300;
+        }
+
+        .brand {
+            margin-top: 6px;
+            font-size: 18px;
+            font-family: 'Secular One', sans-serif;
+            color: #8c6040;
+            letter-spacing: 4px;
+        }
+
+        .logo-container {
+            margin-top: 6px;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.85;
+        }
+
+        @media print {
+            body { background: none; min-height: auto; }
+            .flyer { box-shadow: none; }
+            .particle { animation: none; opacity: 0.4; }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <div class="texture"></div>
+        <div class="border-frame"></div>
+
+        <!-- Corner ornaments -->
+        <div class="corner tl">
+            <svg viewBox="0 0 20 20" fill="none">
+                <path d="M18 2H2V18" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
+                <circle cx="4" cy="4" r="1.5" fill="rgba(120,90,60,0.4)"/>
+            </svg>
+        </div>
+        <div class="corner tr">
+            <svg viewBox="0 0 20 20" fill="none">
+                <path d="M2 2H18V18" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
+                <circle cx="16" cy="4" r="1.5" fill="rgba(120,90,60,0.4)"/>
+            </svg>
+        </div>
+        <div class="corner bl">
+            <svg viewBox="0 0 20 20" fill="none">
+                <path d="M18 18H2V2" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
+                <circle cx="4" cy="16" r="1.5" fill="rgba(120,90,60,0.4)"/>
+            </svg>
+        </div>
+        <div class="corner br">
+            <svg viewBox="0 0 20 20" fill="none">
+                <path d="M2 18H18V2" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
+                <circle cx="16" cy="16" r="1.5" fill="rgba(120,90,60,0.4)"/>
+            </svg>
+        </div>
+
+        <!-- Floating particles -->
+        <div class="particle" style="width:5px;height:5px;top:18%;left:12%;animation-delay:0s;"></div>
+        <div class="particle" style="width:3px;height:3px;top:22%;left:82%;animation-delay:1.5s;"></div>
+        <div class="particle" style="width:4px;height:4px;top:40%;left:8%;animation-delay:3s;"></div>
+        <div class="particle" style="width:3px;height:3px;top:55%;left:88%;animation-delay:2s;"></div>
+        <div class="particle" style="width:6px;height:6px;top:70%;left:15%;animation-delay:4s;"></div>
+        <div class="particle" style="width:4px;height:4px;top:78%;left:80%;animation-delay:1s;"></div>
+
+        <!-- Vessel Illustration -->
+        <div class="vessel-container">
+            <!-- Small pot left -->
+            <div class="pot-small">
+                <div class="plant">🌿</div>
+                <div class="pot-rim"></div>
+                <div class="pot-body"></div>
+            </div>
+
+            <!-- Main vase center -->
+            <div class="vessel-main">
+                <div class="vessel-rim"></div>
+                <div class="vessel-neck"></div>
+                <div class="vessel-body"></div>
+            </div>
+
+            <!-- Bowl right -->
+            <div class="bowl">
+                <div class="bowl-rim"></div>
+                <div class="bowl-body"></div>
+                <div class="bowl-base"></div>
+            </div>
+        </div>
+        <div class="surface-line"></div>
+
+        <!-- Tagline -->
+        <div class="tagline">
+            ❤ לבבות שמחים ❤
+        </div>
+        <div class="workshop-name">סדנת יצירה</div>
+
+        <div class="divider"></div>
+
+        <!-- Title block -->
+        <div class="title-block">
+            <div class="subtitle-label">חוויה יצירתית ייחודית</div>
+            <h1 class="main-title">
+                כלים מבטון פולימירי
+                <span class="accent">גלו את הקסם של החומר האדמתי</span>
+            </h1>
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+            בסדנה ייחודית זו תלמדו לעבוד עם בטון פולימירי —<br>
+            חומר מרתק המאפשר יצירת כלים, קערות ואגרטלים<br>
+            מעוצבים בסגנון אישי. מגע עם החומר, יצירה מהלב,<br>
+            ומיומנות חדשה שתישאר אתכם לכל החיים.
+        </div>
+
+        <!-- Take home box -->
+        <div class="take-home">
+            <div class="take-home-title">מה מקבלים בסדנה</div>
+            <div class="take-home-list">
+                <div class="take-home-item">הדרכה מקצועית ואישית לאורך כל הסדנה</div>
+                <div class="take-home-item">כל החומרים והכלים כלולים במחיר</div>
+                <div class="take-home-item">יצירה מוגמרת שתיקחו הביתה</div>
+                <div class="take-home-item">טכניקות לעיצוב וצביעת הכלי</div>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <div class="details">
+            <div class="detail-row">
+                <span class="detail-icon">📅</span>
+                <span>יום ראשון | 00.00.0000</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-icon">🕐</span>
+                <span>10:00 - 13:00</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-icon">📍</span>
+                <span>הכתובת שלך כאן</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-icon">💰</span>
+                <span>₪220 כולל חומרים</span>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <div class="cta-button">להרשמה ופרטים</div>
+            <div class="contact-info">054-000-0000</div>
+            <div class="brand">צליל</div>
+            <div class="logo-container">
+                <img src="Rimon Logo.png" alt="לוגו רימון">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
