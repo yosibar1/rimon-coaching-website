@@ -263,6 +263,7 @@ function openLightbox(element) {
     lightboxImg.alt = img.alt;
 
     lightbox.classList.add('active');
+    document.body.classList.add('lightbox-open');
     document.body.style.overflow = 'hidden';
 }
 
@@ -271,6 +272,7 @@ function closeLightbox() {
     if (!lightbox) return;
 
     lightbox.classList.remove('active');
+    document.body.classList.remove('lightbox-open');
     document.body.style.overflow = '';
 }
 
@@ -304,6 +306,31 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') navigateLightbox(-1); // RTL: right = previous
     if (e.key === 'ArrowLeft') navigateLightbox(1);   // RTL: left = next
 });
+
+// Lightbox touch swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    touchEndX = e.changedTouches[0].screenX;
+    const swipeDistance = touchEndX - touchStartX;
+    if (Math.abs(swipeDistance) > 50) {
+        // RTL: swipe left (negative) = next, swipe right (positive) = previous
+        if (swipeDistance < 0) {
+            navigateLightbox(1);
+        } else {
+            navigateLightbox(-1);
+        }
+    }
+}, { passive: true });
 
 // Initial call to set correct state on page load
 document.addEventListener('DOMContentLoaded', () => {
