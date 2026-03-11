@@ -226,6 +226,26 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     });
 });
 
+// Gallery Filter
+document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active button
+        document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            if (filter === 'all' || item.dataset.category === filter) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+    });
+});
+
 // Lightbox Gallery
 let currentLightboxIndex = 0;
 let galleryItems = [];
@@ -235,7 +255,7 @@ function openLightbox(element) {
     const lightboxImg = document.getElementById('lightbox-img');
     if (!lightbox || !lightboxImg) return;
 
-    galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    galleryItems = Array.from(document.querySelectorAll('.gallery-item:not(.hidden)'));
     currentLightboxIndex = galleryItems.indexOf(element);
 
     const img = element.querySelector('img');
