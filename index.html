@@ -266,22 +266,22 @@
             <h2 class="section-title fade-in">רגעים מהשטח</h2>
             <p class="section-subtitle fade-in">הצצה לסדנאות, אירועים ותהליכים</p>
             <div class="gallery-preview-grid fade-in">
-                <div class="gallery-preview-item">
+                <div class="gallery-preview-item" onclick="openLightbox(this)">
                     <img src="Gallery/476799984_1073528201480744_6325182833860897529_n.jpg" alt="תמונה מסדנה" loading="lazy">
                 </div>
-                <div class="gallery-preview-item">
+                <div class="gallery-preview-item" onclick="openLightbox(this)">
                     <img src="Gallery/481907073_2568399950018426_6343568248487816778_n.jpg" alt="תמונה מסדנה" loading="lazy">
                 </div>
-                <div class="gallery-preview-item">
+                <div class="gallery-preview-item" onclick="openLightbox(this)">
                     <img src="Gallery/479290797_1073911611442403_8031762176942459745_n.jpg" alt="תמונה מסדנה" loading="lazy">
                 </div>
-                <div class="gallery-preview-item">
+                <div class="gallery-preview-item" onclick="openLightbox(this)">
                     <img src="Gallery/484814913_1099865202180377_1332914198890465922_n.jpg" alt="תמונה מסדנה" loading="lazy">
                 </div>
-                <div class="gallery-preview-item">
+                <div class="gallery-preview-item" onclick="openLightbox(this)">
                     <img src="Gallery/482206547_2569394196585668_5882276645995317592_n.jpg" alt="תמונה מסדנה" loading="lazy">
                 </div>
-                <div class="gallery-preview-item">
+                <div class="gallery-preview-item" onclick="openLightbox(this)">
                     <img src="Gallery/86993115_1221683871356714_4846568481241432064_n.jpg" alt="תמונה מסדנה" loading="lazy">
                 </div>
             </div>
@@ -414,6 +414,24 @@
             </form>
         </section>
     </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="סגירה">&times;</button>
+        <button class="lightbox-prev" onclick="navigateLightbox(-1)" aria-label="הקודם">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <button class="lightbox-next" onclick="navigateLightbox(1)" aria-label="הבא">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="תמונה מוגדלת">
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">

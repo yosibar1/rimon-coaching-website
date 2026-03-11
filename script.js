@@ -255,7 +255,7 @@ function openLightbox(element) {
     const lightboxImg = document.getElementById('lightbox-img');
     if (!lightbox || !lightboxImg) return;
 
-    galleryItems = Array.from(document.querySelectorAll('.gallery-item:not(.hidden)'));
+    galleryItems = Array.from(document.querySelectorAll('.gallery-item:not(.hidden), .gallery-preview-item'));
     currentLightboxIndex = galleryItems.indexOf(element);
 
     const img = element.querySelector('img');
