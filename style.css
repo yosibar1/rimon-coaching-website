@@ -204,7 +204,7 @@ header.scrolled .logo img {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 140px 2rem 80px;
+    padding: 140px 2rem 220px;
     background: var(--cream);
     overflow: hidden;
 }
@@ -222,6 +222,8 @@ header.scrolled .logo img {
 .hero-text {
     flex: 1;
     max-width: 560px;
+    position: relative;
+    z-index: 11;
 }
 
 .welcome-text {
