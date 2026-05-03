@@ -634,12 +634,20 @@ header.scrolled .logo img {
 
 /* Pink Banner */
 .pink-banner {
+    display: block;
     background: var(--accent-color);
     padding: 2.5rem 2rem;
     text-align: center;
     position: relative;
     z-index: 10;
     margin-top: -180px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.pink-banner:hover {
+    filter: brightness(1.07);
 }
 
 .pink-banner h2 {
