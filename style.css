@@ -203,15 +203,15 @@ header.scrolled .logo img {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    padding: 140px 2rem 220px;
+    align-items: flex-end;
+    padding: 165px 2rem 180px;
     background: var(--cream);
     overflow: hidden;
 }
 
 .hero-content {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 6rem;
     max-width: 1200px;
@@ -224,6 +224,7 @@ header.scrolled .logo img {
     max-width: 560px;
     position: relative;
     z-index: 11;
+    align-self: center;
 }
 
 .welcome-text {
@@ -270,10 +271,12 @@ header.scrolled .logo img {
     max-width: 500px;
     width: 100%;
     height: auto;
+    max-height: calc(100vh - 345px); /* 165px header + 180px pink strip = 345px */
     border-radius: 0;
     box-shadow: none;
     z-index: 1;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: bottom;
 }
 
 /* Testimonials */
@@ -1211,14 +1214,20 @@ footer {
         font-size: 1.1rem;
     }
 
+    .hero {
+        align-items: center;
+    }
+
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
         gap: 3rem;
+        align-items: center;
     }
 
     .hero-text {
         max-width: 100%;
+        align-self: auto;
     }
 
     .hero-image::before {
