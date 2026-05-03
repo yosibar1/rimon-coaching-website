@@ -1218,6 +1218,7 @@ footer {
 
     .hero {
         align-items: center;
+        padding-bottom: 3rem;
     }
 
     .hero-content {
@@ -1230,6 +1231,12 @@ footer {
     .hero-text {
         max-width: 100%;
         align-self: auto;
+        z-index: auto;
+    }
+
+    .pink-banner {
+        margin-top: 0;
+        z-index: auto;
     }
 
     .hero-image::before {
