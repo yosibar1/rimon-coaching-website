@@ -1237,6 +1237,9 @@ footer {
 
     .hero-image img {
         max-width: 360px;
+        max-height: none;
+        object-fit: cover;
+        object-position: center top;
     }
 
     .about-wrapper {
@@ -1336,6 +1339,7 @@ footer {
 
     .hero-image img {
         max-width: 280px;
+        max-height: none;
     }
 
     .btn {
