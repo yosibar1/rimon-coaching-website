@@ -207,6 +207,8 @@ header.scrolled .logo img {
     padding: 165px 2rem 180px;
     background: var(--cream);
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -1294,8 +1296,13 @@ footer {
         padding-bottom: 60px;
     }
 
+    .hero-text {
+        z-index: auto;
+    }
+
     .pink-banner {
         margin-top: 0;
+        z-index: auto;
     }
 
     .about,
