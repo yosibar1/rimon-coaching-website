@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מודל ההגשמה | צליל בר - רימון</title>
+    <meta name="description" content="קורס מודל ההגשמה — תהליך עומק לנשים שרוצות לחיות חיים שלמים ומשמעותיים, בהובלת צליל בר">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="מודל ההגשמה | צליל בר">
+    <meta property="og:description" content="קורס עומק לנשים — חיים מתוך שלמות, יצירה ומשמעות">
+    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:url" content="https://rimoncoaching.com/course-fulfillment-model.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;900&family=Secular+One&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --teal:        #7ECAC8;
+            --teal-light:  #B8E4E2;
+            --teal-pale:   #E8F7F6;
+            --pink:        #F2A8BF;
+            --pink-light:  #FAD4E2;
+            --pink-pale:   #FEF0F5;
+            --lavender:    #C9B8E8;
+            --gold:        #c9a227;
+            --text:        #2C3A4A;
+            --text-soft:   #5A6A7A;
+            --white:       #ffffff;
+            --cream:       #FDFBF9;
+            --radius:      16px;
+            --shadow:      0 8px 30px rgba(126,202,200,0.15);
+            --shadow-pink: 0 8px 30px rgba(242,168,191,0.2);
+        }
+
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.75;
+        }
+
+        /* ── SKIP LINK ── */
+        .skip-link {
+            position: absolute; top: -100px; right: 0;
+            background: var(--teal); color: white;
+            padding: 0.75rem 1.5rem; font-weight: 600;
+            text-decoration: none; z-index: 9999;
+            border-radius: 0 0 8px 8px;
+            transition: top 0.2s;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--teal-light);
+            z-index: 1000; padding: 0.9rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo img { height: 55px; width: auto; }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--teal), #5BB8B6);
+            color: white; border: none; border-radius: 50px;
+            padding: 0.6rem 1.6rem; font-family: 'Heebo', sans-serif;
+            font-size: 0.95rem; font-weight: 600; cursor: pointer;
+            text-decoration: none; display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(126,202,200,0.4);
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(126,202,200,0.5); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(145deg, var(--teal-pale) 0%, var(--pink-pale) 50%, #F5F0FA 100%);
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 120px 2rem 80px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -100px; right: -100px;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(126,202,200,0.2) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; bottom: -80px; left: -80px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(242,168,191,0.2) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+        .hero-inner { position: relative; z-index: 2; max-width: 760px; }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--teal-light), var(--pink-light));
+            color: var(--text); font-size: 0.9rem; font-weight: 600;
+            padding: 0.4rem 1.2rem; border-radius: 50px;
+            margin-bottom: 1.5rem; letter-spacing: 0.05em;
+        }
+        .hero h1 {
+            font-family: 'Secular One', sans-serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            color: var(--text); line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--teal), var(--pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-soft); margin: 1.2rem 0 2.5rem;
+            font-weight: 300; line-height: 1.85;
+        }
+        .hero-price {
+            display: inline-block;
+            background: white; border-radius: var(--radius);
+            padding: 1rem 2.5rem; margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        .hero-price .label { font-size: 0.85rem; color: var(--text-soft); display: block; }
+        .hero-price .amount {
+            font-family: 'Secular One', sans-serif;
+            font-size: 2.2rem; color: var(--text);
+        }
+        .hero-price .amount span { font-size: 1rem; font-weight: 400; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--teal), #5BB8B6);
+            color: white; border: none; border-radius: 50px;
+            padding: 0.9rem 2.5rem; font-family: 'Heebo', sans-serif;
+            font-size: 1.05rem; font-weight: 700; cursor: pointer;
+            text-decoration: none; display: inline-block;
+            box-shadow: 0 6px 20px rgba(126,202,200,0.45);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(126,202,200,0.55); }
+        .btn-secondary {
+            background: white; color: var(--text);
+            border: 2px solid var(--pink-light); border-radius: 50px;
+            padding: 0.9rem 2.5rem; font-family: 'Heebo', sans-serif;
+            font-size: 1.05rem; font-weight: 600; cursor: pointer;
+            text-decoration: none; display: inline-block;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-secondary:hover { background: var(--pink-pale); border-color: var(--pink); }
+
+        /* ── SECTION BASE ── */
+        section { padding: 80px 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-tag {
+            display: inline-block; font-size: 0.8rem; font-weight: 700;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--teal); margin-bottom: 0.75rem;
+        }
+        h2.section-title {
+            font-family: 'Secular One', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--text); line-height: 1.25; margin-bottom: 1rem;
+        }
+        .section-sub {
+            font-size: 1.1rem; color: var(--text-soft);
+            max-width: 600px; line-height: 1.85;
+        }
+
+        /* ── FOR WHOM ── */
+        .for-whom { background: white; }
+        .pain-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem; margin-top: 2.5rem;
+        }
+        .pain-card {
+            background: var(--teal-pale); border-radius: var(--radius);
+            padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;
+            transition: transform 0.2s;
+        }
+        .pain-card:hover { transform: translateY(-3px); }
+        .pain-icon { font-size: 1.8rem; flex-shrink: 0; }
+        .pain-card p { font-size: 1rem; color: var(--text); margin: 0; }
+
+        /* ── ABOUT THE COURSE ── */
+        .about-course {
+            background: linear-gradient(135deg, var(--teal-pale), var(--pink-pale));
+        }
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center; margin-top: 2rem;
+        }
+        .about-image-placeholder {
+            background: linear-gradient(135deg, var(--teal-light), var(--pink-light));
+            border-radius: 24px; height: 380px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; color: var(--text-soft); text-align: center;
+            padding: 2rem;
+        }
+        .about-text p { color: var(--text-soft); margin-bottom: 1.25rem; font-size: 1.05rem; }
+
+        /* ── GAINS ── */
+        .gains { background: white; }
+        .gains-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem; margin-top: 2.5rem;
+        }
+        .gain-card {
+            background: var(--cream); border-radius: var(--radius);
+            padding: 2rem 1.5rem; text-align: center;
+            border: 1px solid var(--teal-light);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .gain-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+        .gain-icon {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--teal-light), var(--pink-light));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; margin: 0 auto 1rem;
+        }
+        .gain-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+        .gain-card p { font-size: 0.9rem; color: var(--text-soft); margin: 0; }
+
+        /* ── MODULES ── */
+        .modules {
+            background: linear-gradient(180deg, var(--pink-pale) 0%, var(--teal-pale) 100%);
+        }
+        .modules-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+        .module-item {
+            background: white; border-radius: var(--radius);
+            padding: 1.5rem 2rem; display: flex; gap: 1.5rem; align-items: flex-start;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .module-item:hover { transform: translateX(-4px); }
+        .module-num {
+            font-family: 'Secular One', sans-serif;
+            font-size: 1.8rem; color: var(--teal-light);
+            line-height: 1; flex-shrink: 0; min-width: 2.5rem;
+        }
+        .module-item h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+        .module-item p { font-size: 0.92rem; color: var(--text-soft); margin: 0; }
+
+        /* ── ABOUT TZLIL ── */
+        .about-tzlil { background: white; }
+        .tzlil-grid {
+            display: grid; grid-template-columns: 300px 1fr;
+            gap: 4rem; align-items: center; margin-top: 2rem;
+        }
+        .tzlil-image-wrap {
+            position: relative;
+        }
+        .tzlil-image-wrap img {
+            width: 100%; border-radius: 24px;
+            object-fit: cover; aspect-ratio: 3/4;
+        }
+        .tzlil-image-placeholder {
+            background: linear-gradient(135deg, var(--pink-light), var(--lavender));
+            border-radius: 24px; aspect-ratio: 3/4;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-soft); font-size: 0.95rem; text-align: center; padding: 2rem;
+        }
+        .tzlil-image-wrap::before {
+            content: '';
+            position: absolute; bottom: -12px; right: -12px;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--teal-light), var(--pink-light));
+            border-radius: 24px; z-index: -1;
+        }
+        .tzlil-content .name {
+            font-family: 'Secular One', sans-serif;
+            font-size: 1.8rem; margin-bottom: 0.4rem;
+        }
+        .tzlil-content .role {
+            color: var(--teal); font-weight: 600;
+            font-size: 1rem; margin-bottom: 1.25rem;
+        }
+        .tzlil-content p { color: var(--text-soft); font-size: 1.02rem; margin-bottom: 1rem; }
+        .credentials { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+        .credential {
+            background: var(--teal-pale); border-radius: 50px;
+            padding: 0.35rem 1rem; font-size: 0.85rem; color: var(--text); font-weight: 500;
+        }
+
+        /* ── INVESTMENT ── */
+        .investment {
+            background: linear-gradient(135deg, var(--teal-pale), var(--pink-pale));
+            text-align: center;
+        }
+        .price-card {
+            background: white; border-radius: 24px;
+            padding: 3rem 2rem; max-width: 500px;
+            margin: 2.5rem auto 0; box-shadow: var(--shadow-pink);
+        }
+        .price-tag {
+            font-family: 'Secular One', sans-serif;
+            font-size: 3.5rem; color: var(--text); line-height: 1;
+        }
+        .price-tag .currency { font-size: 1.8rem; }
+        .price-note { color: var(--text-soft); font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
+        .price-includes {
+            list-style: none; margin: 0 0 2rem;
+            display: flex; flex-direction: column; gap: 0.6rem;
+        }
+        .price-includes li {
+            display: flex; align-items: center; gap: 0.6rem;
+            font-size: 0.95rem; color: var(--text-soft);
+        }
+        .price-includes li::before {
+            content: '✓'; color: var(--teal);
+            font-weight: 700; flex-shrink: 0;
+        }
+        .grow-btn {
+            display: block; width: 100%;
+            background: linear-gradient(135deg, var(--pink), #E87FA5);
+            color: white; border: none; border-radius: 50px;
+            padding: 1rem 2rem; font-family: 'Heebo', sans-serif;
+            font-size: 1.1rem; font-weight: 700; cursor: pointer;
+            box-shadow: 0 6px 20px rgba(242,168,191,0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none; margin-bottom: 1rem;
+        }
+        .grow-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(242,168,191,0.6); }
+        .installments { font-size: 0.88rem; color: var(--text-soft); }
+
+        /* ── LEAD FORM ── */
+        .lead-form-section { background: white; }
+        .form-wrapper {
+            max-width: 560px; margin: 0 auto;
+            background: var(--cream); border-radius: 24px;
+            padding: 2.5rem; box-shadow: var(--shadow);
+        }
+        .form-wrapper h3 {
+            font-family: 'Secular One', sans-serif;
+            font-size: 1.6rem; margin-bottom: 0.5rem; text-align: center;
+        }
+        .form-wrapper .form-sub {
+            text-align: center; color: var(--text-soft);
+            font-size: 0.95rem; margin-bottom: 2rem;
+        }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label {
+            display: block; font-size: 0.9rem; font-weight: 600;
+            margin-bottom: 0.4rem; color: var(--text);
+        }
+        .form-group input {
+            width: 100%; padding: 0.85rem 1.1rem;
+            border: 1.5px solid #D8E8F0; border-radius: 10px;
+            font-family: 'Heebo', sans-serif; font-size: 1rem;
+            background: white; color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            direction: rtl;
+        }
+        .form-group input:focus {
+            outline: none; border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(126,202,200,0.25);
+        }
+        .form-group input::placeholder { color: #AAB8C2; }
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--teal), #5BB8B6);
+            color: white; border: none; border-radius: 50px;
+            padding: 1rem; font-family: 'Heebo', sans-serif;
+            font-size: 1.05rem; font-weight: 700; cursor: pointer;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(126,202,200,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(126,202,200,0.5); }
+        .form-privacy {
+            text-align: center; font-size: 0.82rem;
+            color: var(--text-soft); margin-top: 1rem;
+        }
+        .form-privacy a { color: var(--teal); }
+        .form-success {
+            display: none; text-align: center; padding: 2rem;
+        }
+        .form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .form-success h4 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .form-success p { color: var(--text-soft); }
+
+        /* ── FAQ ── */
+        .faq-section { background: var(--teal-pale); }
+        .faq-list { margin-top: 2rem; max-width: 720px; }
+        .faq-item {
+            background: white; border-radius: var(--radius);
+            margin-bottom: 0.75rem; overflow: hidden;
+        }
+        .faq-q {
+            width: 100%; background: none; border: none;
+            padding: 1.2rem 1.5rem; display: flex;
+            justify-content: space-between; align-items: center;
+            font-family: 'Heebo', sans-serif; font-size: 1rem;
+            font-weight: 600; color: var(--text); cursor: pointer;
+            text-align: right;
+        }
+        .faq-arrow {
+            color: var(--teal); font-size: 1.2rem;
+            transition: transform 0.3s; flex-shrink: 0; margin-right: 0.5rem;
+        }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-a {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.open .faq-a { max-height: 300px; padding: 0 1.5rem 1.2rem; }
+        .faq-a p { color: var(--text-soft); font-size: 0.95rem; margin: 0; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--text); color: rgba(255,255,255,0.7);
+            text-align: center; padding: 2.5rem 2rem;
+            font-size: 0.88rem; line-height: 2;
+        }
+        footer a { color: var(--teal-light); text-decoration: none; }
+        footer a:hover { color: var(--pink-light); }
+
+        /* ── FLOATING CTA ── */
+        .float-cta {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            z-index: 900; display: none;
+        }
+        .float-cta.visible { display: block; }
+        .float-btn {
+            background: linear-gradient(135deg, var(--teal), #5BB8B6);
+            color: white; border: none; border-radius: 50px;
+            padding: 0.85rem 2.5rem; font-family: 'Heebo', sans-serif;
+            font-size: 1rem; font-weight: 700; cursor: pointer;
+            box-shadow: 0 8px 24px rgba(126,202,200,0.55);
+            text-decoration: none; display: inline-block;
+            transition: transform 0.2s;
+            white-space: nowrap;
+        }
+        .float-btn:hover { transform: translateY(-3px); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            section { padding: 60px 1.25rem; }
+            .about-grid, .tzlil-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-image-placeholder { height: 220px; }
+            .tzlil-image-wrap::before { display: none; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            nav { padding: 0.75rem 1.25rem; }
+            .nav-logo img { height: 42px; }
+        }
+
+        /* ── ACCESSIBILITY ── */
+        :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+
+    <!-- NAV -->
+    <nav aria-label="ניווט דף הקורס">
+        <div class="nav-logo">
+            <a href="index.html" aria-label="חזרה לאתר רימון">
+                <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+            </a>
+        </div>
+        <a href="#lead-form" class="nav-cta">אני רוצה לשמוע עוד</a>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ── HERO ── -->
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-badge">✦ קורס נשים פרונטלי ✦</div>
+                <h1>מודל<br><span>ההגשמה</span></h1>
+                <p class="hero-tagline">
+                    תהליך עומק לנשים שיודעות שיש בהן יותר —<br>
+                    ורוצות סוף סוף לחיות את זה.
+                </p>
+                <div class="hero-price">
+                    <span class="label">השקעה בעצמך</span>
+                    <div class="amount"><span>₪</span>6,500</div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#purchase" class="btn-primary">לרכישה ➜</a>
+                    <a href="#lead-form" class="btn-secondary">אני רוצה לשמוע עוד</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FOR WHOM ── -->
+        <section class="for-whom">
+            <div class="container">
+                <span class="section-tag">את מזהה את עצמך?</span>
+                <h2 class="section-title">הקורס הזה בשבילך אם...</h2>
+                <p class="section-sub">לפעמים מספיק שמישהי תגיד בדיוק מה שאת מרגישה.</p>
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <div class="pain-icon">💭</div>
+                        <p>את מרגישה שאת "עושה הכל נכון" — אבל בפנים עדיין חסר משהו</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-icon">🔋</div>
+                        <p>את עייפה מלתפקד על אוטומט, ומחפשת לחזור לעצמך</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-icon">🌱</div>
+                        <p>יש לך חלומות שנדחו שוב ושוב — ואת יודעת שהגיע הזמן</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-icon">🪞</div>
+                        <p>את רוצה להבין מי את באמת — מעבר לתפקידים שאת ממלאת</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-icon">💫</div>
+                        <p>את מרגישה שאת חיה את החיים של מישהי אחרת, לא של עצמך</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-icon">🎨</div>
+                        <p>את כמהת לחיבור עמוק יותר לצד היצירתי והרגשי שלך</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ABOUT COURSE ── -->
+        <section class="about-course">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-placeholder" role="img" aria-label="תמונה של הקורס — תוסיפי בקרוב">
+                        📸<br><br>כאן תכנסי תמונה<br>שמייצגת את הקורס
+                    </div>
+                    <div class="about-text">
+                        <span class="section-tag">על הקורס</span>
+                        <h2 class="section-title">מה זה מודל ההגשמה?</h2>
+                        <p>
+                            מודל ההגשמה הוא תהליך ייחודי שפיתחתי לאורך שנים של עבודה עם נשים —
+                            שילוב בין קואצ'ינג ממוקד, תרפיה באמנות וכלים מעשיים לחיים.
+                        </p>
+                        <p>
+                            זהו לא עוד קורס עם טיפים. זה מסע פנימי שבסופו תצאי עם
+                            הבנה ברורה של מי את, מה מניע אותך, ותוכנית אמיתית לחיים שאת רוצה לחיות.
+                        </p>
+                        <p>
+                            <!-- הוסיפי פרטים על מספר המפגשים, מיקום, תדירות -->
+                            📍 <strong>פרונטלי | [מיקום] | [תדירות מפגשים]</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── GAINS ── -->
+        <section class="gains">
+            <div class="container">
+                <span class="section-tag">מה תרוויחי</span>
+                <h2 class="section-title">מה תיקחי הביתה</h2>
+                <div class="gains-grid">
+                    <div class="gain-card">
+                        <div class="gain-icon">🧭</div>
+                        <h3>כיוון ברור</h3>
+                        <p>תדעי לאן את הולכת ולמה — גם כשקשה</p>
+                    </div>
+                    <div class="gain-card">
+                        <div class="gain-icon">💪</div>
+                        <h3>כוח עצמי</h3>
+                        <p>תתחברי מחדש לעוצמה שתמיד הייתה בך</p>
+                    </div>
+                    <div class="gain-card">
+                        <div class="gain-icon">🎯</div>
+                        <h3>כלים מעשיים</h3>
+                        <p>טכניקות שתשתמשי בהן ביומיום — לא רק בתוך הכיתה</p>
+                    </div>
+                    <div class="gain-card">
+                        <div class="gain-icon">🤝</div>
+                        <h3>קהילת נשים</h3>
+                        <p>חיבור לנשים שמבינות — ותומכות</p>
+                    </div>
+                    <div class="gain-card">
+                        <div class="gain-icon">🌸</div>
+                        <h3>שלמות פנימית</h3>
+                        <p>פחות מלחמה עם עצמך, יותר קבלה ואהבה עצמית</p>
+                    </div>
+                    <div class="gain-card">
+                        <div class="gain-icon">🚀</div>
+                        <h3>מומנטום</h3>
+                        <p>תצאי עם תנועה — לא עוד "מחר אני מתחילה"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── MODULES ── -->
+        <section class="modules">
+            <div class="container">
+                <span class="section-tag">מבנה הקורס</span>
+                <h2 class="section-title">המסע שלנו יחד</h2>
+                <p class="section-sub"><!-- הוסיפי כמה מפגשים / שעות --></p>
+                <div class="modules-list">
+                    <div class="module-item">
+                        <div class="module-num">01</div>
+                        <div>
+                            <h3>מי אני באמת — מפגש עם העצמי</h3>
+                            <p><!-- תיאור המודול הראשון --></p>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">02</div>
+                        <div>
+                            <h3>הדפוסים שעוצרים אותי</h3>
+                            <p><!-- תיאור המודול השני --></p>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">03</div>
+                        <div>
+                            <h3>ערכים, חזון ומשמעות</h3>
+                            <p><!-- תיאור המודול השלישי --></p>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">04</div>
+                        <div>
+                            <h3>כלים ליישום — בחיים האמיתיים</h3>
+                            <p><!-- תיאור המודול הרביעי --></p>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">05</div>
+                        <div>
+                            <h3><!-- מודול נוסף -- הוסיפי לפי הצורך --></h3>
+                            <p><!-- תיאור --></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ABOUT TZLIL ── -->
+        <section class="about-tzlil">
+            <div class="container">
+                <div class="tzlil-grid">
+                    <div class="tzlil-image-wrap">
+                        <img src="About.png" alt="צליל בר - מנחת הקורס">
+                    </div>
+                    <div class="tzlil-content">
+                        <span class="section-tag">המנחה שלך</span>
+                        <div class="name">צליל בר</div>
+                        <div class="role">מאמנת, מנטורית ומטפלת באמנות</div>
+                        <p>
+                            במשך שנים ליוויתי נשים שיצאו מאזור הנוחות שלהן ומצאו את עצמן.
+                            הקורס הזה הוא ליבת השיטה שלי — הכלים שעבדו שוב ושוב, מרוכזים לתהליך אחד עמוק.
+                        </p>
+                        <p>
+                            אני מאמינה שלכל אישה יש חוכמה פנימית. התפקיד שלי הוא לעזור לך לגשת אליה.
+                        </p>
+                        <div class="credentials">
+                            <span class="credential">קואצ'ינג מוסמך ICF</span>
+                            <span class="credential">תרפיה באמנות</span>
+                            <span class="credential">NLP</span>
+                            <span class="credential">מנטורינג עסקי</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── INVESTMENT ── -->
+        <section class="investment" id="purchase">
+            <div class="container" style="text-align:center;">
+                <span class="section-tag">ההשקעה שלך</span>
+                <h2 class="section-title">הצעד הראשון שלך</h2>
+                <div class="price-card">
+                    <div class="price-tag"><span class="currency">₪</span>6,500</div>
+                    <p class="price-note">תשלום מלא</p>
+                    <ul class="price-includes">
+                        <li>כל מפגשי הקורס הפרונטליים</li>
+                        <li>חומרי עבודה וכלים ייחודיים</li>
+                        <li>גישה לקבוצת תמיכה</li>
+                        <li>ליווי בין מפגשים</li>
+                        <!-- הוסיפי מה כלול -->
+                    </ul>
+                    <!-- GROW PAYMENT BUTTON — החלופי בקוד של Grow -->
+                    <a href="#" class="grow-btn" id="grow-payment-btn">
+                        לרכישה מאובטחת ➜
+                    </a>
+                    <p class="installments">💳 ניתן לפריסה לתשלומים — לפרטים השאירי פרטים למטה</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── LEAD FORM ── -->
+        <section class="lead-form-section" id="lead-form">
+            <div class="container">
+                <div style="text-align:center; margin-bottom: 2rem;">
+                    <span class="section-tag">נשמח לשמוע ממך</span>
+                    <h2 class="section-title">רוצה לשמוע עוד?</h2>
+                    <p class="section-sub" style="margin: 0 auto;">השאירי פרטים ואחזור אליך תוך 24 שעות עם כל המידע</p>
+                </div>
+                <div class="form-wrapper">
+                    <h3>השאירי פרטים</h3>
+                    <p class="form-sub">ואחזור אליך בהקדם 💬</p>
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="fullname">שם מלא *</label>
+                            <input type="text" id="fullname" name="fullname"
+                                   placeholder="השם המלא שלך" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">כתובת אימייל *</label>
+                            <input type="email" id="email" name="email"
+                                   placeholder="your@email.com" required autocomplete="email" dir="ltr">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">טלפון נייד *</label>
+                            <input type="tel" id="phone" name="phone"
+                                   placeholder="05X-XXX-XXXX" required autocomplete="tel" dir="ltr">
+                        </div>
+                        <button type="submit" class="form-submit">שלחי פרטים ✨</button>
+                        <p class="form-privacy">
+                            הפרטים שלך שמורים אצלנו בלבד ולא יועברו לאף גורם חיצוני.
+                            <a href="privacy.html">מדיניות פרטיות</a>
+                        </p>
+                    </form>
+                    <div class="form-success" id="form-success" role="alert">
+                        <div class="success-icon">🌸</div>
+                        <h4>קיבלתי! תודה רבה</h4>
+                        <p>אחזור אליך תוך 24 שעות עם כל הפרטים על הקורס.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FAQ ── -->
+        <section class="faq-section">
+            <div class="container">
+                <span class="section-tag">שאלות נפוצות</span>
+                <h2 class="section-title">שאלות ותשובות</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>לאיזה גיל הקורס מתאים?</span>
+                            <span class="faq-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-a"><p>הקורס מתאים לנשים בכל גיל. מה שמשותף למשתתפות הוא הרצון לשינוי — לא הגיל.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>האם אפשר לשלם בתשלומים?</span>
+                            <span class="faq-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-a"><p>כן! ניתן לפריסה לתשלומים. השאירי פרטים ונסדיר יחד את האפשרות המתאימה לך.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>כמה משתתפות יש בקבוצה?</span>
+                            <span class="faq-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-a"><p><!-- הוסיפי פרטים על גודל הקבוצה --></p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>מה קורה אם אני מפספסת מפגש?</span>
+                            <span class="faq-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-a"><p><!-- הוסיפי את המדיניות שלך --></p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>האם יש מדיניות ביטול?</span>
+                            <span class="faq-arrow" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="faq-a"><p><!-- הוסיפי מדיניות ביטול --></p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            <strong>רימון - מרכז אימון למצוינות</strong> | צליל בר<br>
+            <a href="tel:+972524480022">052-448-0022</a> |
+            <a href="mailto:info@rimoncoaching.com">info@rimoncoaching.com</a>
+        </p>
+        <p style="margin-top:0.5rem;">
+            <a href="privacy.html">מדיניות פרטיות</a> ·
+            <a href="terms.html">תנאי שימוש</a> ·
+            <a href="accessibility.html">הצהרת נגישות</a> ·
+            <a href="index.html">חזרה לאתר הראשי</a>
+        </p>
+        <p style="margin-top:0.5rem; font-size:0.8rem;">© 2026 רימון - מרכז אימון למצוינות. כל הזכויות שמורות.</p>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <div class="float-cta" id="float-cta" role="complementary" aria-label="כפתור הרשמה צף">
+        <a href="#lead-form" class="float-btn">🌸 אני רוצה להצטרף</a>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Floating CTA — appears after hero
+        const floatCta = document.getElementById('float-cta');
+        const hero = document.querySelector('.hero');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > hero.offsetHeight * 0.7) {
+                floatCta.classList.add('visible');
+            } else {
+                floatCta.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        // Lead form — basic validation + success state
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name  = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            if (!name || !email || !phone) {
+                alert('אנא מלאי את כל השדות');
+                return;
+            }
+            // כאן ניתן לחבר ל-Formspree / EmailJS / Grow או כל שירות אחר
+            // לדוגמה: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(this) })
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        });
+    </script>
+
+    <!-- EqualWeb Accessibility Widget -->
+    <script>
+    window.interdeal = {
+        get sitekey (){ return "2d6687b74564a1ab0ebbe18e4394728a"} ,
+        get domains(){
+            return {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            }
+        },
+        "Position": "left",
+        "Menulang": "HE",
+        "draggable": true,
+        "btnStyle": {
+            "vPosition": ["80%","80%"],
+            "margin": ["0","0"],
+            "scale": ["0.5","0.5"],
+            "color": {"main": "#1876c9","second": "#ffffff"},
+            "icon": {"outline": false,"outlineColor": "#ffffff","type": 1,"shape": "circle"}
+        }
+    };
+    (function(doc, head, body){
+        var coreCall         = doc.createElement('script');
+        coreCall.src         = interdeal.domains.js + 'core/5.2.8/accessibility.js';
+        coreCall.defer       = true;
+        coreCall.integrity   = 'sha512-ka0NgF7zDksnhoZ5ZCKlm+t0F7KTih5lCfXwuzQDnrwu/EdKZSsJotoJvQPd0cuVmV63s0q2cgoUjeki688PuQ==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
+</body>
+</html>
