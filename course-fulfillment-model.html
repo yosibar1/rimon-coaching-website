@@ -439,14 +439,65 @@
         .float-btn:hover { transform: translateY(-3px); }
 
         /* ── RESPONSIVE ── */
+
+        /* טאבלט לנדסקייפ / דסקטופ קטן */
+        @media (max-width: 1024px) {
+            .about-grid { gap: 2.5rem; }
+            .tzlil-grid { grid-template-columns: 240px 1fr; gap: 2.5rem; }
+            .gains-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* טאבלט פורטרט */
         @media (max-width: 768px) {
             section { padding: 60px 1.25rem; }
-            .about-grid, .tzlil-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .about-image-placeholder { height: 220px; }
-            .tzlil-image-wrap::before { display: none; }
-            .hero-buttons { flex-direction: column; align-items: center; }
+
+            /* Nav */
             nav { padding: 0.75rem 1.25rem; }
             .nav-logo img { height: 42px; }
+
+            /* Hero */
+            .hero { padding: 100px 1.25rem 60px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; max-width: 320px; text-align: center; }
+
+            /* Grids → single column */
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .tzlil-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .gains-grid { grid-template-columns: repeat(2, 1fr); }
+            .pain-grid  { grid-template-columns: 1fr; }
+
+            /* Images */
+            .about-image-placeholder { height: 200px; }
+            .tzlil-image-wrap { max-width: 280px; margin: 0 auto; }
+            .tzlil-image-wrap::before { display: none; }
+
+            /* Module items */
+            .module-item { padding: 1.25rem; }
+            .module-num { font-size: 1.4rem; min-width: 2rem; }
+
+            /* Price card */
+            .price-card { padding: 2rem 1.5rem; }
+            .price-tag { font-size: 2.8rem; }
+
+            /* Form */
+            .form-wrapper { padding: 2rem 1.25rem; }
+
+            /* Floating CTA */
+            .float-btn { padding: 0.75rem 1.75rem; font-size: 0.95rem; }
+        }
+
+        /* מובייל */
+        @media (max-width: 480px) {
+            h2.section-title { font-size: 1.65rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .gains-grid { grid-template-columns: 1fr; }
+            .module-item { flex-direction: column; gap: 0.5rem; }
+            .module-num { font-size: 1.2rem; }
+            .credentials { gap: 0.4rem; }
+            .credential { font-size: 0.8rem; padding: 0.3rem 0.75rem; }
+            .hero-price { padding: 0.75rem 1.75rem; }
+            .hero-price .amount { font-size: 1.8rem; }
+            .price-tag { font-size: 2.2rem; }
         }
 
         /* ── ACCESSIBILITY ── */
