@@ -286,6 +286,48 @@
             padding: 0.35rem 1rem; font-size: 0.85rem; color: var(--text); font-weight: 500;
         }
 
+        /* ── TESTIMONIALS ── */
+        .testimonials { background: white; }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem; margin-top: 2.5rem;
+        }
+        .testimonial-card {
+            background: var(--cream);
+            border-radius: var(--radius);
+            padding: 1.75rem 1.5rem;
+            border: 1px solid var(--pink-light);
+            display: flex; flex-direction: column;
+            gap: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-pink);
+        }
+        .stars { color: #F5A623; font-size: 1.1rem; letter-spacing: 2px; }
+        .testimonial-text {
+            font-size: 0.97rem; color: var(--text-soft);
+            line-height: 1.85; flex: 1;
+            font-style: italic;
+        }
+        .testimonial-text::before { content: '"'; color: var(--pink); font-size: 1.4rem; font-style: normal; }
+        .testimonial-text::after  { content: '"'; color: var(--pink); font-size: 1.4rem; font-style: normal; }
+        .testimonial-author {
+            display: flex; align-items: center; gap: 0.75rem;
+            border-top: 1px solid var(--pink-light); padding-top: 1rem;
+        }
+        .author-avatar {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--teal-light), var(--pink-light));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; font-weight: 700; color: var(--text);
+            flex-shrink: 0;
+        }
+        .author-name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+        .author-role { font-size: 0.82rem; color: var(--text-soft); }
+
         /* ── INVESTMENT ── */
         .investment {
             background: linear-gradient(135deg, var(--teal-pale), var(--pink-pale));
@@ -447,6 +489,11 @@
             .gains-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
+        /* טאבלט לנדסקייפ */
+        @media (max-width: 1024px) {
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         /* טאבלט פורטרט */
         @media (max-width: 768px) {
             section { padding: 60px 1.25rem; }
@@ -484,6 +531,7 @@
 
             /* Floating CTA */
             .float-btn { padding: 0.75rem 1.75rem; font-size: 0.95rem; }
+            .testimonials-grid { grid-template-columns: 1fr; }
         }
 
         /* מובייל */
@@ -718,6 +766,124 @@
                             <span class="credential">מנטורינג עסקי</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── TESTIMONIALS ── -->
+        <section class="testimonials">
+            <div class="container">
+                <span class="section-tag">מה אומרות הנשים</span>
+                <h2 class="section-title">הן כבר עשו את הצעד</h2>
+                <p class="section-sub">עדויות אמיתיות מנשים שעברו את התהליך</p>
+
+                <div class="testimonials-grid">
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            נכנסתי לקורס עם ערפל ויצאתי עם כיוון. זה לא קלישאה — פשוט קרה לי.
+                            צליל יודעת לגעת בדיוק במקום הנכון, בלי לדחוף ובלי לשפוט.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">מ</div>
+                            <div>
+                                <div class="author-name">מיכל ר.</div>
+                                <div class="author-role">מנהלת, 42</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            הייתי סקפטית בהתחלה — "עוד קורס נשים". אבל משהו כאן שונה לגמרי.
+                            הכלים שלמדתי שינו את הדרך שבה אני מקבלת החלטות.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ש</div>
+                            <div>
+                                <div class="author-name">שירה ל.</div>
+                                <div class="author-role">עצמאית, 36</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            אחרי שנים של "אני אתחיל מחר" — סוף סוף התחלתי.
+                            הקורס נתן לי לא רק כלים אלא גם קהילה של נשים מדהימות שאני עדיין בקשר איתן.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">נ</div>
+                            <div>
+                                <div class="author-name">נועה כ.</div>
+                                <div class="author-role">אמא ועובדת סוציאלית, 38</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            הגעתי שבורה ועייפה. יצאתי עם אנרגיה שלא הרגשתי שנים.
+                            צליל מחזיקה מרחב בטוח וחם שבו מותר להיות אתה — גם כשזה מסובך.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ר</div>
+                            <div>
+                                <div class="author-name">רחל ב.</div>
+                                <div class="author-role">מורה, 45</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            לא ידעתי שאפשר לשנות כל כך הרבה בזמן כל כך קצר.
+                            חזרתי הביתה אחרי כל מפגש עם משהו חדש — תובנה, כלי, או פשוט תחושה של קלות.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ד</div>
+                            <div>
+                                <div class="author-name">דנה מ.</div>
+                                <div class="author-role">רופאה, 41</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            הדבר הכי טוב שעשיתי לעצמי ב-10 השנים האחרונות.
+                            ממליצה לכל אישה שמרגישה שמגיע לה יותר — כי זה נכון, מגיע לך.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ע</div>
+                            <div>
+                                <div class="author-name">ענת ש.</div>
+                                <div class="author-role">בעלת עסק, 39</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            ציפיתי לקואצ'ינג "רגיל". קיבלתי חוויה שנגעה בי בנשמה.
+                            החיבור לאמנות היה בשבילי המפתח — פתח דברים שמילים לא הגיעו אליהם.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">א</div>
+                            <div>
+                                <div class="author-name">אביגיל ט.</div>
+                                <div class="author-role">אדריכלית, 44</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
