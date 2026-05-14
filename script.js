@@ -22,6 +22,7 @@ const menuOverlay = document.querySelector('.menu-overlay');
 
 function closeMobileMenu() {
     menuToggle?.classList.remove('active');
+    menuToggle?.setAttribute('aria-expanded', 'false');
     navLinks?.classList.remove('active');
     menuOverlay?.classList.remove('active');
     document.body.style.overflow = '';
@@ -29,9 +30,12 @@ function closeMobileMenu() {
 
 function openMobileMenu() {
     menuToggle?.classList.add('active');
+    menuToggle?.setAttribute('aria-expanded', 'true');
     navLinks?.classList.add('active');
     menuOverlay?.classList.add('active');
     document.body.style.overflow = 'hidden';
+    // Move focus to first nav link
+    navLinks?.querySelector('a')?.focus();
 }
 
 menuToggle?.addEventListener('click', () => {
@@ -226,6 +230,16 @@ document.querySelectorAll('.content-tab').forEach(tab => {
     });
 });
 
+// Keyboard support for gallery items (Enter/Space to open lightbox)
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const item = e.target.closest('.gallery-item, .gallery-preview-item');
+    if (item && item.hasAttribute('tabindex')) {
+        e.preventDefault();
+        openLightbox(item);
+    }
+});
+
 // Gallery Filter
 document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -250,6 +264,8 @@ document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
 let currentLightboxIndex = 0;
 let galleryItems = [];
 
+let lastFocusedElement = null;
+
 function openLightbox(element) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -262,19 +278,55 @@ function openLightbox(element) {
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
 
+    // Remember who triggered the lightbox so we can return focus on close
+    lastFocusedElement = document.activeElement;
+
+    lightbox.setAttribute('aria-hidden', 'false');
     lightbox.classList.add('active');
     document.body.classList.add('lightbox-open');
     document.body.style.overflow = 'hidden';
+
+    // Move focus to close button
+    requestAnimationFrame(() => {
+        lightbox.querySelector('.lightbox-close')?.focus();
+    });
 }
 
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     if (!lightbox) return;
 
+    lightbox.setAttribute('aria-hidden', 'true');
     lightbox.classList.remove('active');
     document.body.classList.remove('lightbox-open');
     document.body.style.overflow = '';
+
+    // Return focus to triggering element
+    lastFocusedElement?.focus();
 }
+
+// Focus trap inside lightbox
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    if (e.key !== 'Tab') return;
+
+    const focusable = Array.from(lightbox.querySelectorAll('button:not([disabled])'));
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey) {
+        if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        }
+    } else {
+        if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    }
+});
 
 function navigateLightbox(direction) {
     if (galleryItems.length === 0) return;

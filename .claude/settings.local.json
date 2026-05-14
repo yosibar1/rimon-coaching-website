@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"C:\\\\Users\\\\yosib\\\\Desktop\\\\Claude Code\\\\Website\\\\flyer-candle-workshop.html\")",
+      "Bash(python -m http.server:*)",
+      "Bash(where python)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(lsof -i :3000)",
+      "Bash(netstat -ano)",
+      "Bash(start http://localhost:3000/gallery.html)",
+      "Bash(winget install --id GitHub.cli --accept-source-agreements --accept-package-agreements)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh --version)",
+      "Bash(gh auth status)",
+      "Bash(gh auth login --web -h github.com)",
+      "Bash(taskkill //PID 1068796 //F)",
+      "Bash(python -c \"from PIL import Image; img = Image.open\\(''/c/Users/yosib/Desktop/Claude Code/Website/Rimon Logo.png''\\); print\\(f''Size: {img.size}, Mode: {img.mode}''\\)\")",
+      "Bash(python -c \"from PIL import Image; img = Image.open\\(''C:/Users/yosib/Desktop/Claude Code/Website/Rimon Logo.png''\\); print\\(f''Size: {img.size}, Mode: {img.mode}''\\)\")",
+      "Bash(python -c \":*)",
+      "Bash(ls -la \"/c/Users/yosib/Desktop/Claude Code/Website/favicon\"* \"/c/Users/yosib/Desktop/Claude Code/Website/apple-touch-icon.png\")",
+      "Bash(taskkill //PID 1098492 //F)",
+      "Bash(gh pr merge 1 --squash --subject \"Update website: organize assets, fix paths, add favicon\")",
+      "Bash(gh pr view 1 --json state,mergeable,mergeStateStatus)",
+      "Bash(PATH=\"$PATH:/c/Program Files/GitHub CLI\" git push origin main)"
+    ]
+  }
+}
