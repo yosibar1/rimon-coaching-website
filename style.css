@@ -1569,7 +1569,8 @@ footer {
 
 .workshop-card-details {
     background: var(--primary-light);
-    padding: 0.75rem 2rem;
+    padding: 0 2rem;
+    height: 52px;
     border-top: 1px solid var(--border-color);
     font-size: 0.88rem;
     font-weight: 600;
@@ -1577,6 +1578,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
