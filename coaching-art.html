@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קוצ'ינג בשילוב אמנות | רימון - מרכז אימון למצוינות</title>
+    <meta name="description" content="שיטה ייחודית המשלבת קוצ'ינג מקצועי ותרפיה באמנות — לפיתוח אישי עמוק, הסרת חסמים ויצירת שינוי אמיתי בחיים ובקריירה">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="רימון - מרכז אימון למצוינות">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:title" content="קוצ'ינג בשילוב אמנות | רימון">
+    <meta property="og:description" content="שיטה ייחודית המשלבת קוצ'ינג מקצועי ותרפיה באמנות">
+    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:url" content="https://rimoncoaching.com/coaching-art.html">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== Coaching Art Page — Page-Specific Styles ===== */
+        :root {
+            --art-teal: #5b9ea0;
+            --art-teal-light: #e8f4f4;
+            --art-teal-pale: #f2fafa;
+            --art-warm: #c9a227;
+            --art-warm-light: #f5f0e1;
+        }
+
+        /* Hero */
+        .ca-hero {
+            background: linear-gradient(135deg, var(--art-teal-pale) 0%, var(--art-warm-light) 100%);
+            padding: 160px 2rem 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ca-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235b9ea0' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            pointer-events: none;
+        }
+        .ca-hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .ca-hero-tag {
+            display: inline-block;
+            background: var(--art-teal);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 1.1rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.03em;
+        }
+        .ca-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--text-color);
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+        .ca-hero h1 span {
+            color: var(--art-teal);
+        }
+        .ca-hero-sub {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        .ca-hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-teal {
+            background: var(--art-teal);
+            color: #fff;
+            padding: 0.9rem 2.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background var(--transition-base), transform var(--transition-fast);
+        }
+        .btn-teal:hover {
+            background: #4a8587;
+            transform: translateY(-2px);
+        }
+        .btn-outline-teal {
+            border: 2px solid var(--art-teal);
+            color: var(--art-teal);
+            padding: 0.9rem 2.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all var(--transition-base);
+        }
+        .btn-outline-teal:hover {
+            background: var(--art-teal);
+            color: #fff;
+        }
+
+        /* What Is Section */
+        .ca-what {
+            padding: 80px 2rem;
+            background: #fff;
+        }
+        .ca-what-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .ca-what-text h2 {
+            color: var(--text-color);
+            margin-bottom: 1.2rem;
+        }
+        .ca-what-text h2 span {
+            color: var(--art-teal);
+        }
+        .ca-what-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .ca-what-visual {
+            background: linear-gradient(135deg, var(--art-teal-light), var(--art-warm-light));
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.5rem;
+            text-align: center;
+        }
+        .ca-what-visual .visual-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .ca-what-visual p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Pillars */
+        .ca-pillars {
+            padding: 80px 2rem;
+            background: var(--art-teal-pale);
+        }
+        .ca-pillars-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .ca-pillars h2 {
+            text-align: center;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+        .ca-pillars-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3.5rem;
+            font-size: 1.05rem;
+        }
+        .ca-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .ca-pillar-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 2.2rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--art-teal);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+        .ca-pillar-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .ca-pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .ca-pillar-card h3 {
+            color: var(--text-color);
+            margin-bottom: 0.7rem;
+            font-size: 1.15rem;
+        }
+        .ca-pillar-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* For Whom */
+        .ca-whom {
+            padding: 80px 2rem;
+            background: #fff;
+        }
+        .ca-whom-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .ca-whom h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+        .ca-whom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+        .ca-whom-item {
+            background: var(--art-teal-pale);
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border-right: 3px solid var(--art-teal);
+        }
+        .ca-whom-item .check {
+            color: var(--art-teal);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .ca-whom-item p {
+            color: var(--text-color);
+            font-size: 0.97rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Process */
+        .ca-process {
+            padding: 80px 2rem;
+            background: var(--art-warm-light);
+        }
+        .ca-process-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .ca-process h2 {
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+        .ca-process-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3.5rem;
+        }
+        .ca-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .ca-step {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.8rem 2rem;
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            box-shadow: var(--shadow-sm);
+        }
+        .ca-step-num {
+            width: 52px;
+            height: 52px;
+            background: var(--art-teal);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .ca-step h3 {
+            color: var(--text-color);
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+        }
+        .ca-step p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* About Tzlil */
+        .ca-about {
+            padding: 80px 2rem;
+            background: #fff;
+        }
+        .ca-about-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+        .ca-about-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 5px solid var(--art-teal-light);
+            flex-shrink: 0;
+        }
+        .ca-about-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--art-teal-light), var(--art-warm-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            border: 5px solid var(--art-teal-light);
+            flex-shrink: 0;
+        }
+        .ca-about-text h2 {
+            color: var(--text-color);
+            margin-bottom: 0.4rem;
+        }
+        .ca-about-tagline {
+            color: var(--art-teal);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .ca-about-text p {
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.8;
+        }
+        .ca-creds {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+        }
+        .ca-cred-tag {
+            background: var(--art-teal-light);
+            color: var(--art-teal);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+        }
+
+        /* CTA Section */
+        .ca-cta {
+            padding: 80px 2rem;
+            background: var(--art-teal);
+            text-align: center;
+        }
+        .ca-cta h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .ca-cta p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+        .btn-white-teal {
+            background: #fff;
+            color: var(--art-teal);
+            padding: 0.9rem 2.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform var(--transition-fast), box-shadow var(--transition-base);
+        }
+        .btn-white-teal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .ca-what-inner {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .ca-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .ca-about-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .ca-about-placeholder, .ca-about-avatar {
+                margin: 0 auto;
+            }
+            .ca-creds {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .ca-hero {
+                padding: 140px 1.5rem 60px;
+            }
+            .ca-whom-grid {
+                grid-template-columns: 1fr;
+            }
+            .ca-step {
+                grid-template-columns: 50px 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+    <header>
+        <nav aria-label="ניווט ראשי">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+                </a>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">בית</a></li>
+                <li><a href="index.html#about">אודות</a></li>
+                <li><a href="index.html#services">שירותים</a></li>
+                <li><a href="workshops.html">סדנאות</a></li>
+                <li><a href="articles.html">מאמרים</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
+                <li><a href="index.html#contact">צרו קשר</a></li>
+            </ul>
+            <a href="https://wa.me/972524480022" target="_blank" class="header-whatsapp" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#25D366">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            <button class="menu-toggle" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="menu-overlay"></div>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <section class="ca-hero">
+            <div class="ca-hero-inner fade-in">
+                <span class="ca-hero-tag">שיטה ייחודית</span>
+                <h1>קוצ'ינג <span>בשילוב אמנות</span></h1>
+                <p class="ca-hero-sub">
+                    כאשר המילים לא מספיקות — האמנות מדברת. שיטה עמוקה המשלבת קוצ'ינג מקצועי ותרפיה באמנות
+                    לפיתוח אישי מואץ, הסרת חסמים ויצירת שינוי אמיתי ומתמשך.
+                </p>
+                <div class="ca-hero-actions">
+                    <a href="index.html#contact" class="btn-teal">לשיחת היכרות חינם</a>
+                    <a href="#ca-process" class="btn-outline-teal">איך זה עובד?</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Is It -->
+        <section class="ca-what">
+            <div class="ca-what-inner">
+                <div class="ca-what-text fade-in">
+                    <h2>מה זה <span>קוצ'ינג בשילוב אמנות</span>?</h2>
+                    <p>
+                        זוהי שיטת עבודה ייחודית שפיתחתי לאורך שנים, המשלבת את הכלים החדישים של הקוצ'ינג המקצועי
+                        עם הכוח הרגשי והסמלי של תרפיה באמנות.
+                    </p>
+                    <p>
+                        היצירה — בין אם ציור, ניפוח זכוכית, יצירת נרות או עבודה בחומרים — פותחת שכבות עמוקות שהשיח המילולי
+                        לבדו לא תמיד מגיע אליהן. כך נוצר מרחב של בטחון, ביטוי אותנטי וחיבור לחוזקות הפנימיות.
+                    </p>
+                    <p>
+                        התוצאה: תובנות עמוקות יותר, שינוי מהיר יותר, ועוגן מוחשי שמלווה אתכם הלאה.
+                    </p>
+                </div>
+                <div class="ca-what-visual fade-in">
+                    <span class="visual-icon">🎨</span>
+                    <p>
+                        "כאשר יד יוצרת, נפש מדברת.<br>
+                        כאשר נפש מדברת, שינוי מתחיל."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three Pillars -->
+        <section class="ca-pillars">
+            <div class="ca-pillars-inner">
+                <h2 class="fade-in">שלושת עמודי השיטה</h2>
+                <p class="ca-pillars-sub fade-in">גישה הוליסטית המשלבת שלושה עולמות לתהליך אחד עוצמתי</p>
+                <div class="ca-pillars-grid">
+                    <div class="ca-pillar-card fade-in">
+                        <span class="ca-pillar-icon">🧠</span>
+                        <h3>קוצ'ינג מקצועי</h3>
+                        <p>שאלות עוצמה, גילוי אמונות מגבילות, הגדרת מטרות ברורות ובניית מפת דרכים אישית לשינוי.</p>
+                    </div>
+                    <div class="ca-pillar-card fade-in">
+                        <span class="ca-pillar-icon">🎨</span>
+                        <h3>תרפיה באמנות</h3>
+                        <p>יצירה כשפה — גישה לעולמות הרגשיים והסמליים, עיבוד חוויות ויכולת לבטא מה שקשה לומר במילים.</p>
+                    </div>
+                    <div class="ca-pillar-card fade-in">
+                        <span class="ca-pillar-icon">✨</span>
+                        <h3>NLP ומיינדסט</h3>
+                        <p>כלי NLP מתקדמים לעיצוב מחדש של דפוסי חשיבה, חיזוק משאבים פנימיים ויצירת מצב מנטלי אופטימלי.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Whom -->
+        <section class="ca-whom">
+            <div class="ca-whom-inner">
+                <h2 class="fade-in">למי זה מתאים?</h2>
+                <div class="ca-whom-grid">
+                    <div class="ca-whom-item fade-in">
+                        <span class="check">✓</span>
+                        <p>מי שמרגיש תקוע ורוצה לפרוץ קדימה — בקריירה, ביחסים או בחיים האישיים</p>
+                    </div>
+                    <div class="ca-whom-item fade-in">
+                        <span class="check">✓</span>
+                        <p>מנהלים ואנשי עסקים המחפשים פיתוח אישי עמוק מעבר לכלים ניהוליים</p>
+                    </div>
+                    <div class="ca-whom-item fade-in">
+                        <span class="check">✓</span>
+                        <p>נשים בצמתים של שינוי — קריירה, מעבר גיל, גירושין, הורות, פרישה</p>
+                    </div>
+                    <div class="ca-whom-item fade-in">
+                        <span class="check">✓</span>
+                        <p>מי שמדבר על שינוי אבל לא מצליח לעשות אותו — חסמים עמוקים</p>
+                    </div>
+                    <div class="ca-whom-item fade-in">
+                        <span class="check">✓</span>
+                        <p>אנשים שניסו טיפול או קוצ'ינג "רגיל" ומחפשים גישה שונה ועמוקה יותר</p>
+                    </div>
+                    <div class="ca-whom-item fade-in">
+                        <span class="check">✓</span>
+                        <p>כל מי שרוצה לחיות חיים אמיתיים יותר — עם ערכים, כיוון ותחושת שליחות</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="ca-process" id="ca-process">
+            <div class="ca-process-inner">
+                <h2 class="fade-in">איך התהליך עובד?</h2>
+                <p class="ca-process-sub fade-in">מפגש ראשון ועד לשינוי — מסע מובנה ואישי</p>
+                <div class="ca-steps">
+                    <div class="ca-step fade-in">
+                        <div class="ca-step-num">1</div>
+                        <div>
+                            <h3>שיחת היכרות (חינם)</h3>
+                            <p>פגישת זום של 30 דקות להבנת הצורך, הציפיות והבדיקה האם יש "כימיה" — תנאי בסיסי לתהליך טוב.</p>
+                        </div>
+                    </div>
+                    <div class="ca-step fade-in">
+                        <div class="ca-step-num">2</div>
+                        <div>
+                            <h3>מיפוי אישי</h3>
+                            <p>מפגש ראשון עמוק של 90 דקות למיפוי המצב הנוכחי, הגדרת יעדים ובחירת כלי האמנות שמדברים אליך.</p>
+                        </div>
+                    </div>
+                    <div class="ca-step fade-in">
+                        <div class="ca-step-num">3</div>
+                        <div>
+                            <h3>תהליך עבודה אישי</h3>
+                            <p>סדרה של 5–8 מפגשים, כל אחד שעה עד שעה וחצי, המשלבים שיח קוצ'ינג עם יצירה. התדירות והאורך — לפי הצורך שלך.</p>
+                        </div>
+                    </div>
+                    <div class="ca-step fade-in">
+                        <div class="ca-step-num">4</div>
+                        <div>
+                            <h3>עוגן ביצירה</h3>
+                            <p>כל מפגש יצירתי מסתיים עם יצירה שהיא עוגן מוחשי — תזכורת חיה לתובנות ולמשאבים שגילית.</p>
+                        </div>
+                    </div>
+                    <div class="ca-step fade-in">
+                        <div class="ca-step-num">5</div>
+                        <div>
+                            <h3>מפגש סיכום ובניית המשך</h3>
+                            <p>סיכום הדרך שעברת, המשגת ההישגים וגיבוש תוכנית להמשך העצמאי שלך.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Tzlil -->
+        <section class="ca-about">
+            <div class="ca-about-inner">
+                <div class="ca-about-placeholder fade-in">🌟</div>
+                <div class="ca-about-text fade-in">
+                    <h2>צליל בר</h2>
+                    <p class="ca-about-tagline">מנטורית, קואצ'ית ומטפלת באמנות | למעלה משני עשורים של ניסיון</p>
+                    <p>
+                        צליל פיתחה את שיטת "קוצ'ינג בשילוב אמנות" לאורך שנות עבודה עם מנהלים, ארגונים ויחידים
+                        שרצו שינוי אמיתי. היא משלבת השכלה אקדמית כפולה בניהול ובאמנות עם הכשרה מקצועית
+                        מהשורה הראשונה.
+                    </p>
+                    <div class="ca-creds">
+                        <span class="ca-cred-tag">M.B.A בר-אילן</span>
+                        <span class="ca-cred-tag">M.A ספיר — אמנות</span>
+                        <span class="ca-cred-tag">NLP Master-Trainer</span>
+                        <span class="ca-cred-tag">תרפיה באמנות מוסמכת</span>
+                        <span class="ca-cred-tag">הנחיית קבוצות</span>
+                        <span class="ca-cred-tag">יועצת ארגונית</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="ca-cta">
+            <div class="fade-in">
+                <h2>מוכנים להתחיל?</h2>
+                <p>שיחת היכרות ראשונה — ללא עלות וללא התחייבות</p>
+                <a href="index.html#contact" class="btn-white-teal">לתיאום שיחת היכרות</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+            </div>
+            <div class="footer-links">
+                <a href="index.html#home">בית</a>
+                <a href="index.html#about">אודות</a>
+                <a href="index.html#services">שירותים</a>
+                <a href="workshops.html">סדנאות</a>
+                <a href="articles.html">מאמרים</a>
+                <a href="gallery.html">גלריה</a>
+                <a href="index.html#contact">צרו קשר</a>
+            </div>
+            <div class="footer-links" style="margin-top:0.5rem;">
+                <a href="privacy.html">מדיניות פרטיות</a>
+                <a href="terms.html">תנאי שימוש</a>
+                <a href="accessibility.html">הצהרת נגישות</a>
+            </div>
+            <p class="copyright">© 2026 רימון - מרכז אימון למצוינות | כל הזכויות שמורות</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Accessibility Widget - EqualWeb -->
+    <script>
+    window.interdeal = {
+        get sitekey (){ return "2d6687b74564a1ab0ebbe18e4394728a"} ,
+        get domains(){
+            return {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            }
+        },
+        "Position": "left",
+        "Menulang": "HE",
+        "draggable": true,
+        "btnStyle": {
+            "vPosition": ["80%","80%"],
+            "margin": ["0","0"],
+            "scale": ["0.5","0.5"],
+            "color": {"main": "#1876c9","second": "#ffffff"},
+            "icon": {"outline": false,"outlineColor": "#ffffff","type": 1,"shape": "circle"}
+        }
+    };
+    (function(doc, head, body){
+        var coreCall         = doc.createElement('script');
+        coreCall.src         = interdeal.domains.js + 'core/5.2.8/accessibility.js';
+        coreCall.defer       = true;
+        coreCall.integrity   = 'sha512-ka0NgF7zDksnhoZ5ZCKlm+t0F7KTih5lCfXwuzQDnrwu/EdKZSsJotoJvQPd0cuVmV63s0q2cgoUjeki688PuQ==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
+</body>
+</html>
