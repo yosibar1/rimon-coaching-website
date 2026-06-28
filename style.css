@@ -1232,7 +1232,7 @@ footer {
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 3rem;
+        gap: 1rem;
         align-items: center;
     }
 
