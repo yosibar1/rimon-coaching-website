@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סדנת סגנונות תקשורת | רימון - מרכז אימון למצוינות</title>
+    <meta name="description" content="סדנה הומוריסטית וחווייתית לקבוצות גדולות — לגלות את ארבעת סגנונות התקשורת (משימתי, מקדם, מנתח, תומך) ולהשיג שיתוף פעולה מכל אחד. מושלם לכנסים, ימי כיף וארגונים">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="רימון - מרכז אימון למצוינות">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:title" content="סדנת סגנונות תקשורת | רימון">
+    <meta property="og:description" content="סדנה הומוריסטית וחווייתית לקבוצות גדולות — ארבעה סגנונות תקשורת ואיך להשיג שיתוף פעולה מכל אחד">
+    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:url" content="https://rimoncoaching.com/workshop-communication-styles.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== סגנונות תקשורת — עיצוב ייעודי ===== */
+        .cs-hero {
+            padding: 180px 2rem 70px;
+            background: var(--cream);
+            text-align: center;
+        }
+        .cs-hero-inner { max-width: 850px; margin: 0 auto; }
+        .cs-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
+            border-radius: 20px;
+            margin-bottom: 1.3rem;
+        }
+        .cs-hero h1 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .cs-hero .cs-sub {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .cs-hero p.lead {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 2.2rem;
+        }
+
+        /* Quadrant */
+        .cs-quadrant-section {
+            padding: 80px 2rem;
+            background: #fff;
+        }
+        .cs-quadrant-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .cs-quadrant-wrap h2 { margin-bottom: 0.6rem; }
+        .cs-quadrant-wrap > p {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+        .cs-axis-top, .cs-axis-bottom {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+        }
+        .cs-quadrant-grid {
+            display: grid;
+            grid-template-columns: 24px 1fr 1fr 24px;
+            grid-template-rows: auto auto auto;
+            gap: 10px;
+            align-items: stretch;
+            margin: 1rem 0;
+        }
+        .cs-axis-side {
+            writing-mode: vertical-rl;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cs-q {
+            border-radius: var(--radius-md);
+            padding: 1.8rem 1rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            transition: transform var(--transition-base);
+        }
+        .cs-q:hover { transform: scale(1.04); }
+        .cs-q small {
+            font-weight: 400;
+            font-size: 0.82rem;
+            opacity: 0.9;
+        }
+        .cs-q .emoji { font-size: 2rem; }
+        .cs-q-mission  { background: #b23a48; }
+        .cs-q-promoter { background: #e8883a; }
+        .cs-q-analyst  { background: #3a6ea5; }
+        .cs-q-support  { background: #4c9a63; }
+
+        /* Style cards */
+        .cs-styles {
+            padding: 80px 2rem;
+            background: var(--background-alt);
+        }
+        .cs-styles-inner { max-width: 1100px; margin: 0 auto; }
+        .cs-styles-inner > h2 { text-align: center; margin-bottom: 0.6rem; }
+        .cs-styles-inner > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+        .cs-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+        }
+        .cs-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border-top: 5px solid;
+            transition: var(--transition-base);
+        }
+        .cs-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+        .cs-card.mission  { border-color: #b23a48; }
+        .cs-card.promoter { border-color: #e8883a; }
+        .cs-card.analyst  { border-color: #3a6ea5; }
+        .cs-card.support  { border-color: #4c9a63; }
+        .cs-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.25rem;
+        }
+        .cs-card p {
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            margin-bottom: 0.8rem;
+        }
+        .cs-card .cs-tip {
+            background: var(--primary-light);
+            border-radius: var(--radius-sm);
+            padding: 0.7rem 1rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+        .cs-card .cs-tip strong { color: var(--primary-dark); }
+
+        /* What happens */
+        .cs-program {
+            padding: 80px 2rem;
+            background: #fff;
+        }
+        .cs-program-inner { max-width: 900px; margin: 0 auto; }
+        .cs-program h2 { text-align: center; margin-bottom: 3rem; }
+        .cs-program-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+        .cs-program-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: var(--background-alt);
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1.5rem;
+        }
+        .cs-program-item .icon { font-size: 1.7rem; flex-shrink: 0; }
+        .cs-program-item h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+        .cs-program-item p { color: var(--text-secondary); font-size: 0.93rem; margin: 0; }
+
+        .cs-meta-band {
+            padding: 0 2rem 70px;
+            background: #fff;
+            text-align: center;
+        }
+        .cs-meta-band .chips {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .cs-meta-band .chips span {
+            background: var(--primary-light);
+            border: 1.5px solid rgba(201, 162, 39, 0.35);
+            border-radius: 40px;
+            padding: 0.7rem 1.6rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .cs-hero { padding: 150px 1.5rem 55px; }
+            .cs-cards, .cs-program-grid { grid-template-columns: 1fr; }
+            .cs-q { font-size: 1.05rem; padding: 1.3rem 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+    <header>
+        <nav aria-label="ניווט ראשי">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+                </a>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">בית</a></li>
+                <li><a href="index.html#about">אודות</a></li>
+                <li><a href="index.html#services">שירותים</a></li>
+                <li><a href="workshops.html" class="active">סדנאות</a></li>
+                <li><a href="workshops-art.html">סדנאות אמנות</a></li>
+                <li><a href="articles.html">מאמרים</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
+                <li><a href="#contact">צרו קשר</a></li>
+            </ul>
+            <a href="https://wa.me/972524480022" target="_blank" class="header-whatsapp" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#25D366">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            <button class="menu-toggle" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="menu-overlay"></div>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <section class="cs-hero">
+            <div class="cs-hero-inner">
+                <span class="cs-badge fade-in">סדנה הומוריסטית לקבוצות גדולות 🎭</span>
+                <h1 class="fade-in">סדנת סגנונות תקשורת</h1>
+                <p class="cs-sub fade-in">"למה הוא כזה?!" — הסדנה שתגרום לכם לצחוק, ולהבין סוף-סוף את כולם</p>
+                <p class="lead fade-in">למה יש אנשים שעונים לכם "תכלס, מה אתה רוצה?" ואחרים מספרים סיפור של עשר דקות רק כדי להגיד שלום? הסדנה חושפת — בהמון הומור ודוגמאות מהחיים — את העיקרון שמחלק את בני האדם לארבעה סגנונות תקשורת, ומלמדת איך לדבר עם כל אחד מהם כך שבאמת ישתפו פעולה.</p>
+                <a href="#contact" class="btn fade-in">להזמנת הסדנה</a>
+            </div>
+        </section>
+
+        <!-- Quadrant -->
+        <section class="cs-quadrant-section">
+            <div class="cs-quadrant-wrap">
+                <h2 class="fade-in">המודל: ארבעה סגנונות, שני צירים</h2>
+                <p class="fade-in">כל אחד מאיתנו נמצא איפשהו בין דומיננטי לפסיבי, ובין רשמי לבלתי רשמי — והשילוב קובע את הסגנון</p>
+                <div class="fade-in">
+                    <div class="cs-axis-top">דומיננטי ⬆</div>
+                    <div class="cs-quadrant-grid">
+                        <div class="cs-axis-side">רשמי ←</div>
+                        <div class="cs-q cs-q-mission">
+                            <span class="emoji">🎯</span>
+                            משימתי
+                            <small>"תכלס, מה השורה התחתונה?"</small>
+                        </div>
+                        <div class="cs-q cs-q-promoter">
+                            <span class="emoji">🎤</span>
+                            מקדם
+                            <small>"חבר'ה, יש לי רעיון מדהים!"</small>
+                        </div>
+                        <div class="cs-axis-side">→ בלתי רשמי</div>
+                        <div class="cs-axis-side">רשמי ←</div>
+                        <div class="cs-q cs-q-analyst">
+                            <span class="emoji">🔍</span>
+                            מנתח
+                            <small>"רגע, בוא נבדוק את הנתונים"</small>
+                        </div>
+                        <div class="cs-q cs-q-support">
+                            <span class="emoji">🤝</span>
+                            תומך
+                            <small>"מה שנוח לכם, באמת"</small>
+                        </div>
+                        <div class="cs-axis-side">→ בלתי רשמי</div>
+                    </div>
+                    <div class="cs-axis-bottom">⬇ פסיבי</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Style cards -->
+        <section class="cs-styles">
+            <div class="cs-styles-inner">
+                <h2 class="fade-in">הכירו את הארבעה</h2>
+                <p class="fade-in">בטוח תזהו את עצמכם — ואת כל מי שאתם עובדים איתם</p>
+                <div class="cs-cards">
+                    <div class="cs-card mission fade-in">
+                        <h3>🎯 המשימתי</h3>
+                        <p>דומיננטי, תכליתי ועצמאי. מתמקד בתוצאות ובשורה התחתונה, מחליט מהר ופועל ביעילות — לפעמים על חשבון יחסי האנוש. אוהב שליטה, דורש סטנדרטים גבוהים, ושונא בזבוז זמן.</p>
+                        <p class="cs-tip"><strong>איך מדברים איתו?</strong> קצר ולעניין. עובדות, תוצאות, תכלס. ואל תאחרו לו לפגישה.</p>
+                    </div>
+                    <div class="cs-card promoter fade-in">
+                        <h3>🎤 המקדם</h3>
+                        <p>אנרגטי, כריזמטי וחברותי. חי מרעיונות, התלהבות וקהל שמוחא כפיים. משכנע ודרמטי, קופץ מדבר לדבר, ומדליק את כל החדר — אבל את הפרטים הקטנים ישאיר למישהו אחר.</p>
+                        <p class="cs-tip"><strong>איך מדברים איתו?</strong> עם דימויים, סיפורים והתלהבות. ופרגנו לו — רצוי מול קהל גדול.</p>
+                    </div>
+                    <div class="cs-card analyst fade-in">
+                        <h3>🔍 המנתח</h3>
+                        <p>שכלתני, שיטתי ומדויק. אוסף את כל הנתונים לפני כל החלטה, נמנע מסיכונים ושונא לטעות. עשוי להיראות מרוחק — אבל כשנוצר קשר, אין נאמן ויציב ממנו.</p>
+                        <p class="cs-tip"><strong>איך מדברים איתו?</strong> בפרטי פרטים, בסדר לוגי, בטון שקט וסבלני. ובשום אופן לא לקטוע אותו.</p>
+                    </div>
+                    <div class="cs-card support fade-in">
+                        <h3>🤝 התומך</h3>
+                        <p>נינוח, חביב וקשוב. שומר על הרמוניה בכל מחיר, מתקשה להגיד לא, ומעדיף לרצות אחרים גם על חשבון עצמו. משתף פעולה מצוין — שרק צריך מסגרת ברורה והרבה חיזוקים.</p>
+                        <p class="cs-tip"><strong>איך מדברים איתו?</strong> ברגש, בסבלנות ובהתעניינות אמיתית. בלי לחץ, בלי צעקות ובלי ביקורת בפרהסיה.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program -->
+        <section class="cs-program">
+            <div class="cs-program-inner">
+                <h2 class="fade-in">מה קורה בסדנה?</h2>
+                <div class="cs-program-grid">
+                    <div class="cs-program-item fade-in">
+                        <span class="icon">📝</span>
+                        <div>
+                            <h3>מגלים מי אתם</h3>
+                            <p>כל משתתף ממלא שאלון אבחון אישי ומגלה את סגנון התקשורת הדומיננטי שלו — רגע של הארה (וצחוק גדול)</p>
+                        </div>
+                    </div>
+                    <div class="cs-program-item fade-in">
+                        <span class="icon">😂</span>
+                        <div>
+                            <h3>צוחקים על כולנו</h3>
+                            <p>הדגמות חיות, סיטואציות מהמשרד ומהבית וחיקויים שכל אחד מזהה — כי אין דרך טובה יותר ללמוד מאשר דרך הומור</p>
+                        </div>
+                    </div>
+                    <div class="cs-program-item fade-in">
+                        <span class="icon">👀</span>
+                        <div>
+                            <h3>לומדים לזהות אחרים</h3>
+                            <p>שפת גוף, ברכת פתיחה, טון דיבור — סימנים פשוטים שמגלים תוך שניות עם איזה סגנון אתם מדברים</p>
+                        </div>
+                    </div>
+                    <div class="cs-program-item fade-in">
+                        <span class="icon">🗣️</span>
+                        <div>
+                            <h3>מתאימים את המסר</h3>
+                            <p>איך לדבר עם כל סגנון, מה אסור לעשות לו בשום מצב, ואיך לפרגן לו כך שזה באמת יגיע</p>
+                        </div>
+                    </div>
+                    <div class="cs-program-item fade-in">
+                        <span class="icon">🤝</span>
+                        <div>
+                            <h3>משיגים שיתוף פעולה</h3>
+                            <p>הכלי המרכזי: איך לרתום כל סגנון — בעבודה, בצוות ובבית — בדרך שמתאימה לו</p>
+                        </div>
+                    </div>
+                    <div class="cs-program-item fade-in">
+                        <span class="icon">📖</span>
+                        <div>
+                            <h3>לוקחים הביתה</h3>
+                            <p>חוברת סגנונות תקשורת מקצועית של רימון — עם טבלאות עזר לכל סגנון, לשימוש יומיומי אחרי הסדנה</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meta -->
+        <section class="cs-meta-band">
+            <div class="chips fade-in">
+                <span>👥 מותאם לקבוצות גדולות</span>
+                <span>🎪 מושלם לכנסים, ימי כיף וימי גיבוש</span>
+                <span>🏢 מתאים גם כחלק מתוכנית הדרכה ארגונית</span>
+                <span>⏱️ משך גמיש — מהרצאה ועד סדנה מלאה</span>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="cta-content fade-in">
+                <h2>רוצים שהצוות שלכם סוף-סוף יבין אחד את השני?</h2>
+                <p>סדנת סגנונות תקשורת מגיעה עד אליכם — לכנס, ליום הכיף או ליום העיון הבא</p>
+                <a href="#contact" class="btn btn-white">להזמנת הסדנה</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title fade-in">בואו נדבר</h2>
+            <p class="section-subtitle fade-in">השאירו פרטים ואחזור אליכם תוך 24 שעות</p>
+
+            <form class="contact-form fade-in">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">שם מלא</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">אימייל</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder=" ">
+                    <label for="phone">טלפון</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
+                    <label for="message">ספרו לי במה אוכל לעזור...</label>
+                </div>
+                <button type="submit" class="btn">שליחה</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+            </div>
+            <div class="footer-links">
+                <a href="index.html#home">בית</a>
+                <a href="index.html#about">אודות</a>
+                <a href="index.html#services">שירותים</a>
+                <a href="workshops.html">סדנאות</a>
+                <a href="workshops-art.html">סדנאות אמנות</a>
+                <a href="articles.html">מאמרים</a>
+                <a href="gallery.html">גלריה</a>
+                <a href="#contact">צרו קשר</a>
+            </div>
+            <div class="footer-links" style="margin-top:0.5rem;"><a href="privacy.html">מדיניות פרטיות</a><a href="terms.html">תנאי שימוש</a><a href="accessibility.html">הצהרת נגישות</a></div>
+            <p class="copyright">© 2026 רימון - מרכז אימון למצוינות | כל הזכויות שמורות</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Accessibility Widget - EqualWeb -->
+    <script>
+    window.interdeal = {
+        get sitekey (){ return "2d6687b74564a1ab0ebbe18e4394728a"} ,
+        get domains(){
+            return {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            }
+        },
+        "Position": "left",
+        "Menulang": "HE",
+        "draggable": true,
+        "btnStyle": {
+            "vPosition": ["80%","80%"],
+            "margin": ["0","0"],
+            "scale": ["0.5","0.5"],
+            "color": {"main": "#1876c9","second": "#ffffff"},
+            "icon": {"outline": false,"outlineColor": "#ffffff","type": 1,"shape": "circle"}
+        }
+    };
+    (function(doc, head, body){
+        var coreCall         = doc.createElement('script');
+        coreCall.src         = interdeal.domains.js + 'core/5.2.8/accessibility.js';
+        coreCall.defer       = true;
+        coreCall.integrity   = 'sha512-ka0NgF7zDksnhoZ5ZCKlm+t0F7KTih5lCfXwuzQDnrwu/EdKZSsJotoJvQPd0cuVmV63s0q2cgoUjeki688PuQ==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
+</body>
+</html>
