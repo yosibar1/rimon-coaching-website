@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סדנאות אמנות | מבית רימון</title>
-    <meta name="description" content="סטודיו ליצירה והעצמה מבית רימון — סדנאות בת מצווה, יצירת נרות, עיצוב בבטון וחוויות אמנותיות מעצימות">
+    <title>אמן — אימון · אמונה · אומנות | מבית רימון</title>
+    <meta name="description" content="אמן — מרחב יצירה, התבוננות וצמיחה מבית רימון. סדנאות בת מצווה, יצירת נרות, עיצוב בבטון וחוויות אמנותיות מעצימות">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="סדנאות אמנות מבית רימון">
+    <meta property="og:site_name" content="אמן מבית רימון">
     <meta property="og:locale" content="he_IL">
-    <meta property="og:title" content="סדנאות אמנות | מבית רימון">
-    <meta property="og:description" content="סטודיו ליצירה והעצמה — סדנאות בת מצווה וחוויות אמנותיות מעצימות">
-    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:title" content="אמן — אימון · אמונה · אומנות | מבית רימון">
+    <meta property="og:description" content="מרחב יצירה, התבוננות וצמיחה — סדנאות בת מצווה וחוויות אמנותיות מעצימות">
+    <meta property="og:image" content="https://rimoncoaching.com/Logos/Amen1.png">
     <meta property="og:url" content="https://rimoncoaching.com/workshops-art.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +26,18 @@
            ============================================ */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* פלטה נגזרת מלוגו אמן — גווני אדמה */
         :root {
-            --terracotta: #d96f4c;
-            --terracotta-deep: #b8532f;
-            --plum: #6b4173;
-            --plum-deep: #4e2d54;
-            --mustard: #e3a72f;
-            --sage: #8aa17c;
-            --paper: #faf6f0;
-            --paper-warm: #f5ecdf;
-            --ink: #33254a;
-            --ink-soft: #5c4d6e;
+            --terracotta: #b47f52;        /* קאמל */
+            --terracotta-deep: #91643f;
+            --plum: #5b4437;              /* חום כהה */
+            --plum-deep: #443228;
+            --mustard: #ab948a;           /* טאופ */
+            --sage: #d8cfc7;              /* אבן בהירה */
+            --paper: #faf8f6;
+            --paper-warm: #f0eae4;
+            --ink: #2e2620;
+            --ink-soft: #6b5d52;
         }
 
         html { scroll-behavior: smooth; }
@@ -88,7 +89,7 @@
             margin: 0 auto;
         }
 
-        /* לוגו המותג — יוחלף בקובץ לוגו כשיהיה בתיקייה */
+        /* לוגו אמן */
         .brand-mark {
             display: flex;
             align-items: center;
@@ -96,9 +97,11 @@
             text-decoration: none;
         }
         .brand-mark img {
-            height: 64px;
+            height: 72px;
             width: auto;
             display: block;
+            /* הופך את הרקע הלבן של הלוגו לשקוף על רקעים בהירים */
+            mix-blend-mode: multiply;
         }
         .brand-wordmark {
             font-family: 'Suez One', serif;
@@ -509,13 +512,8 @@
     <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
 
     <header class="art-header">
-        <a href="workshops-art.html" class="brand-mark" aria-label="סדנאות אמנות מבית רימון - דף הבית">
-            <!-- כשהלוגו יהיה בתיקייה: להחליף את ה-wordmark בתגית img -->
-            <!-- <img src="Art-Logo.png" alt="סדנאות אמנות מבית רימון"> -->
-            <span class="brand-wordmark">
-                סדנאות אמנות
-                <small>מבית רימון · צליל בר</small>
-            </span>
+        <a href="workshops-art.html" class="brand-mark" aria-label="אמן - אימון, אמונה, אומנות - דף הבית">
+            <img src="Logos/Amen1.png" alt="אמן — אימון, אמונה, אומנות. מרחב יצירה, התבוננות וצמיחה">
         </a>
         <a href="index.html" class="back-to-rimon">→ לאתר רימון</a>
     </header>
@@ -529,7 +527,7 @@
             <div class="blob blob-3"></div>
             <div class="blob blob-4"></div>
             <div class="art-hero-inner">
-                <span class="art-hero-kicker">סטודיו ליצירה והעצמה</span>
+                <span class="art-hero-kicker">אימון · אמונה · אומנות</span>
                 <h1>רגעים של יצירה,<br><span class="stroke">זיכרונות לכל החיים</span></h1>
                 <p>סדנאות אמנות חווייתיות שמחברות בין הידיים ללב — לבת מצווה, לקבוצות ולאירועים מיוחדים.</p>
                 <a href="#batmitzvah" class="art-btn">לסדנת בת המצווה</a>
@@ -600,8 +598,8 @@
 
     <footer class="art-footer">
         <div class="brand-wordmark">
-            סדנאות אמנות
-            <small>מבית רימון · צליל בר</small>
+            אמן
+            <small>אימון · אמונה · אומנות</small>
         </div>
         <p>מבית <a href="index.html">רימון — מרכז אימון למצוינות</a></p>
         <div class="legal">
