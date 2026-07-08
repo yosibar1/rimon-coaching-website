@@ -83,23 +83,18 @@
             z-index: 20;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
             padding: 1.2rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* לוגו אמן */
-        .brand-mark {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            text-decoration: none;
-        }
-        .brand-mark img {
-            height: 72px;
-            width: auto;
+        /* לוגו אמן — גדול, מעל הכותרת בהירו */
+        .hero-logo {
             display: block;
+            height: clamp(150px, 24vw, 280px);
+            width: auto;
+            margin: 0 auto 2rem;
             /* הופך את הרקע הלבן של הלוגו לשקוף על רקעים בהירים */
             mix-blend-mode: multiply;
         }
@@ -143,7 +138,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 130px 2rem 100px;
+            padding: 110px 2rem 100px;
             background: var(--paper-warm);
             overflow: hidden;
         }
@@ -494,7 +489,6 @@
         }
         @media (max-width: 480px) {
             .art-header { padding: 1rem 1.2rem; }
-            .brand-mark img { height: 48px; }
             .brand-wordmark { font-size: 1.25rem; }
             .back-to-rimon { font-size: 0.8rem; padding: 0.35rem 0.9rem; }
             .rimon-strip { font-size: 0.78rem; letter-spacing: 0; padding: 0.85rem 1rem; }
@@ -512,9 +506,6 @@
     <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
 
     <header class="art-header">
-        <a href="workshops-art.html" class="brand-mark" aria-label="אמן - אימון, אמונה, אומנות - דף הבית">
-            <img src="Logos/Amen1.png" alt="אמן — אימון, אמונה, אומנות. מרחב יצירה, התבוננות וצמיחה">
-        </a>
         <a href="index.html" class="back-to-rimon">→ לאתר רימון</a>
     </header>
 
@@ -527,7 +518,7 @@
             <div class="blob blob-3"></div>
             <div class="blob blob-4"></div>
             <div class="art-hero-inner">
-                <span class="art-hero-kicker">אימון · אמונה · אומנות</span>
+                <img class="hero-logo" src="Logos/Amen1.png" alt="אמן — אימון, אמונה, אומנות. מרחב יצירה, התבוננות וצמיחה">
                 <h1>רגעים של יצירה,<br><span class="stroke">זיכרונות לכל החיים</span></h1>
                 <p>סדנאות אמנות חווייתיות שמחברות בין הידיים ללב — לבת מצווה, לקבוצות ולאירועים מיוחדים.</p>
                 <a href="#batmitzvah" class="art-btn">לסדנת בת המצווה</a>
