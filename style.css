@@ -1239,7 +1239,7 @@ footer {
 
     .hero {
         align-items: center;
-        padding-bottom: 0;
+        padding-bottom: 2.5rem;
     }
 
     .hero-content {
@@ -1256,8 +1256,8 @@ footer {
     }
 
     .pink-banner {
-        margin-top: -50px;
-        z-index: 10;
+        margin-top: 0;
+        z-index: auto;
     }
 
     .hero-image::before {
@@ -1272,6 +1272,9 @@ footer {
         margin-bottom: 0;
         object-fit: cover;
         object-position: center top;
+        /* soft fade instead of a hard crop line above the headline */
+        -webkit-mask-image: linear-gradient(to top, transparent 0, #000 12%);
+        mask-image: linear-gradient(to top, transparent 0, #000 12%);
     }
 
     .about-wrapper {
@@ -1323,7 +1326,7 @@ footer {
     .hero {
         padding-top: 120px;
         min-height: auto;
-        padding-bottom: 0;
+        padding-bottom: 2.5rem;
     }
 
     .hero-text {
@@ -1331,8 +1334,8 @@ footer {
     }
 
     .pink-banner {
-        margin-top: -50px;
-        z-index: 10;
+        margin-top: 0;
+        z-index: auto;
     }
 
     .about,
