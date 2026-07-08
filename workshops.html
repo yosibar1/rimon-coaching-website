@@ -65,12 +65,18 @@
             .ws-hero {
                 min-height: auto;
                 padding: 150px 1.5rem 70px;
-                background-position: 28% 20%;
+                /* מסיט את התמונה כך שהיד יוצאת מהפריים */
+                background-position: 52% 18%;
             }
             .ws-hero::before {
                 background: rgba(26, 26, 46, 0.55);
             }
-            .ws-hero-text { text-align: center; max-width: 100%; }
+            .ws-hero-text {
+                text-align: center;
+                max-width: 100%;
+                /* דוחף את הכותרת מטה — מתחת לאזור הפנים */
+                margin-top: 170px;
+            }
         }
     </style>
 </head>
