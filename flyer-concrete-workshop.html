@@ -3,592 +3,639 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סדנת לבבות שמחים - בטון פולימירי</title>
-    <meta name="description" content="סדנה יצירתית להכנת לבבות מבטון פולימרי - רימון מרכז אימון למצוינות">
+    <title>מעצבים תודעת שפע — סדנת בטון פולימרי | אמן מבית רימון</title>
+    <meta name="description" content="סדנת קראפט ייחודית המשלבת טכניקות מנטליות ויצירה בבטון פולימרי — כלים, קערות ואגרטלים בעיצוב אישי. מבית אמן — מרחב יצירה, התבוננות וצמיחה">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="רימון - מרכז אימון למצוינות">
+    <meta property="og:site_name" content="אמן מבית רימון">
     <meta property="og:locale" content="he_IL">
-    <meta property="og:title" content="סדנת לבבות שמחים - בטון פולימרי | רימון">
-    <meta property="og:description" content="סדנה יצירתית להכנת לבבות מבטון פולימרי - רימון מרכז אימון למצוינות">
-    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:title" content="מעצבים תודעת שפע — סדנת בטון פולימרי | אמן">
+    <meta property="og:description" content="סדנת קראפט ייחודית המשלבת טכניקות מנטליות ויצירה בבטון פולימרי">
+    <meta property="og:image" content="https://rimoncoaching.com/Logos/Amen1.png">
     <meta property="og:url" content="https://rimoncoaching.com/flyer-concrete-workshop.html">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Suez+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Secular+One&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* ============================================
+           מעצבים תודעת שפע — דף סדנה מבית אמן
+           שפה עיצובית: מותג אמן (גווני אדמה)
+           ============================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --terracotta: #b47f52;
+            --terracotta-deep: #91643f;
+            --plum: #5b4437;
+            --plum-deep: #443228;
+            --mustard: #ab948a;
+            --sage: #d8cfc7;
+            --paper: #faf8f6;
+            --paper-warm: #f0eae4;
+            --ink: #2e2620;
+            --ink-soft: #6b5d52;
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: #3a3530;
             font-family: 'Heebo', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        .flyer {
-            width: 148mm;
-            height: 210mm;
-            background: linear-gradient(170deg,
-                #f5ede4 0%,
-                #ede0d4 25%,
-                #d9c8b8 55%,
-                #c4b09a 80%,
-                #b09880 100%);
+        h1, h2, h3 {
+            font-family: 'Suez One', serif;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            right: 1rem;
+            background: var(--plum);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus { top: 1rem; }
+        :focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
+
+        /* ===== Header ===== */
+        .art-header {
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-logo img {
+            height: 58px;
+            width: auto;
+            display: block;
+            mix-blend-mode: multiply;
+        }
+        .back-to-amen {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ink-soft);
+            text-decoration: none;
+            border: 1.5px solid var(--ink-soft);
+            border-radius: 30px;
+            padding: 0.4rem 1.2rem;
+            transition: all 0.25s ease;
+            background: rgba(250, 248, 246, 0.7);
+        }
+        .back-to-amen:hover {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: var(--paper);
+        }
+
+        /* ===== Hero ===== */
+        .art-hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 2rem 90px;
+            background: var(--paper-warm);
+            overflow: hidden;
+        }
+        .blob {
+            position: absolute;
+            pointer-events: none;
+        }
+        .blob-1 {
+            width: 420px; height: 420px;
+            background: var(--plum);
+            opacity: 0.1;
+            top: -120px; right: -100px;
+            border-radius: 58% 42% 55% 45% / 50% 58% 42% 50%;
+        }
+        .blob-2 {
+            width: 360px; height: 360px;
+            background: var(--terracotta);
+            opacity: 0.13;
+            bottom: -80px; left: -90px;
+            border-radius: 45% 55% 48% 52% / 55% 45% 55% 45%;
+        }
+        .blob-3 {
+            width: 180px; height: 180px;
+            background: var(--sage);
+            opacity: 0.35;
+            top: 26%; right: 8%;
+            border-radius: 52% 48% 60% 40% / 45% 52% 48% 55%;
+        }
+
+        .art-hero-inner {
+            position: relative;
+            max-width: 720px;
+        }
+
+        /* ===== כלי בטון — איור חי ===== */
+        .vessel-scene {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 26px;
+            margin: 0 auto 0.4rem;
+            width: fit-content;
+        }
+        .pot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .plant {
+            font-size: 1.6rem;
+            margin-bottom: -6px;
+            animation: sway 4s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+        @keyframes sway {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        .pot-body {
+            width: 62px; height: 52px;
+            background: linear-gradient(180deg, #cbb9a8, #b8a390);
+            border-radius: 6px 6px 16px 16px;
+            box-shadow: inset 0 6px 8px rgba(255,255,255,0.35), inset 0 -8px 12px rgba(68, 50, 40, 0.2);
+        }
+        .vase {
+            width: 58px; height: 108px;
+            background: linear-gradient(180deg, #a8917d, #8f7663);
+            border-radius: 26px 26px 18px 18px / 12px 12px 16px 16px;
+            position: relative;
+            box-shadow: inset 8px 0 12px rgba(255,255,255,0.2), inset -8px -6px 14px rgba(68, 50, 40, 0.25);
+        }
+        .vase::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 34px; height: 8px;
+            background: #7d6653;
+            border-radius: 50%;
+        }
+        .bowl {
+            width: 84px; height: 42px;
+            background: linear-gradient(180deg, #d5c6b6, #bfab97);
+            border-radius: 8px 8px 42px 42px / 6px 6px 36px 36px;
+            box-shadow: inset 0 8px 10px rgba(255,255,255,0.4), inset 0 -8px 12px rgba(68, 50, 40, 0.18);
+        }
+        .surface-line {
+            width: 300px;
+            max-width: 76vw;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(145, 100, 63, 0.4), transparent);
+            border-radius: 3px;
+            margin: 0 auto 2.2rem;
+        }
+
+        .art-hero .kicker {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--terracotta-deep);
+            letter-spacing: 0.12em;
+            margin-bottom: 1.2rem;
+        }
+        .art-hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        .art-hero h1 .stroke {
+            position: relative;
+            color: var(--terracotta);
+            white-space: nowrap;
+        }
+        .art-hero h1 .stroke::after {
+            content: '';
+            position: absolute;
+            right: 0; left: 0;
+            bottom: 0.05em;
+            height: 0.28em;
+            background: var(--mustard);
+            opacity: 0.4;
+            z-index: -1;
+            border-radius: 3px;
+            transform: rotate(-1deg);
+        }
+        .art-hero .hero-sub {
+            font-size: 1.15rem;
+            color: var(--ink-soft);
+            max-width: 560px;
+            margin: 0 auto 2.4rem;
+        }
+
+        .art-btn {
+            display: inline-block;
+            background: var(--plum);
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 0.95rem 2.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.25s ease, box-shadow 0.25s ease;
+        }
+        .art-btn:hover {
+            background: var(--plum-deep);
+            transform: translateY(-3px) rotate(-0.5deg);
+            box-shadow: 0 12px 28px rgba(91, 68, 55, 0.35);
+        }
+        .art-btn.terracotta { background: var(--terracotta); }
+        .art-btn.terracotta:hover {
+            background: var(--terracotta-deep);
+            box-shadow: 0 12px 28px rgba(180, 127, 82, 0.35);
+        }
+
+        /* ===== strip ===== */
+        .rimon-strip {
+            background: var(--ink);
+            color: var(--paper);
+            text-align: center;
+            padding: 0.85rem 2rem;
+            font-size: 0.92rem;
+            letter-spacing: 0.05em;
+        }
+        .rimon-strip a {
+            color: var(--mustard);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .rimon-strip a:hover { text-decoration: underline; }
+
+        /* ===== About the workshop ===== */
+        .about-ws {
+            padding: 90px 2rem;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #3d2f22;
         }
-
-        /* Texture overlay */
-        .texture {
-            position: absolute;
-            inset: 0;
-            background-image:
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(100,80,60,0.15) 0%, transparent 40%),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
-            pointer-events: none;
+        .about-ws .blob-4 {
+            width: 460px; height: 460px;
+            background: var(--terracotta);
+            opacity: 0.06;
+            top: 5%; left: -160px;
+            border-radius: 55% 45% 52% 48% / 48% 55% 45% 52%;
         }
-
-        /* Decorative border */
-        .border-frame {
-            position: absolute;
-            inset: 8px;
-            border: 1.5px solid rgba(120, 90, 60, 0.3);
-            border-radius: 2px;
-            pointer-events: none;
-        }
-
-        .border-frame::before {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            border: 0.5px solid rgba(120, 90, 60, 0.15);
-            border-radius: 1px;
-        }
-
-        /* Corner ornaments */
-        .corner {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            z-index: 2;
-        }
-        .corner svg { width: 100%; height: 100%; }
-        .corner.tl { top: 14px; right: 14px; }
-        .corner.tr { top: 14px; left: 14px; }
-        .corner.bl { bottom: 14px; right: 14px; }
-        .corner.br { bottom: 14px; left: 14px; }
-
-        /* Hero image area - concrete vessel illustration */
-        .vessel-container {
-            margin-top: 28px;
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 8px;
-        }
-
-        /* Small pot left */
-        .pot-small {
-            position: relative;
-            bottom: 0;
-        }
-        .pot-small .pot-body {
-            width: 30px;
-            height: 32px;
-            background: linear-gradient(135deg, #b0a090 0%, #8c7c6c 40%, #7a6a5a 100%);
-            border-radius: 3px 3px 8px 8px / 3px 3px 10px 10px;
-            position: relative;
-            box-shadow: inset -4px 0 8px rgba(0,0,0,0.2), inset 3px 0 6px rgba(255,255,255,0.15);
-        }
-        .pot-small .pot-rim {
-            width: 36px;
-            height: 6px;
-            background: linear-gradient(90deg, #9a8a7a, #b0a090, #9a8a7a);
-            border-radius: 50%;
-            margin: 0 auto -2px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        .pot-small .plant {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 16px;
-        }
-
-        /* Main large vessel in center */
-        .vessel-main {
-            position: relative;
-        }
-        .vessel-main .vessel-body {
-            width: 58px;
-            height: 70px;
-            background: linear-gradient(135deg,
-                #c8b8a8 0%,
-                #a89888 30%,
-                #8c7c6c 60%,
-                #786858 100%);
-            border-radius: 5px 5px 18px 18px / 5px 5px 22px 22px;
-            position: relative;
-            box-shadow:
-                inset -6px 0 12px rgba(0,0,0,0.25),
-                inset 5px 0 10px rgba(255,255,255,0.18),
-                0 6px 20px rgba(0,0,0,0.2);
-        }
-        /* Decorative texture lines on vessel */
-        .vessel-main .vessel-body::before {
-            content: '';
-            position: absolute;
-            top: 12px;
-            left: 10px;
-            right: 10px;
-            height: 1px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-        }
-        .vessel-main .vessel-body::after {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: 14px;
-            right: 14px;
-            height: 1px;
-            background: rgba(0,0,0,0.1);
-            border-radius: 50%;
-        }
-        .vessel-main .vessel-neck {
-            width: 38px;
-            height: 14px;
-            background: linear-gradient(90deg, #a89888, #c0b0a0, #a89888);
-            border-radius: 50%;
+        .about-ws-inner {
+            max-width: 820px;
             margin: 0 auto;
             position: relative;
-            top: 2px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            text-align: center;
         }
-        .vessel-main .vessel-rim {
-            width: 46px;
-            height: 8px;
-            background: linear-gradient(90deg, #9a8a7a, #b8a898, #9a8a7a);
-            border-radius: 50%;
+        .about-ws h2 {
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            color: var(--plum-deep);
+            margin-bottom: 1.6rem;
+        }
+        .about-ws p {
+            color: var(--ink-soft);
+            font-size: 1.08rem;
+            margin-bottom: 1rem;
+        }
+        .about-ws .highlight-line {
+            font-family: 'Suez One', serif;
+            font-size: 1.3rem;
+            color: var(--terracotta-deep);
+            margin-top: 1.8rem;
+        }
+
+        /* ===== What you get ===== */
+        .get-section {
+            background: var(--paper-warm);
+            padding: 90px 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .get-section .blob-5 {
+            width: 280px; height: 280px;
+            background: var(--sage);
+            opacity: 0.3;
+            bottom: -70px; right: -70px;
+            border-radius: 52% 48% 45% 55% / 55% 48% 52% 45%;
+        }
+        .get-inner {
+            max-width: 900px;
             margin: 0 auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        /* Bowl right */
-        .bowl {
-            position: relative;
-            bottom: 0;
-        }
-        .bowl .bowl-body {
-            width: 42px;
-            height: 22px;
-            background: linear-gradient(135deg, #c0a888 0%, #9a8068 40%, #866856 100%);
-            border-radius: 0 0 12px 12px;
-            position: relative;
-            box-shadow: inset -4px 0 8px rgba(0,0,0,0.2), inset 3px 0 6px rgba(255,255,255,0.12);
-        }
-        .bowl .bowl-rim {
-            width: 48px;
-            height: 7px;
-            background: linear-gradient(90deg, #a08878, #c0a890, #a08878);
-            border-radius: 50%;
-            margin: 0 auto;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.18);
-        }
-        .bowl .bowl-base {
-            width: 22px;
-            height: 5px;
-            background: linear-gradient(90deg, #8a7868, #a08878, #8a7868);
-            border-radius: 0 0 4px 4px;
-            margin: 0 auto;
-        }
-
-        /* Ground/surface line */
-        .surface-line {
-            width: 130px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(100,80,60,0.4), rgba(100,80,60,0.4), transparent);
-            margin-top: 2px;
-            z-index: 2;
             position: relative;
         }
-
-        /* Floating particles / dust */
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(180, 150, 110, 0.4);
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-            50% { transform: translateY(-12px) rotate(180deg); opacity: 0.7; }
-        }
-
-        /* Quote / tagline */
-        .tagline {
-            margin-top: 14px;
-            font-family: 'Secular One', sans-serif;
-            font-size: 28px;
-            color: #5c3d22;
+        .get-inner h2 {
             text-align: center;
-            line-height: 1.25;
-            z-index: 2;
-            text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
-            padding: 0 20px;
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            color: var(--ink);
+            margin-bottom: 3rem;
         }
-
-        .tagline .heart {
-            color: #c05040;
-            font-size: 24px;
+        .get-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
         }
-
-        /* Workshop name */
-        .workshop-name {
-            margin-top: 6px;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 5px;
-            color: #8a6a50;
-            text-transform: uppercase;
-            z-index: 2;
-        }
-
-        /* Divider */
-        .divider {
-            width: 110px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #a0785a, transparent);
-            margin: 12px auto;
-            position: relative;
-            z-index: 2;
-        }
-        .divider::before {
-            content: '❖';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #a0785a;
-            font-size: 9px;
-            background: linear-gradient(170deg, #ede0d4, #d9c8b8);
-            padding: 0 8px;
-        }
-
-        /* Workshop title block */
-        .title-block {
-            z-index: 2;
-            text-align: center;
-            padding: 0 22px;
-        }
-
-        .subtitle-label {
-            font-size: 11px;
-            letter-spacing: 4px;
-            color: #9a7860;
-            font-weight: 500;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .main-title {
-            font-family: 'Secular One', sans-serif;
-            font-size: 22px;
-            color: #3d2f22;
-            line-height: 1.35;
-        }
-
-        .main-title .accent {
-            display: block;
-            font-size: 16px;
-            color: #7a5a3a;
-            font-family: 'Heebo', sans-serif;
-            font-weight: 300;
-            letter-spacing: 1px;
-            margin-top: 3px;
-        }
-
-        /* Description */
-        .description {
-            margin-top: 10px;
-            font-size: 12.5px;
-            font-weight: 300;
-            line-height: 1.85;
-            color: #5a4030;
-            text-align: center;
-            padding: 0 24px;
-            z-index: 2;
-        }
-
-        /* What you take home */
-        .take-home {
-            margin-top: 10px;
-            z-index: 2;
-            background: rgba(255,255,255,0.35);
-            border: 1px solid rgba(160,120,90,0.2);
-            border-radius: 4px;
-            padding: 8px 18px;
-            width: calc(100% - 50px);
-            backdrop-filter: blur(2px);
-        }
-
-        .take-home-title {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #7a5a3a;
-            text-align: center;
-            margin-bottom: 6px;
-        }
-
-        .take-home-list {
+        .get-card {
+            background: var(--paper);
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem;
             display: flex;
-            flex-direction: column;
-            gap: 3px;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-
-        .take-home-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11.5px;
-            color: #4a3525;
-            font-weight: 300;
+        .get-card:hover {
+            transform: translateY(-4px) rotate(-0.3deg);
+            box-shadow: 0 14px 32px rgba(46, 38, 32, 0.1);
         }
-
-        .take-home-item::before {
-            content: '◆';
-            color: #a0785a;
-            font-size: 7px;
+        .get-card .icon {
+            font-size: 1.8rem;
             flex-shrink: 0;
         }
-
-        /* Details */
-        .details {
-            z-index: 2;
-            text-align: center;
-            margin-top: 8px;
-            padding: 0 20px;
+        .get-card h3 {
+            font-size: 1.1rem;
+            color: var(--plum-deep);
+            margin-bottom: 0.3rem;
+        }
+        .get-card p {
+            color: var(--ink-soft);
+            font-size: 0.95rem;
+            margin: 0;
         }
 
-        .detail-row {
+        /* ===== Details band ===== */
+        .details-band {
+            padding: 70px 2rem;
+            text-align: center;
+        }
+        .details-band h2 {
+            font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+            color: var(--plum-deep);
+            margin-bottom: 2.2rem;
+        }
+        .details-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .detail-chip {
+            background: var(--paper-warm);
+            border: 1.5px solid rgba(171, 148, 138, 0.45);
+            border-radius: 40px;
+            padding: 0.7rem 1.6rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--ink);
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 5px;
-            font-size: 12px;
-            color: #5a4030;
-            font-weight: 400;
+            gap: 0.5rem;
         }
 
-        .detail-icon {
-            font-size: 14px;
-            width: 22px;
+        /* ===== CTA ===== */
+        .art-cta {
+            padding: 90px 2rem;
             text-align: center;
-            color: #9a6a4a;
+            background: var(--paper-warm);
+            position: relative;
+            overflow: hidden;
+        }
+        .art-cta .blob-6 {
+            width: 360px; height: 360px;
+            background: var(--plum);
+            opacity: 0.07;
+            top: -90px; right: 12%;
+            border-radius: 48% 52% 55% 45% / 52% 45% 55% 48%;
+        }
+        .art-cta h2 {
+            font-size: clamp(1.9rem, 4.5vw, 3rem);
+            color: var(--ink);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .art-cta p {
+            color: var(--ink-soft);
+            font-size: 1.12rem;
+            margin-bottom: 2.4rem;
+            position: relative;
         }
 
-        /* CTA */
-        .cta-section {
-            margin-top: auto;
-            margin-bottom: 18px;
-            z-index: 2;
+        /* ===== Footer ===== */
+        .art-footer {
+            background: var(--ink);
+            color: rgba(250, 248, 246, 0.75);
             text-align: center;
+            padding: 2.5rem 2rem;
+            font-size: 0.9rem;
         }
-
-        .cta-button {
-            display: inline-block;
-            padding: 10px 36px;
-            background: linear-gradient(135deg, #8c6040, #6a4428);
-            border-radius: 30px;
-            color: #f5ede4;
-            font-size: 14px;
+        .art-footer .brand-wordmark {
+            font-family: 'Suez One', serif;
+            font-size: 1.6rem;
+            color: var(--paper);
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+        .art-footer .brand-wordmark small {
+            display: block;
+            font-family: 'Heebo', sans-serif;
+            font-size: 0.72rem;
             font-weight: 500;
-            letter-spacing: 2px;
-            box-shadow: 0 4px 15px rgba(100, 60, 30, 0.35);
+            color: var(--mustard);
+            letter-spacing: 0.06em;
+        }
+        .art-footer a { color: var(--mustard); text-decoration: none; }
+        .art-footer a:hover { text-decoration: underline; }
+        .art-footer .legal { margin-top: 1.2rem; font-size: 0.8rem; }
+        .art-footer .legal a { color: rgba(250, 248, 246, 0.6); margin: 0 0.5rem; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .art-hero { min-height: auto; padding: 110px 1.5rem 70px; }
+            .get-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .art-header { padding: 1rem 1.2rem; }
+            .header-logo img { height: 46px; }
+            .back-to-amen { font-size: 0.8rem; padding: 0.35rem 0.9rem; }
+            .rimon-strip { font-size: 0.78rem; letter-spacing: 0; padding: 0.85rem 1rem; }
         }
 
-        .contact-info {
-            margin-top: 7px;
-            font-size: 12px;
-            color: #7a5a3a;
-            font-weight: 300;
-        }
-
-        .brand {
-            margin-top: 6px;
-            font-size: 18px;
-            font-family: 'Secular One', sans-serif;
-            color: #8c6040;
-            letter-spacing: 4px;
-        }
-
-        .logo-container {
-            margin-top: 6px;
-        }
-
-        .logo-container img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-            opacity: 0.85;
-        }
-
-        @media print {
-            body { background: none; min-height: auto; }
-            .flyer { box-shadow: none; }
-            .particle { animation: none; opacity: 0.4; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="flyer">
-        <div class="texture"></div>
-        <div class="border-frame"></div>
+    <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
 
-        <!-- Corner ornaments -->
-        <div class="corner tl">
-            <svg viewBox="0 0 20 20" fill="none">
-                <path d="M18 2H2V18" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
-                <circle cx="4" cy="4" r="1.5" fill="rgba(120,90,60,0.4)"/>
-            </svg>
-        </div>
-        <div class="corner tr">
-            <svg viewBox="0 0 20 20" fill="none">
-                <path d="M2 2H18V18" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
-                <circle cx="16" cy="4" r="1.5" fill="rgba(120,90,60,0.4)"/>
-            </svg>
-        </div>
-        <div class="corner bl">
-            <svg viewBox="0 0 20 20" fill="none">
-                <path d="M18 18H2V2" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
-                <circle cx="4" cy="16" r="1.5" fill="rgba(120,90,60,0.4)"/>
-            </svg>
-        </div>
-        <div class="corner br">
-            <svg viewBox="0 0 20 20" fill="none">
-                <path d="M2 18H18V2" stroke="rgba(120,90,60,0.5)" stroke-width="1.5" fill="none"/>
-                <circle cx="16" cy="16" r="1.5" fill="rgba(120,90,60,0.4)"/>
-            </svg>
-        </div>
+    <header class="art-header">
+        <a href="workshops-art.html" class="header-logo" aria-label="אמן - חזרה לדף הסדנאות">
+            <img src="Logos/Amen1.png" alt="אמן — אימון, אמונה, אומנות">
+        </a>
+        <a href="workshops-art.html" class="back-to-amen">→ לכל הסדנאות</a>
+    </header>
 
-        <!-- Floating particles -->
-        <div class="particle" style="width:5px;height:5px;top:18%;left:12%;animation-delay:0s;"></div>
-        <div class="particle" style="width:3px;height:3px;top:22%;left:82%;animation-delay:1.5s;"></div>
-        <div class="particle" style="width:4px;height:4px;top:40%;left:8%;animation-delay:3s;"></div>
-        <div class="particle" style="width:3px;height:3px;top:55%;left:88%;animation-delay:2s;"></div>
-        <div class="particle" style="width:6px;height:6px;top:70%;left:15%;animation-delay:4s;"></div>
-        <div class="particle" style="width:4px;height:4px;top:78%;left:80%;animation-delay:1s;"></div>
+    <main id="main-content">
 
-        <!-- Vessel Illustration -->
-        <div class="vessel-container">
-            <!-- Small pot left -->
-            <div class="pot-small">
-                <div class="plant">🌿</div>
-                <div class="pot-rim"></div>
-                <div class="pot-body"></div>
+        <!-- Hero -->
+        <section class="art-hero">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="art-hero-inner">
+                <div class="vessel-scene" aria-hidden="true">
+                    <div class="pot">
+                        <div class="plant">🌿</div>
+                        <div class="pot-body"></div>
+                    </div>
+                    <div class="vase"></div>
+                    <div class="bowl"></div>
+                </div>
+                <div class="surface-line"></div>
+                <span class="kicker">סדנת קראפט מבית אמן</span>
+                <h1>מעצבים <span class="stroke">תודעת שפע</span></h1>
+                <p class="hero-sub">יצירה בבטון פולימרי כמסע מנטלי — תהליך היציקה והעיצוב משקף את היכולת שלנו לעצב את התודעה ולראות הזדמנויות בכל מקום.</p>
+                <a href="https://wa.me/972524480022" target="_blank" class="art-btn">לתיאום סדנה</a>
             </div>
+        </section>
 
-            <!-- Main vase center -->
-            <div class="vessel-main">
-                <div class="vessel-rim"></div>
-                <div class="vessel-neck"></div>
-                <div class="vessel-body"></div>
+        <div class="rimon-strip">
+            אמן — מרחב יצירה, התבוננות וצמיחה · חלק ממשפחת <a href="index.html">רימון</a>
+        </div>
+
+        <!-- About -->
+        <section class="about-ws">
+            <div class="blob blob-4"></div>
+            <div class="about-ws-inner">
+                <h2>מה קורה בסדנה?</h2>
+                <p>תודעת שפע היא היכולת לראות הזדמנויות, לייצר פתרונות יצירתיים ולפעול מתוך אמונה ביכולת שלנו. בסדנה נשלב טכניקות מנטליות מעשיות עם חוויית יצירה בחומר מרתק — בטון פולימרי.</p>
+                <p>כל משתתפת ומשתתף יוצרים במו ידיהם כלים עיצוביים — קערות, אגרטלים וכלי בית — בעבודה עם בטון ופיגמנטים. מגע עם החומר, יצירה מהלב, ומיומנות חדשה שנשארת לכל החיים.</p>
+                <p class="highlight-line">כמו הבטון — גם התודעה שלנו נוזלת, מקבלת צורה, ומתקשחת לכלי חזק ויפה.</p>
             </div>
+        </section>
 
-            <!-- Bowl right -->
-            <div class="bowl">
-                <div class="bowl-rim"></div>
-                <div class="bowl-body"></div>
-                <div class="bowl-base"></div>
+        <!-- What you get -->
+        <section class="get-section">
+            <div class="blob blob-5"></div>
+            <div class="get-inner">
+                <h2>מה מקבלים בסדנה</h2>
+                <div class="get-grid">
+                    <div class="get-card">
+                        <span class="icon">🧠</span>
+                        <div>
+                            <h3>טכניקות מנטליות</h3>
+                            <p>כלים מעשיים לפיתוח תודעת שפע — בהנחיית צליל בר</p>
+                        </div>
+                    </div>
+                    <div class="get-card">
+                        <span class="icon">🤲</span>
+                        <div>
+                            <h3>הדרכה מקצועית ואישית</h3>
+                            <p>ליווי צמוד לאורך כל תהליך היצירה — גם למי שמעולם לא יצרו</p>
+                        </div>
+                    </div>
+                    <div class="get-card">
+                        <span class="icon">🎨</span>
+                        <div>
+                            <h3>טכניקות עיצוב וצביעה</h3>
+                            <p>עבודה עם פיגמנטים, מרקמים וגימורים — כל החומרים והכלים כלולים</p>
+                        </div>
+                    </div>
+                    <div class="get-card">
+                        <span class="icon">🏺</span>
+                        <div>
+                            <h3>יצירה מוגמרת הביתה</h3>
+                            <p>כל משתתפת ומשתתף לוקחים הביתה כלי מעוצב שיצרו בעצמם</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="surface-line"></div>
-
-        <!-- Tagline -->
-        <div class="tagline">
-            ❤ לבבות שמחים ❤
-        </div>
-        <div class="workshop-name">סדנת יצירה</div>
-
-        <div class="divider"></div>
-
-        <!-- Title block -->
-        <div class="title-block">
-            <div class="subtitle-label">חוויה יצירתית ייחודית</div>
-            <h1 class="main-title">
-                כלים מבטון פולימירי
-                <span class="accent">גלו את הקסם של החומר האדמתי</span>
-            </h1>
-        </div>
-
-        <!-- Description -->
-        <div class="description">
-            בסדנה ייחודית זו תלמדו לעבוד עם בטון פולימירי —<br>
-            חומר מרתק המאפשר יצירת כלים, קערות ואגרטלים<br>
-            מעוצבים בסגנון אישי. מגע עם החומר, יצירה מהלב,<br>
-            ומיומנות חדשה שתישאר אתכם לכל החיים.
-        </div>
-
-        <!-- Take home box -->
-        <div class="take-home">
-            <div class="take-home-title">מה מקבלים בסדנה</div>
-            <div class="take-home-list">
-                <div class="take-home-item">הדרכה מקצועית ואישית לאורך כל הסדנה</div>
-                <div class="take-home-item">כל החומרים והכלים כלולים במחיר</div>
-                <div class="take-home-item">יצירה מוגמרת שתיקחו הביתה</div>
-                <div class="take-home-item">טכניקות לעיצוב וצביעת הכלי</div>
-            </div>
-        </div>
+        </section>
 
         <!-- Details -->
-        <div class="details">
-            <div class="detail-row">
-                <span class="detail-icon">📅</span>
-                <span>יום ראשון | 00.00.0000</span>
+        <section class="details-band">
+            <h2>פרטים מעשיים</h2>
+            <div class="details-row">
+                <span class="detail-chip">⏱️ כ-3 שעות</span>
+                <span class="detail-chip">👥 מתאים לקבוצות, צוותים ואירועים</span>
+                <span class="detail-chip">📍 אצלכם או במיקום שנתאם</span>
+                <span class="detail-chip">🪨 כל החומרים והכלים כלולים</span>
             </div>
-            <div class="detail-row">
-                <span class="detail-icon">🕐</span>
-                <span>10:00 - 13:00</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-icon">📍</span>
-                <span>הכתובת שלך כאן</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-icon">💰</span>
-                <span>₪220 כולל חומרים</span>
-            </div>
-        </div>
+        </section>
 
         <!-- CTA -->
-        <div class="cta-section">
-            <div class="cta-button">להרשמה ופרטים</div>
-            <div class="contact-info">054-000-0000</div>
-            <div class="brand">צליל</div>
-            <div class="logo-container">
-                <img src="Rimon Logo.png" alt="לוגו רימון">
-            </div>
+        <section class="art-cta">
+            <div class="blob blob-6"></div>
+            <h2>מוכנים לעצב את השפע שלכם?</h2>
+            <p>נתאם שיחה קצרה ונבנה את הסדנה המתאימה בדיוק לקבוצה שלכם</p>
+            <a href="https://wa.me/972524480022" target="_blank" class="art-btn terracotta">דברו איתי בוואטסאפ</a>
+        </section>
+
+    </main>
+
+    <footer class="art-footer">
+        <div class="brand-wordmark">
+            אמן
+            <small>אימון · אמונה · אומנות</small>
         </div>
-    </div>
+        <p>מבית <a href="index.html">רימון — מרכז אימון למצוינות</a></p>
+        <div class="legal">
+            <a href="privacy.html">מדיניות פרטיות</a> ·
+            <a href="terms.html">תנאי שימוש</a> ·
+            <a href="accessibility.html">הצהרת נגישות</a>
+            <br>© 2026 כל הזכויות שמורות
+        </div>
+    </footer>
+
+    <!-- Accessibility Widget - EqualWeb -->
+    <script>
+    window.interdeal = {
+        get sitekey (){ return "2d6687b74564a1ab0ebbe18e4394728a"} ,
+        get domains(){
+            return {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            }
+        },
+        "Position": "left",
+        "Menulang": "HE",
+        "draggable": true,
+        "btnStyle": {
+            "vPosition": ["80%","80%"],
+            "margin": ["0","0"],
+            "scale": ["0.5","0.5"],
+            "color": {"main": "#1876c9","second": "#ffffff"},
+            "icon": {"outline": false,"outlineColor": "#ffffff","type": 1,"shape": "circle"}
+        }
+    };
+    (function(doc, head, body){
+        var coreCall         = doc.createElement('script');
+        coreCall.src         = interdeal.domains.js + 'core/5.2.8/accessibility.js';
+        coreCall.defer       = true;
+        coreCall.integrity   = 'sha512-ka0NgF7zDksnhoZ5ZCKlm+t0F7KTih5lCfXwuzQDnrwu/EdKZSsJotoJvQPd0cuVmV63s0q2cgoUjeki688PuQ==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
 </body>
 </html>
