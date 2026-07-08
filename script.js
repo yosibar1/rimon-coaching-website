@@ -108,7 +108,8 @@ document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(ele
     observer.observe(element);
 });
 
-// Form submission handling
+// Form submission handling — sends via FormSubmit
+const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/yosibo@gmail.com';
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -117,25 +118,50 @@ if (contactForm) {
         const btn = this.querySelector('.btn');
         const originalText = btn.textContent;
 
-        // Disable button during submission
         btn.disabled = true;
         btn.textContent = 'שולח...';
 
-        // Simulate submission (replace with actual form handling)
-        setTimeout(() => {
+        fetch(CONTACT_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: this.querySelector('#name').value,
+                email: this.querySelector('#email').value,
+                phone: this.querySelector('#phone') ? this.querySelector('#phone').value : '',
+                message: this.querySelector('#message').value,
+                _subject: 'פנייה חדשה מאתר רימון',
+                _template: 'table',
+                _captcha: 'false'
+            })
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('send failed');
+            return response.json();
+        })
+        .then(data => {
+            if (data.success === 'false' || data.success === false) throw new Error('not delivered');
+        })
+        .then(() => {
             btn.textContent = 'נשלח בהצלחה!';
             btn.style.backgroundColor = '#22c55e';
             btn.style.boxShadow = '0 2px 8px rgba(34, 197, 94, 0.3)';
-
-            // Reset after delay
+            this.reset();
+        })
+        .catch(() => {
+            btn.textContent = 'שגיאה בשליחה — נסו שוב';
+            btn.style.backgroundColor = '#dc2626';
+        })
+        .finally(() => {
             setTimeout(() => {
                 btn.textContent = originalText;
                 btn.style.backgroundColor = '';
                 btn.style.boxShadow = '';
                 btn.disabled = false;
-                this.reset();
-            }, 2500);
-        }, 800);
+            }, 3000);
+        });
     });
 }
 
