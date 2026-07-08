@@ -22,6 +22,57 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero — עמוד הסדנאות */
+        .ws-hero {
+            position: relative;
+            min-height: 68vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 190px 2rem 100px;
+            background: url('Gallery/481926373_2569393799919041_7579237356428590607_n (1).jpg') center 22% / cover no-repeat;
+        }
+        .ws-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* כהות עולה לצד ימין — שם יושב הטקסט, צליל נשארת בולטת משמאל */
+            background: linear-gradient(270deg, rgba(26, 26, 46, 0.78) 0%, rgba(26, 26, 46, 0.55) 45%, rgba(26, 26, 46, 0.18) 100%);
+        }
+        .ws-hero-content {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .ws-hero-text {
+            max-width: 560px;
+        }
+        .ws-hero h1 {
+            color: #fff;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+        }
+        .ws-hero p {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.2rem;
+            margin-bottom: 2.2rem;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+        }
+        @media (max-width: 768px) {
+            .ws-hero {
+                min-height: auto;
+                padding: 150px 1.5rem 70px;
+                background-position: 28% 20%;
+            }
+            .ws-hero::before {
+                background: rgba(26, 26, 46, 0.55);
+            }
+            .ws-hero-text { text-align: center; max-width: 100%; }
+        }
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
@@ -57,9 +108,19 @@
     <div class="menu-overlay"></div>
 
     <main id="main-content">
-        <!-- Page Header -->
+        <!-- Hero -->
+        <section class="ws-hero">
+            <div class="ws-hero-content">
+                <div class="ws-hero-text fade-in">
+                    <h1>עולם הסדנאות של רימון</h1>
+                    <p>הרצאות, סדנאות והכשרות חווייתיות — למנהלים, לצוותים ולארגונים. תוכן מקצועי שנוגע גם בלב.</p>
+                    <a href="#contact" class="btn">לתיאום סדנה</a>
+                </div>
+            </div>
+        </section>
+
         <!-- הדרכות ארגוניות — למעלה -->
-        <section id="organizational" class="more-workshops" style="padding-top: 140px;">
+        <section id="organizational" class="more-workshops" style="padding-top: 80px;">
             <div class="workshops-container">
                 <h2 class="section-title fade-in" style="color: var(--primary-color); font-size: clamp(2.5rem, 5vw, 4rem);">הדרכות וסדנאות לארגונים</h2>
                 <p class="section-subtitle fade-in" style="color: var(--primary-color); opacity: 0.8;">תוכניות הכשרה מותאמות אישית למנהלים, צוותים וארגונים — לפי צרכים ולוחות זמנים</p>
