@@ -2353,3 +2353,72 @@ body.lightbox-open header {
         height: 44px;
     }
 }
+
+/* ===== Audience links (workshops page top) ===== */
+.audience-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto 4.5rem;
+}
+
+.audience-link {
+    display: block;
+    background: var(--primary-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.6rem 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all var(--transition-base);
+}
+
+.audience-link .audience-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.audience-link small {
+    display: block;
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+    transition: color var(--transition-base);
+}
+
+.audience-link:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.audience-link:hover small {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Coming-soon strip on audience pages */
+.coming-soon-strip {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--primary-light);
+    border: 1px dashed var(--primary-color);
+    border-radius: var(--radius-md);
+    padding: 1.6rem 2rem;
+    text-align: center;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .audience-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
