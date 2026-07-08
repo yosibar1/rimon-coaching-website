@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>למכללות מקצועיות | רימון - מרכז אימון למצוינות</title>
-    <meta name="description" content="קורסים, הרצאות והכשרות למכללות ומוסדות לימוד מקצועיים — בהנחיית צליל בר, מרצה מוסמכת עם ניסיון של שני עשורים">
+    <title>הכשרות מקצועיות למנהלי בטיחות | רימון - מרכז אימון למצוינות</title>
+    <meta name="description" content="הכשרות מקצועיות למנהלי בטיחות, קורסים והרצאות למכללות ומוסדות לימוד מקצועיים — בהנחיית צליל בר, מוסמכת התמ״ת">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="רימון - מרכז אימון למצוינות">
     <meta property="og:locale" content="he_IL">
-    <meta property="og:title" content="למכללות מקצועיות | רימון">
-    <meta property="og:description" content="קורסים, הרצאות והכשרות למכללות ומוסדות לימוד מקצועיים">
-    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:title" content="הכשרות מקצועיות למנהלי בטיחות | רימון">
+    <meta property="og:description" content="הכשרות מקצועיות למנהלי בטיחות, קורסים והרצאות למכללות מקצועיות">
+    <meta property="og:image" content="https://rimoncoaching.com/Gallery/shutterstock_2774517135.jpg">
     <meta property="og:url" content="https://rimoncoaching.com/colleges.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,47 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero — הכשרות מקצועיות למנהלי בטיחות */
+        .college-hero {
+            position: relative;
+            min-height: 64vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 180px 2rem 90px;
+            background: url('Gallery/shutterstock_2774517135.jpg') center 28% / cover no-repeat;
+        }
+        .college-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26, 26, 46, 0.62) 0%, rgba(26, 26, 46, 0.45) 55%, rgba(26, 26, 46, 0.68) 100%);
+        }
+        .college-hero-content {
+            position: relative;
+            max-width: 820px;
+        }
+        .college-hero h1 {
+            color: #fff;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+        }
+        .college-hero p {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.2rem;
+            margin-bottom: 2.2rem;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+        }
+        @media (max-width: 768px) {
+            .college-hero {
+                min-height: auto;
+                padding: 150px 1.5rem 70px;
+            }
+        }
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
@@ -55,7 +96,16 @@
     <div class="menu-overlay"></div>
 
     <main id="main-content">
-        <section class="more-workshops" style="padding-top: 140px;">
+        <!-- Hero -->
+        <section class="college-hero">
+            <div class="college-hero-content fade-in">
+                <h1>הכשרות מקצועיות למנהלי בטיחות</h1>
+                <p>מוסמכת התמ"ת להכשרת ממוני בטיחות | ניסיון של שני עשורים בהוראה והנחיה</p>
+                <a href="index.html#contact" class="btn">לתיאום שיחה</a>
+            </div>
+        </section>
+
+        <section class="more-workshops" style="padding-top: 80px;">
             <div class="workshops-container">
                 <h2 class="section-title fade-in" style="color: var(--primary-color); font-size: clamp(2.5rem, 5vw, 4rem);">למכללות מקצועיות</h2>
                 <p class="section-subtitle fade-in" style="color: var(--primary-color); opacity: 0.8;">הוראה מקצועית שמחברת בין ידע, מיומנות והשראה</p>
