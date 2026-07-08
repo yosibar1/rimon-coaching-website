@@ -1329,6 +1329,11 @@ footer {
         padding-bottom: 2.5rem;
     }
 
+    .hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.45;
+    }
+
     .hero-text {
         z-index: auto;
     }
