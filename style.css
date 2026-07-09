@@ -238,6 +238,21 @@ header.scrolled .logo img {
     color: var(--gold);
 }
 
+/* כותרת מפוצלת — הקדמה קטנה, קריאה לפעולה גדולה */
+.hero h1 .headline-lead {
+    display: block;
+    font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.7rem;
+}
+
+.hero h1 .headline-main {
+    display: block;
+}
+
 .highlight {
     color: var(--gold);
     position: relative;
