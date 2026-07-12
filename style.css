@@ -1619,6 +1619,33 @@ footer {
     flex-shrink: 0;
 }
 
+.workshop-card-cta {
+    display: block;
+    flex-shrink: 0;
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 0.9rem 1rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--transition-base);
+}
+
+.workshop-card-cta::after {
+    content: " ←";
+    font-weight: 700;
+}
+
+.workshop-card-cta:hover {
+    background: var(--primary-dark);
+}
+
+.workshop-card-cta:focus-visible {
+    outline: 3px solid var(--primary-dark);
+    outline-offset: -3px;
+}
+
 @media (max-width: 900px) {
     .workshops-grid {
         grid-template-columns: 1fr;
