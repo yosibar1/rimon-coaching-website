@@ -164,12 +164,12 @@
             .product-points { grid-template-columns: 1fr; }
         }
 
-        /* ===== Testimonials — WhatsApp style (הדרכה טובה) ===== */
+        /* ===== Testimonials — image grid (הדרכה טובה) ===== */
         .tt-section {
             padding: 90px 2rem;
             background: var(--cream);
         }
-        .tt-inner { max-width: 640px; margin: 0 auto; }
+        .tt-inner { max-width: 1000px; margin: 0 auto; }
         .tt-inner > h2 {
             text-align: center;
             color: var(--text-color);
@@ -178,113 +178,27 @@
         .tt-inner > p.tt-sub {
             text-align: center;
             color: var(--text-secondary);
-            margin-bottom: 2.2rem;
+            margin-bottom: 2.5rem;
         }
-        /* Chat window */
-        .wa-chat {
-            background: #efe7de;
-            background-image:
-                radial-gradient(rgba(180,160,140,0.18) 1px, transparent 1px),
-                radial-gradient(rgba(180,160,140,0.14) 1px, transparent 1px);
-            background-size: 26px 26px, 26px 26px;
-            background-position: 0 0, 13px 13px;
-            border-radius: 16px;
-            padding: 1.4rem 1rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(0,0,0,0.06);
+        .tt-grid {
+            column-count: 3;
+            column-gap: 1.2rem;
         }
-        .wa-topbar {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            background: #075e54;
-            color: #fff;
-            margin: -1.4rem -1rem 1.2rem;
-            padding: 0.8rem 1rem;
-            border-radius: 16px 16px 0 0;
-        }
-        .wa-topbar .wa-topav {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: #cfd8d3; color: #075e54;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700; flex-shrink: 0;
-        }
-        .wa-topbar b { font-size: 1rem; }
-        .wa-topbar small { display: block; font-size: 0.72rem; opacity: 0.85; font-weight: 400; }
-        /* Message row */
-        .wa-msg {
-            display: flex;
-            align-items: flex-end;
-            gap: 7px;
-            margin-bottom: 14px;
-        }
-        .wa-avatar {
-            width: 30px; height: 30px;
-            border-radius: 50%;
-            color: #fff;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 0.85rem;
-            flex-shrink: 0;
-        }
-        .wa-bubble {
-            position: relative;
+        .tt-grid img {
+            width: 100%;
+            display: block;
+            margin-bottom: 1.2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            break-inside: avoid;
             background: #fff;
-            border-radius: 9px;
-            border-top-right-radius: 0;
-            padding: 7px 11px 6px;
-            max-width: 82%;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.15);
         }
-        /* tail — points toward the avatar (right side in RTL) */
-        .wa-bubble::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -7px;
-            width: 0; height: 0;
-            border-style: solid;
-            border-width: 0 0 8px 8px;
-            border-color: transparent transparent transparent #fff;
+        @media (max-width: 900px) {
+            .tt-grid { column-count: 2; }
         }
-        .wa-name {
-            font-size: 0.82rem;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-        .wa-text {
-            font-size: 0.95rem;
-            color: #111b21;
-            line-height: 1.5;
-            text-align: right;
-        }
-        .wa-time {
-            font-size: 0.66rem;
-            color: #667781;
-            text-align: left;
-            margin-top: 2px;
-            direction: ltr;
-        }
-        .wa-react {
-            display: inline-block;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.18);
-            font-size: 0.8rem;
-            padding: 1px 6px;
-            margin: -6px 0 8px 34px;
-        }
-        /* quoted reply block */
-        .wa-quote {
-            background: rgba(6,94,84,0.08);
-            border-right: 3px solid #06cf9c;
-            border-radius: 5px;
-            padding: 4px 8px;
-            margin-bottom: 5px;
-        }
-        .wa-quote b { color: #06967a; font-size: 0.78rem; display: block; }
-        .wa-quote span { color: #667781; font-size: 0.8rem; }
-        @media (max-width: 768px) {
-            .tt-section { padding: 60px 1rem; }
+        @media (max-width: 560px) {
+            .tt-section { padding: 60px 1.2rem; }
+            .tt-grid { column-count: 1; }
         }
     </style>
 </head>
@@ -381,64 +295,12 @@
                 <h2 class="fade-in">מה אומרים בוגרי הקורס</h2>
                 <p class="tt-sub fade-in">הודעות שהגיעו מממוני ומנהלי בטיחות אחרי "הדרכה טובה"</p>
 
-                <div class="wa-chat fade-in">
-                    <div class="wa-topbar">
-                        <span class="wa-topav">🎓</span>
-                        <span>
-                            <b>בוגרי "הדרכה טובה"</b>
-                            <small>ממוני ומנהלי בטיחות</small>
-                        </span>
-                    </div>
-
-                    <div class="wa-msg">
-                        <span class="wa-avatar" style="background:#0a7cff;">מ</span>
-                        <div class="wa-bubble">
-                            <div class="wa-name" style="color:#c2185b;">בוגר הקורס</div>
-                            <div class="wa-text">היי צליל היקרה, העברתי הדרכה לאחרונה, וההדרכה שהעברתי עם הכלים שקיבלתי סייעו רבות להדרכה ולריכוז והתוצאה הייתה טובה יותר מהרצאות קודמות, השתמשתי בקילרים עד רמה 2, ובפתיח ואוו, יצרתי סקרנות על ההתחלה תודה רבה לך 👍</div>
-                            <div class="wa-time">12:30</div>
-                        </div>
-                    </div>
-
-                    <div class="wa-msg">
-                        <span class="wa-avatar" style="background:#e0642d;">ב</span>
-                        <div class="wa-bubble">
-                            <div class="wa-name" style="color:#1f7aad;">בוגרת הקורס</div>
-                            <div class="wa-text">צליל תודה על כל הקורס שלך היה מדהים ותודה על הכלים שקיבלנו ממך ובנוסף לזה אני רוצה להגיד שאת בחורה מאוד מיוחדת 🌺</div>
-                            <div class="wa-time">9:30</div>
-                        </div>
-                    </div>
-
-                    <div class="wa-msg">
-                        <span class="wa-avatar" style="background:#6a1b9a;">ב</span>
-                        <div class="wa-bubble">
-                            <div class="wa-name" style="color:#0b8043;">בוגר הקורס</div>
-                            <div class="wa-text">תודה על הקורס, באמת שהיה קורס איכותי ומכוון לכל אחד בתחומו.</div>
-                            <div class="wa-time">9:31</div>
-                        </div>
-                    </div>
-
-                    <div class="wa-msg">
-                        <span class="wa-avatar" style="background:#00897b;">ב</span>
-                        <div class="wa-bubble">
-                            <div class="wa-name" style="color:#8e24aa;">בוגר הקורס</div>
-                            <div class="wa-quote">
-                                <b>צליל בר</b>
-                                <span>יקרים, רוצה להודות לכם מעומק הלב ❤ על המתנות! שמסמלות צמיחה, פריחה והתחדשות…</span>
-                            </div>
-                            <div class="wa-text">תודה לך צליל על קורס מהנה שהעניק עבורי כלים רבים לנושא ההדרכה. וזה בזכות לא רק כישורי ההוראה שלך אלא אישיותך המיוחדת. היחס החברי וההומור אך גם הכריזמה והדרכים המקוריות לטפטף לתודעה את המיומנות המיוחדות להעביר חומר לימודי לקהל. הטיפים הרבים שנתת אין לי ספק שאשתמש בהם לפחות בחלקם בעתיד. אז שוב תודה ויישר כח!</div>
-                            <div class="wa-time">19:49</div>
-                        </div>
-                    </div>
-                    <span class="wa-react">❤️</span>
-
-                    <div class="wa-msg">
-                        <span class="wa-avatar" style="background:#0b8043;">י</span>
-                        <div class="wa-bubble">
-                            <div class="wa-name" style="color:#d81b60;">יורם בוסקילה</div>
-                            <div class="wa-text">שמחתי לפגוש מרצה באיכות, נקיות לשון, מודה ומזכירה את ה' יתברך, עם המון חן הסברה רצון לתת ולא לסמן עוד ✓ תודה תודה ושוב תודה.</div>
-                            <div class="wa-time">10:13</div>
-                        </div>
-                    </div>
+                <div class="tt-grid fade-in">
+                    <img src="testimonials/course-1.png" alt="עדות בוגר הקורס הדרכה טובה" loading="lazy">
+                    <img src="testimonials/course-2.png" alt="עדות בוגר הקורס הדרכה טובה" loading="lazy">
+                    <img src="testimonials/course-3.png" alt="עדות בוגר הקורס הדרכה טובה" loading="lazy">
+                    <img src="testimonials/course-4.png" alt="עדות בוגר הקורס הדרכה טובה" loading="lazy">
+                    <img src="testimonials/course-5.png" alt="עדות בוגר הקורס הדרכה טובה — יורם בוסקילה" loading="lazy">
                 </div>
             </div>
         </section>
