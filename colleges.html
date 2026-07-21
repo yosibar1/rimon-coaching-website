@@ -163,6 +163,78 @@
             .product-section { padding: 60px 1.5rem; }
             .product-points { grid-template-columns: 1fr; }
         }
+
+        /* ===== Testimonials (הדרכה טובה) ===== */
+        .tt-section {
+            padding: 90px 2rem;
+            background: var(--cream);
+        }
+        .tt-inner { max-width: 1050px; margin: 0 auto; }
+        .tt-inner > h2 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+        .tt-inner > p.tt-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+        .tt-grid {
+            column-count: 2;
+            column-gap: 1.5rem;
+        }
+        .tt-card {
+            break-inside: avoid;
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.7rem 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border-top: 3px solid var(--primary-color);
+            position: relative;
+        }
+        .tt-card .tt-quote {
+            font-family: Georgia, serif;
+            font-size: 2.6rem;
+            line-height: 0.8;
+            color: var(--primary-light);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .tt-card p {
+            color: var(--text-color);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin: 0 0 1.1rem;
+        }
+        .tt-author {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.9rem;
+        }
+        .tt-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .tt-name { font-weight: 600; color: var(--text-color); font-size: 0.95rem; }
+        .tt-role { color: var(--text-muted); font-size: 0.83rem; }
+        .tt-stars { color: var(--primary-color); font-size: 0.9rem; letter-spacing: 1px; margin-right: auto; }
+        @media (max-width: 768px) {
+            .tt-section { padding: 60px 1.5rem; }
+            .tt-grid { column-count: 1; }
+        }
     </style>
 </head>
 <body>
@@ -249,6 +321,80 @@
                     <span>📅 פורמט גמיש — קורס מרוכז או סדרת מפגשים</span>
                 </div>
                 <a href="#contact" class="btn fade-in">לפרטים והתאמת הקורס</a>
+            </div>
+        </section>
+
+        <!-- עדויות בוגרי "הדרכה טובה" -->
+        <section class="tt-section">
+            <div class="tt-inner">
+                <h2 class="fade-in">מה אומרים בוגרי הקורס</h2>
+                <p class="tt-sub fade-in">ממוני ומנהלי בטיחות שכבר עברו את "הדרכה טובה" — ומדריכים אחרת</p>
+                <div class="tt-grid">
+                    <div class="tt-card fade-in">
+                        <span class="tt-quote">”</span>
+                        <p>העברתי הדרכה לאחרונה, וההדרכה שהעברתי עם הכלים שקיבלתי סייעו רבות להדרכה ולריכוז — והתוצאה הייתה טובה יותר מהרצאות קודמות. השתמשתי ב"קילרים" עד רמה 2, ובפתיח — ואוו, יצרתי סקרנות כבר על ההתחלה. תודה רבה לך 👍</p>
+                        <div class="tt-author">
+                            <span class="tt-avatar">מ</span>
+                            <span>
+                                <span class="tt-name">בוגר הקורס</span><br>
+                                <span class="tt-role">ממונה בטיחות</span>
+                            </span>
+                            <span class="tt-stars">★★★★★</span>
+                        </div>
+                    </div>
+
+                    <div class="tt-card fade-in">
+                        <span class="tt-quote">”</span>
+                        <p>תודה לך צליל על קורס מהנה שהעניק עבורי כלים רבים לנושא ההדרכה. וזה בזכות לא רק כישורי ההוראה שלך, אלא אישיותך המיוחדת — היחס החברי וההומור, אך גם הכריזמה והדרכים המקוריות לטפטף לתודעה את המיומנויות המיוחדות להעברת חומר לימודי לקהל. הטיפים הרבים שנתת — אין לי ספק שאשתמש בהם, לפחות בחלקם, בעתיד. אז שוב תודה ויישר כוח!</p>
+                        <div class="tt-author">
+                            <span class="tt-avatar">ב</span>
+                            <span>
+                                <span class="tt-name">בוגר הקורס</span><br>
+                                <span class="tt-role">ממונה בטיחות</span>
+                            </span>
+                            <span class="tt-stars">★★★★★</span>
+                        </div>
+                    </div>
+
+                    <div class="tt-card fade-in">
+                        <span class="tt-quote">”</span>
+                        <p>שמחתי לפגוש מרצה באיכות — נקיות לשון, המון חן, יכולת הסברה ורצון אמיתי לתת. תודה, תודה ושוב תודה.</p>
+                        <div class="tt-author">
+                            <span class="tt-avatar">י</span>
+                            <span>
+                                <span class="tt-name">יורם בוסקילה</span><br>
+                                <span class="tt-role">בוגר הקורס</span>
+                            </span>
+                            <span class="tt-stars">★★★★★</span>
+                        </div>
+                    </div>
+
+                    <div class="tt-card fade-in">
+                        <span class="tt-quote">”</span>
+                        <p>תודה על הקורס — באמת שהיה קורס איכותי ומכוון לכל אחד בתחומו.</p>
+                        <div class="tt-author">
+                            <span class="tt-avatar">ב</span>
+                            <span>
+                                <span class="tt-name">בוגר הקורס</span><br>
+                                <span class="tt-role">ממונה בטיחות</span>
+                            </span>
+                            <span class="tt-stars">★★★★★</span>
+                        </div>
+                    </div>
+
+                    <div class="tt-card fade-in">
+                        <span class="tt-quote">”</span>
+                        <p>צליל, תודה על כל הקורס — היה מדהים, ותודה על הכלים שקיבלנו ממך. ובנוסף לזה, אני רוצה להגיד שאת בחורה מאוד מיוחדת 🌺</p>
+                        <div class="tt-author">
+                            <span class="tt-avatar">ב</span>
+                            <span>
+                                <span class="tt-name">בוגרת הקורס</span><br>
+                                <span class="tt-role">ממונה בטיחות</span>
+                            </span>
+                            <span class="tt-stars">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
