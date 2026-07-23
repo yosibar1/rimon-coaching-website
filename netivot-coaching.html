@@ -56,11 +56,13 @@
         /* Hero — full-bleed banner */
         .lp-hero {
             position: relative;
-            background: #e9edf0 url('Gallery/coaching-hero.jpg') 30% center / cover no-repeat;
-            min-height: min(92vh, 780px);
+            /* full banner width (zoomed out), y-crop removes the bright ceiling strip at top */
+            background: #e9edf0 url('Gallery/coaching-hero.jpg') center 64% / 100% auto no-repeat;
+            height: min(44vw, 680px);
+            min-height: 440px;
             display: flex;
             align-items: center;
-            padding: 130px 2rem 60px;
+            padding: 120px 2rem 44px;
             overflow: hidden;
         }
         .lp-hero::before {
@@ -356,8 +358,10 @@
 
         @media (max-width: 900px) {
             .lp-hero {
+                height: auto;
                 min-height: 84vh;
                 align-items: flex-end;
+                background-size: cover;
                 background-position: 32% top;
                 padding: 120px 1.5rem 42px;
             }
