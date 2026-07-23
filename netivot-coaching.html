@@ -104,12 +104,32 @@
             margin-bottom: 1.3rem;
         }
         .lp-hero-text h1 {
-            font-size: clamp(2.2rem, 4.6vw, 3.6rem);
             color: var(--text-color);
-            line-height: 1.2;
-            margin-bottom: 1.1rem;
+            line-height: 1.12;
+            margin-bottom: 1.3rem;
         }
-        .lp-hero-text h1 span { color: var(--primary-color); }
+        .lp-hero-text h1 .hl-small {
+            display: block;
+            font-size: clamp(1.25rem, 2.3vw, 1.8rem);
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.01em;
+            margin-bottom: 0.25rem;
+        }
+        .lp-hero-text h1 .hl-big {
+            display: block;
+            font-size: clamp(2.5rem, 5.2vw, 4.1rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.02em;
+        }
+        .lp-hero-text h1 .hl-sub {
+            display: block;
+            font-size: clamp(1.45rem, 2.9vw, 2.1rem);
+            font-weight: 600;
+            color: var(--text-color);
+            margin-top: 0.35rem;
+        }
         .lp-hero-text .lp-lead {
             font-size: 1.2rem;
             color: var(--text-secondary);
@@ -417,7 +437,11 @@
         <section class="lp-hero">
             <div class="lp-hero-inner">
                 <div class="lp-hero-text">
-                    <h1>הגיע הזמן <span>לעשות את השינוי</span> — ואני כאן ללוות אותך</h1>
+                    <h1>
+                        <span class="hl-small">הגיע הזמן</span>
+                        <span class="hl-big">לעשות את השינוי</span>
+                        <span class="hl-sub">ואני כאן ללוות אותך</span>
+                    </h1>
                     <p class="lp-lead">תהליך אישי קצר, ממוקד ומעצים עם צליל בר — בקליניקה שקטה ודיסקרטית בנתיבות. יוצאים מהתקיעות, מגלים כוחות, ובונים חיים שמרגישים נכון.</p>
                     <div class="lp-cta-row">
                         <a href="#lead" class="lp-btn lp-btn-primary">לשיחת היכרות ללא עלות</a>
