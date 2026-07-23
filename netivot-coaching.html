@@ -62,11 +62,10 @@
         /* Hero — full-bleed banner */
         .lp-hero {
             position: relative;
-            /* aspect-locked banner: full width (zoomed out) and consistent framing at every screen size */
-            background: #e9edf0 url('Gallery/coaching-hero.jpg') center 42% / cover no-repeat;
-            aspect-ratio: 2560 / 1300;
+            /* full banner width (zoomed out), y-crop removes the bright ceiling strip at top */
+            background: #e9edf0 url('Gallery/coaching-hero.jpg') center 64% / 100% auto no-repeat;
+            height: min(44vw, 680px);
             min-height: 440px;
-            max-height: 800px;
             display: flex;
             align-items: center;
             padding: 120px 2rem 44px;
