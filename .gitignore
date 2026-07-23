@@ -1,0 +1,15 @@
+# Source / working files — kept locally, not deployed
+*.psd
+*.pdf
+
+# Raw, unoptimized source images (optimized versions are committed instead)
+Gallery/Coaching hero.png
+Gallery/Tzlil About round.png
+Gallery/YBP_9859.jpg
+Gallery/481926373_2569393799919041_7579237356428590607_n.png
+
+# Raw WhatsApp screenshots — only the cropped/optimized ones used on the site are committed
+testimonials/*.jpeg
+testimonials/Coaching/*.jpeg
+testimonials/Edu/
+testimonials/presentation/
