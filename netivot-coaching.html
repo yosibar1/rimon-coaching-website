@@ -363,23 +363,27 @@
         .lp-float svg { width: 32px; height: 32px; fill: #fff; }
 
         @media (max-width: 900px) {
+            /* stack: clean photo band on top, text below on brand background */
             .lp-hero {
+                display: block;
                 height: auto;
-                min-height: 84vh;
-                align-items: flex-end;
-                background-size: cover;
-                background-position: 32% top;
-                padding: 120px 1.5rem 42px;
+                min-height: 0;
+                padding: 0 0 46px;
+                background: linear-gradient(165deg, var(--cream) 0%, var(--primary-light) 100%);
             }
             .lp-hero::before {
-                background: linear-gradient(to top,
-                    rgba(255,255,255,0.97) 6%,
-                    rgba(255,255,255,0.85) 32%,
-                    rgba(255,255,255,0.2) 62%,
-                    rgba(255,255,255,0) 100%);
+                content: '';
+                display: block;
+                position: static;
+                inset: auto;
+                width: 100%;
+                height: 62vw;
+                max-height: 420px;
+                background: #e9edf0 url('Gallery/coaching-hero.jpg') 24% 24% / cover no-repeat;
             }
-            .lp-hero-inner { justify-content: center; }
+            .lp-hero-inner { justify-content: center; padding: 2.2rem 1.5rem 0; }
             .lp-hero-text { text-align: center; max-width: 100%; }
+            .lp-hero-text .lp-kicker { margin-top: 0; }
             .lp-hero-text .lp-lead { margin-left: auto; margin-right: auto; }
             .lp-cta-row { justify-content: center; }
             .lp-pain-grid, .lp-method-grid { grid-template-columns: 1fr; }
