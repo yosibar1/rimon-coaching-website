@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אימון אישי עם צליל בר | קליניקה בנתיבות</title>
+    <meta name="description" content="אימון אישי פנים-אל-פנים עם צליל בר בקליניקה בנתיבות — תהליך קצר, ממוקד ומעצים לפריצת דרך אישית. שיחת היכרות ללא עלות.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="רימון - מרכז אימון למצוינות">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:title" content="אימון אישי עם צליל בר | קליניקה בנתיבות">
+    <meta property="og:description" content="תהליך אישי קצר וממוקד לפריצת דרך — בקליניקה בנתיבות. שיחת היכרות ללא עלות.">
+    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:url" content="https://rimoncoaching.com/netivot-coaching.html">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== Landing Page — אימון אישי בנתיבות ===== */
+        .lp-header {
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .lp-header .lp-logo img { height: 70px; width: auto; display: block; }
+        .lp-header .lp-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.25s ease;
+        }
+        .lp-header .lp-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.35); }
+        .lp-header .lp-wa svg { width: 20px; height: 20px; fill: #fff; }
+
+        /* Hero */
+        .lp-hero {
+            position: relative;
+            background: linear-gradient(160deg, var(--cream) 0%, var(--primary-light) 100%);
+            padding: 150px 2rem 70px;
+            overflow: hidden;
+        }
+        .lp-hero-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .lp-hero-text .lp-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: var(--accent-color);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            margin-bottom: 1.3rem;
+        }
+        .lp-hero-text h1 {
+            font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+            color: var(--text-color);
+            line-height: 1.2;
+            margin-bottom: 1.1rem;
+        }
+        .lp-hero-text h1 span { color: var(--primary-color); }
+        .lp-hero-text .lp-lead {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+        .lp-cta-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .lp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 2.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+        .lp-btn-primary { background: var(--primary-color); color: #fff; }
+        .lp-btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .lp-btn-wa { background: #25D366; color: #fff; }
+        .lp-btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(37,211,102,0.35); }
+        .lp-btn-wa svg { width: 22px; height: 22px; fill: #fff; }
+
+        .lp-hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .lp-hero-image::before {
+            content: '';
+            position: absolute;
+            width: min(420px, 90%);
+            aspect-ratio: 1;
+            background: rgba(255,255,255,0.55);
+            border-radius: 50%;
+            bottom: 8%;
+            z-index: 0;
+        }
+        .lp-hero-image img {
+            position: relative;
+            z-index: 1;
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));
+        }
+
+        /* Trust chips */
+        .lp-trust {
+            background: var(--text-color);
+            padding: 1.1rem 2rem;
+        }
+        .lp-trust-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem 1.6rem;
+        }
+        .lp-trust-inner span {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.92rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .lp-trust-inner span::before { content: '✦'; color: var(--primary-color); }
+
+        /* Generic section */
+        .lp-sec { padding: 80px 2rem; }
+        .lp-sec.alt { background: var(--background-alt); }
+        .lp-sec-inner { max-width: 1050px; margin: 0 auto; }
+        .lp-sec h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            color: var(--text-color);
+            margin-bottom: 0.6rem;
+        }
+        .lp-sec .lp-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.08rem;
+            max-width: 720px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Pain grid */
+        .lp-pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+        .lp-pain {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.6rem 1.6rem;
+            border-right: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .lp-pain .ic { font-size: 1.5rem; flex-shrink: 0; }
+        .lp-pain p { margin: 0; color: var(--text-color); font-weight: 500; font-size: 0.98rem; }
+
+        /* Method */
+        .lp-method-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .lp-method {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .lp-method .ic {
+            width: 64px; height: 64px;
+            margin: 0 auto 1rem;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem;
+        }
+        .lp-method h3 { color: var(--text-color); font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .lp-method p { color: var(--text-secondary); font-size: 0.96rem; margin: 0; }
+
+        /* Steps */
+        .lp-steps { display: flex; flex-direction: column; gap: 1.2rem; max-width: 780px; margin: 0 auto; }
+        .lp-step {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 1.3rem;
+            align-items: start;
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .lp-step .num {
+            width: 48px; height: 48px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.25rem;
+        }
+        .lp-step h3 { color: var(--text-color); font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .lp-step p { color: var(--text-secondary); font-size: 0.96rem; margin: 0; }
+
+        /* Clinic */
+        .lp-clinic-inner {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .lp-clinic-text h2 { text-align: right; margin-bottom: 1rem; }
+        .lp-clinic-text p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+        .lp-clinic-meta { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1.5rem; }
+        .lp-clinic-meta a, .lp-clinic-meta span {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            color: var(--text-color); font-weight: 600; text-decoration: none;
+        }
+        .lp-clinic-meta .ic { color: var(--primary-color); font-size: 1.2rem; }
+        .lp-map {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            min-height: 320px;
+            border: 0;
+            width: 100%;
+        }
+
+        /* About */
+        .lp-about-inner {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .lp-about-img img {
+            width: 230px; height: 230px;
+            object-fit: cover; object-position: top;
+            border-radius: 50%;
+            border: 6px solid var(--primary-light);
+        }
+        .lp-about-text h2 { text-align: right; margin-bottom: 0.3rem; }
+        .lp-about-text .tag { color: var(--primary-dark); font-weight: 600; margin-bottom: 1rem; }
+        .lp-about-text p { color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
+        .lp-creds { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .lp-creds span {
+            background: var(--primary-light); color: var(--primary-dark);
+            border-radius: 20px; padding: 0.3rem 0.9rem; font-size: 0.83rem; font-weight: 600;
+        }
+
+        /* CTA band */
+        .lp-cta-band {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            padding: 70px 2rem;
+            text-align: center;
+        }
+        .lp-cta-band h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-bottom: 0.8rem; }
+        .lp-cta-band p { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; }
+        .lp-cta-band .lp-btn-white { background: #fff; color: var(--primary-dark); }
+        .lp-cta-band .lp-btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
+
+        /* Lead form */
+        .lp-form-sec { padding: 80px 2rem; background: var(--background-alt); }
+        .lp-form-wrap { max-width: 560px; margin: 0 auto; }
+        .lp-form-wrap h2 { text-align: center; margin-bottom: 0.5rem; }
+        .lp-form-wrap .lp-sub { margin-bottom: 2rem; }
+        .lp-lead-form { background: #fff; border-radius: var(--radius-lg); padding: 2.2rem; box-shadow: var(--shadow-md); }
+        .lp-lead-form .fg { position: relative; margin-bottom: 1.1rem; }
+        .lp-lead-form label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-color); }
+        .lp-lead-form input, .lp-lead-form textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+        .lp-lead-form input:focus, .lp-lead-form textarea:focus { outline: none; border-color: var(--primary-color); }
+        .lp-lead-form button {
+            width: 100%;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.25s ease;
+        }
+        .lp-lead-form button:hover { background: var(--primary-dark); }
+        .lp-form-note { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; }
+
+        /* Footer */
+        .lp-footer {
+            background: var(--text-color);
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+            padding: 2.2rem 2rem;
+            font-size: 0.9rem;
+        }
+        .lp-footer a { color: var(--primary-color); text-decoration: none; }
+        .lp-footer .legal { margin-top: 0.8rem; font-size: 0.8rem; }
+        .lp-footer .legal a { color: rgba(255,255,255,0.6); margin: 0 0.4rem; }
+
+        /* Floating WhatsApp */
+        .lp-float {
+            position: fixed;
+            bottom: 20px; right: 20px;
+            z-index: 50;
+            width: 58px; height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+            transition: transform 0.2s ease;
+        }
+        .lp-float:hover { transform: scale(1.08); }
+        .lp-float svg { width: 32px; height: 32px; fill: #fff; }
+
+        @media (max-width: 900px) {
+            .lp-hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .lp-hero-text .lp-lead { margin-left: auto; margin-right: auto; }
+            .lp-cta-row { justify-content: center; }
+            .lp-hero-image { order: -1; }
+            .lp-hero-image img { max-width: 300px; }
+            .lp-pain-grid, .lp-method-grid { grid-template-columns: 1fr; }
+            .lp-clinic-inner, .lp-about-inner { grid-template-columns: 1fr; }
+            .lp-clinic-text h2, .lp-about-text h2 { text-align: center; }
+            .lp-about-inner { text-align: center; }
+            .lp-about-img img { margin: 0 auto; }
+            .lp-creds { justify-content: center; }
+        }
+        @media (max-width: 480px) {
+            .lp-header .lp-logo img { height: 54px; }
+            .lp-sec, .lp-form-sec { padding: 55px 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="lp-header">
+        <div class="lp-logo">
+            <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+        </div>
+        <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="lp-wa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            שיחה מהירה
+        </a>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="lp-hero">
+            <div class="lp-hero-inner">
+                <div class="lp-hero-text">
+                    <span class="lp-kicker">📍 קליניקה בנתיבות · אימון אישי פנים אל פנים</span>
+                    <h1>הגיע הזמן <span>לעשות את השינוי</span> — ואני כאן ללוות אותך</h1>
+                    <p class="lp-lead">תהליך אישי קצר, ממוקד ומעצים עם צליל בר — בקליניקה שקטה ודיסקרטית בנתיבות. יוצאים מהתקיעות, מגלים כוחות, ובונים חיים שמרגישים נכון.</p>
+                    <div class="lp-cta-row">
+                        <a href="#lead" class="lp-btn lp-btn-primary">לשיחת היכרות ללא עלות</a>
+                        <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="lp-btn lp-btn-wa">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            דברו איתי בוואטסאפ
+                        </a>
+                    </div>
+                </div>
+                <div class="lp-hero-image">
+                    <img src="Tzlil hero sec 3.png" alt="צליל בר — מאמנת אישית">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust -->
+        <div class="lp-trust">
+            <div class="lp-trust-inner">
+                <span>מעל שני עשורים של ניסיון</span>
+                <span>M.B.A ו-M.A</span>
+                <span>NLP Master-Trainer</span>
+                <span>תרפיה באמנות</span>
+                <span>תהליך קצר וממוקד</span>
+            </div>
+        </div>
+
+        <!-- For whom -->
+        <section class="lp-sec">
+            <div class="lp-sec-inner">
+                <h2>מתאים לך אם…</h2>
+                <p class="lp-sub">כל אחד מגיע עם הסיפור שלו. אם משהו מהדברים האלה מהדהד לך — כנראה שהגיע הזמן.</p>
+                <div class="lp-pain-grid">
+                    <div class="lp-pain"><span class="ic">🌀</span><p>את/ה מרגיש/ה תקוע/ה ורוצה לפרוץ קדימה — בקריירה, ביחסים או בחיים האישיים</p></div>
+                    <div class="lp-pain"><span class="ic">🧭</span><p>את/ה בצומת דרכים וצריך/ה בהירות והחלטה</p></div>
+                    <div class="lp-pain"><span class="ic">💭</span><p>מדבר/ת על שינוי הרבה זמן — אבל לא מצליח/ה לעשות אותו</p></div>
+                    <div class="lp-pain"><span class="ic">🔋</span><p>מרגיש/ה שחיקה, עומס או חוסר איזון ורוצה לחזור לעצמך</p></div>
+                    <div class="lp-pain"><span class="ic">✨</span><p>רוצה לחזק ביטחון עצמי, מוטיבציה ותחושת מסוגלות</p></div>
+                    <div class="lp-pain"><span class="ic">🌱</span><p>עברת אירוע או תקופה מאתגרת ורוצה לצמוח ממנה</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Method -->
+        <section class="lp-sec alt">
+            <div class="lp-sec-inner">
+                <h2>מה מייחד את התהליך איתי</h2>
+                <p class="lp-sub">שיטה שמשלבת ראש, לב ומעשה — ומביאה לתוצאות אמיתיות בזמן קצר</p>
+                <div class="lp-method-grid">
+                    <div class="lp-method">
+                        <div class="ic">🎯</div>
+                        <h3>קצר וממוקד</h3>
+                        <p>לא תהליך אינסופי. תהליך מדויק עם יעדים ברורים ומפת דרכים אישית — שמביא אותך אל היעד.</p>
+                    </div>
+                    <div class="lp-method">
+                        <div class="ic">🧠</div>
+                        <h3>כלים מוכחים</h3>
+                        <p>שילוב קואצ'ינג, NLP, פסיכולוגיה חיובית, חוכמת היהדות ותרפיה באמנות — לפי מה שנכון לך.</p>
+                    </div>
+                    <div class="lp-method">
+                        <div class="ic">🤝</div>
+                        <h3>יחס אישי וחם</h3>
+                        <p>מרחב דיסקרטי, מקבל ולא שיפוטי, שבו מותר להיות אמיתי/ת — ובדיוק משם מתחיל השינוי.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="lp-sec">
+            <div class="lp-sec-inner">
+                <h2>איך נעבוד יחד</h2>
+                <p class="lp-sub">שלושה צעדים פשוטים מכאן אל השינוי</p>
+                <div class="lp-steps">
+                    <div class="lp-step">
+                        <div class="num">1</div>
+                        <div>
+                            <h3>שיחת היכרות — ללא עלות</h3>
+                            <p>נכיר, אבין מה מביא אותך ולאן היית רוצה להגיע, ונבדוק יחד שיש בינינו כימיה. בלי התחייבות.</p>
+                        </div>
+                    </div>
+                    <div class="lp-step">
+                        <div class="num">2</div>
+                        <div>
+                            <h3>תהליך אישי בקליניקה</h3>
+                            <p>סדרת מפגשים פנים אל פנים בקליניקה בנתיבות — כל מפגש מקדם אותך צעד ממשי קדימה.</p>
+                        </div>
+                    </div>
+                    <div class="lp-step">
+                        <div class="num">3</div>
+                        <div>
+                            <h3>כלים שנשארים איתך</h3>
+                            <p>לא רק תוצאות בתהליך — אלא ארגז כלים אישי שממשיך ללוות אותך הרבה אחרי שנסיים.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinic -->
+        <section class="lp-sec alt">
+            <div class="lp-clinic-inner">
+                <div class="lp-clinic-text">
+                    <h2>הקליניקה בנתיבות</h2>
+                    <p>מרחב שקט, נעים ודיסקרטי בלב נתיבות — מקום שבו אפשר לעצור, לנשום ולהתמקד בעצמך. הפגישות מתקיימות פנים אל פנים, באווירה חמה ומזמינה.</p>
+                    <div class="lp-clinic-meta">
+                        <span><span class="ic">📍</span> אריק איינשטיין 48, נתיבות</span>
+                        <a href="https://wa.me/972522298022" target="_blank" rel="noopener"><span class="ic">💬</span> וואטסאפ: 052-229-8022</a>
+                        <a href="tel:+972522298022"><span class="ic">📞</span> חייגו: 052-229-8022</a>
+                    </div>
+                </div>
+                <iframe
+                    class="lp-map"
+                    title="מפת הקליניקה — אריק איינשטיין 48, נתיבות"
+                    src="https://maps.google.com/maps?q=%D7%90%D7%A8%D7%99%D7%A7%20%D7%90%D7%99%D7%99%D7%A0%D7%A9%D7%98%D7%99%D7%99%D7%9F%2048%20%D7%A0%D7%AA%D7%99%D7%91%D7%95%D7%AA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="lp-sec">
+            <div class="lp-about-inner">
+                <div class="lp-about-img">
+                    <img src="About.png" alt="צליל בר">
+                </div>
+                <div class="lp-about-text">
+                    <h2>נעים להכיר, צליל בר</h2>
+                    <p class="tag">מנטורית ומאמנת אישית | למעלה משני עשורים של ניסיון</p>
+                    <p>מזה למעלה משני עשורים אני מלווה אנשים בתהליכי שינוי, צמיחה והתפתחות אישית. אני מאמינה שלכל אחד ואחת יש בתוכם את הכוחות לחיים טובים יותר — ותפקידי הוא לעזור לך לגלות אותם ולתרגם אותם למציאות.</p>
+                    <div class="lp-creds">
+                        <span>M.B.A בר-אילן</span>
+                        <span>M.A ספיר</span>
+                        <span>NLP Master-Trainer</span>
+                        <span>תרפיה באמנות</span>
+                        <span>הנחיית קבוצות</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA band -->
+        <section class="lp-cta-band">
+            <h2>הצעד הראשון קל מכפי שנדמה לך</h2>
+            <p>שיחת היכרות ללא עלות וללא התחייבות — נבדוק יחד אם זה מתאים לך</p>
+            <a href="#lead" class="lp-btn lp-btn-white">אני רוצה שיחת היכרות</a>
+        </section>
+
+        <!-- Lead form -->
+        <section class="lp-form-sec" id="lead">
+            <div class="lp-form-wrap">
+                <h2>השאירו פרטים</h2>
+                <p class="lp-sub">אחזור אליכם תוך 24 שעות לתיאום שיחת היכרות</p>
+                <form class="contact-form lp-lead-form">
+                    <div class="fg">
+                        <label for="name">שם מלא</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="fg">
+                        <label for="phone">טלפון</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="fg">
+                        <label for="email">אימייל</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="fg">
+                        <label for="message">משהו שחשוב שאדע? (לא חובה)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">לתיאום שיחת היכרות</button>
+                    <p class="lp-form-note">🔒 הפרטים נשמרים אצלי בלבד ולא מועברים לאף גורם</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="lp-footer">
+        <p>© 2026 רימון — מרכז אימון למצוינות · צליל בר · אריק איינשטיין 48, נתיבות</p>
+        <div class="legal">
+            <a href="index.html">לאתר המלא</a> ·
+            <a href="privacy.html">מדיניות פרטיות</a> ·
+            <a href="terms.html">תקנון ותנאי שימוש</a> ·
+            <a href="accessibility.html">הצהרת נגישות</a>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="lp-float" aria-label="שיחת וואטסאפ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+    <!-- Accessibility Widget - EqualWeb -->
+    <script>
+    window.interdeal = {
+        get sitekey (){ return "2d6687b74564a1ab0ebbe18e4394728a"} ,
+        get domains(){
+            return {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            }
+        },
+        "Position": "left",
+        "Menulang": "HE",
+        "draggable": true,
+        "btnStyle": {
+            "vPosition": ["60%","60%"],
+            "margin": ["0","0"],
+            "scale": ["0.5","0.5"],
+            "color": {"main": "#1876c9","second": "#ffffff"},
+            "icon": {"outline": false,"outlineColor": "#ffffff","type": 1,"shape": "circle"}
+        }
+    };
+    (function(doc, head, body){
+        var coreCall         = doc.createElement('script');
+        coreCall.src         = interdeal.domains.js + 'core/5.2.8/accessibility.js';
+        coreCall.defer       = true;
+        coreCall.integrity   = 'sha512-ka0NgF7zDksnhoZ5ZCKlm+t0F7KTih5lCfXwuzQDnrwu/EdKZSsJotoJvQPd0cuVmV63s0q2cgoUjeki688PuQ==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
+</body>
+</html>
