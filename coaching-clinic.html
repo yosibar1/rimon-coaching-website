@@ -350,6 +350,13 @@
         @media (max-width: 820px) {
             .tt-section { padding: 60px 1.2rem; }
             .tt-grid { flex-direction: column; }
+            /* flatten columns so images order individually on mobile */
+            .tt-col { display: contents; }
+            /* mobile order: move the currently-first (3) to the end */
+            .tt-grid img[src*="Coaching/1"] { order: 1; }
+            .tt-grid img[src*="Coaching/4"] { order: 2; }
+            .tt-grid img[src*="Coaching/2"] { order: 3; }
+            .tt-grid img[src*="Coaching/3"] { order: 4; }
         }
 
         .lp-cta-band {
