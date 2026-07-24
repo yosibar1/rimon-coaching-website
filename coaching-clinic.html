@@ -464,6 +464,90 @@
             .lp-header .lp-logo img { height: 54px; }
             .lp-sec, .lp-form-sec { padding: 55px 1.3rem; }
         }
+
+        /* ===== Motion: scroll reveal ===== */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+            transition-delay: var(--rd, 0ms);
+        }
+        [data-reveal="right"] { transform: translateX(38px); }
+        [data-reveal="left"]  { transform: translateX(-38px); }
+        [data-reveal="zoom"]  { transform: scale(.93); }
+        [data-reveal].is-in   { opacity: 1; transform: none; }
+
+        /* Hero entrance sequence (on load) */
+        .lp-hero-text h1 .hl-small,
+        .lp-hero-text h1 .hl-big,
+        .lp-hero-text h1 .hl-sub,
+        .lp-hero-text .lp-lead,
+        .lp-hero-text .lp-cta-row { animation: heroIn .9s cubic-bezier(.22,.61,.36,1) both; }
+        .lp-hero-text h1 .hl-small { animation-delay: .10s; }
+        .lp-hero-text h1 .hl-big   { animation-delay: .24s; }
+        .lp-hero-text h1 .hl-sub   { animation-delay: .38s; }
+        .lp-hero-text .lp-lead     { animation-delay: .52s; }
+        .lp-hero-text .lp-cta-row  { animation-delay: .66s; }
+        @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+        /* Micro-interactions */
+        .lp-pain { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .lp-pain:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .lp-pain .ic { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+        .lp-pain:hover .ic { transform: scale(1.15) rotate(-8deg); }
+
+        .lp-method { transition: transform .3s ease; }
+        .lp-method:hover { transform: translateY(-6px); }
+        .lp-method .ic { transition: transform .4s cubic-bezier(.34,1.56,.64,1), background .3s ease, color .3s ease; }
+        .lp-method:hover .ic { transform: scale(1.12) rotate(-7deg); background: var(--primary-color); color: #fff; }
+
+        .lp-step { transition: transform .3s ease, box-shadow .3s ease; }
+        .lp-step:hover { transform: translateX(-7px); box-shadow: var(--shadow-md); }
+        .lp-step .num { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+        .lp-step:hover .num { transform: scale(1.12); }
+
+        .tt-grid img { transition: transform .35s ease, filter .35s ease; }
+        .tt-grid img:hover { transform: translateY(-5px) scale(1.015); filter: drop-shadow(0 14px 28px rgba(0,0,0,0.22)); }
+
+        .lp-trust-inner span { transition: transform .25s ease, color .25s ease; }
+        .lp-trust-inner span:hover { transform: translateY(-2px); color: #fff; }
+
+        /* Sheen sweep across the primary CTA */
+        .lp-btn-primary { position: relative; overflow: hidden; }
+        .lp-btn-primary::after {
+            content: '';
+            position: absolute; top: 0; left: -60%;
+            width: 40%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+            transform: skewX(-20deg);
+            animation: sheen 5s ease-in-out infinite;
+        }
+        @keyframes sheen { 0%, 72% { left: -60%; } 100% { left: 130%; } }
+
+        /* Breathing ring on the floating WhatsApp button */
+        .lp-float { animation: waPulse 2.8s ease-in-out infinite; }
+        @keyframes waPulse {
+            0%, 100% { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5); }
+            50%      { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 15px rgba(37,211,102,0); }
+        }
+
+        /* Gentle float on the portrait */
+        .lp-about-img img { animation: floaty 6.5s ease-in-out infinite; }
+        @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            [data-reveal], [data-reveal].is-in {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .lp-hero-text h1 span,
+            .lp-hero-text .lp-lead,
+            .lp-hero-text .lp-cta-row,
+            .lp-float,
+            .lp-about-img img,
+            .lp-btn-primary::after { animation: none !important; }
+        }
     </style>
 </head>
 <body>
@@ -501,7 +585,7 @@
 
         <!-- Trust -->
         <div class="lp-trust">
-            <div class="lp-trust-inner">
+            <div class="lp-trust-inner" data-reveal>
                 <span>מעל שני עשורים של ניסיון</span>
                 <span>M.B.A ו-M.A</span>
                 <span>NLP Master-Trainer</span>
@@ -513,15 +597,15 @@
         <!-- For whom -->
         <section class="lp-sec">
             <div class="lp-sec-inner">
-                <p class="lp-sub" style="margin-bottom:0.8rem;">כל אחד מגיע עם הסיפור שלו. אם משהו מהדברים האלה מהדהד לך — כנראה שהגיע הזמן.</p>
-                <h2 style="margin-bottom:3rem;">תהליך אימון אישי מתאים לך אם…</h2>
+                <p class="lp-sub" data-reveal style="margin-bottom:0.8rem;">כל אחד מגיע עם הסיפור שלו. אם משהו מהדברים האלה מהדהד לך — כנראה שהגיע הזמן.</p>
+                <h2 data-reveal style="margin-bottom:3rem;">תהליך אימון אישי מתאים לך אם…</h2>
                 <div class="lp-pain-grid">
-                    <div class="lp-pain"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg></span><p>את/ה מרגיש/ה תקוע/ה ורוצה לפרוץ קדימה — בקריירה, ביחסים או בחיים האישיים</p></div>
-                    <div class="lp-pain"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2 5.2-5.2 2 2-5.2 5.2-2z"/></svg></span><p>את/ה בצומת דרכים וצריך/ה בהירות והחלטה</p></div>
-                    <div class="lp-pain"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 18h5"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.6.5 1.3 1.4 1.3 2.4h5c0-1 .7-1.9 1.3-2.4A6 6 0 0 0 12 3z"/></svg></span><p>מדבר/ת על שינוי הרבה זמן — אבל לא מצליח/ה לעשות אותו</p></div>
-                    <div class="lp-pain"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-6 3.5 12 2.5-6H22"/></svg></span><p>מרגיש/ה שחיקה, עומס או חוסר איזון ורוצה לחזור לעצמך</p></div>
-                    <div class="lp-pain"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg></span><p>רוצה לחזק ביטחון עצמי, מוטיבציה ותחושת מסוגלות</p></div>
-                    <div class="lp-pain"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21c-4.5 0-8-3.5-8-8 0-5.5 4.5-10 10-10 2 0 4 .5 4 .5s.5 2 .5 4c0 5.5-4.5 10-6.5 13.5z"/><path d="M11 21c0-5 2.5-9 6-11.5"/></svg></span><p>עברת אירוע או תקופה מאתגרת ורוצה לצמוח ממנה</p></div>
+                    <div class="lp-pain" data-reveal style="--rd:0ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg></span><p>את/ה מרגיש/ה תקוע/ה ורוצה לפרוץ קדימה — בקריירה, ביחסים או בחיים האישיים</p></div>
+                    <div class="lp-pain" data-reveal style="--rd:80ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2 5.2-5.2 2 2-5.2 5.2-2z"/></svg></span><p>את/ה בצומת דרכים וצריך/ה בהירות והחלטה</p></div>
+                    <div class="lp-pain" data-reveal style="--rd:160ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 18h5"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.6.5 1.3 1.4 1.3 2.4h5c0-1 .7-1.9 1.3-2.4A6 6 0 0 0 12 3z"/></svg></span><p>מדבר/ת על שינוי הרבה זמן — אבל לא מצליח/ה לעשות אותו</p></div>
+                    <div class="lp-pain" data-reveal style="--rd:240ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-6 3.5 12 2.5-6H22"/></svg></span><p>מרגיש/ה שחיקה, עומס או חוסר איזון ורוצה לחזור לעצמך</p></div>
+                    <div class="lp-pain" data-reveal style="--rd:320ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg></span><p>רוצה לחזק ביטחון עצמי, מוטיבציה ותחושת מסוגלות</p></div>
+                    <div class="lp-pain" data-reveal style="--rd:400ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21c-4.5 0-8-3.5-8-8 0-5.5 4.5-10 10-10 2 0 4 .5 4 .5s.5 2 .5 4c0 5.5-4.5 10-6.5 13.5z"/><path d="M11 21c0-5 2.5-9 6-11.5"/></svg></span><p>עברת אירוע או תקופה מאתגרת ורוצה לצמוח ממנה</p></div>
                 </div>
             </div>
         </section>
@@ -529,20 +613,20 @@
         <!-- Method -->
         <section class="lp-sec alt">
             <div class="lp-sec-inner">
-                <h2>מה מייחד את התהליך איתי</h2>
-                <p class="lp-sub">שיטה שמשלבת ראש, לב ומעשה — ומביאה לתוצאות אמיתיות בזמן קצר</p>
+                <h2 data-reveal>מה מייחד את התהליך איתי</h2>
+                <p class="lp-sub" data-reveal>שיטה שמשלבת ראש, לב ומעשה — ומביאה לתוצאות אמיתיות בזמן קצר</p>
                 <div class="lp-method-grid">
-                    <div class="lp-method">
+                    <div class="lp-method" data-reveal style="--rd:0ms">
                         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></div>
                         <h3>קצר וממוקד</h3>
                         <p>לא תהליך אינסופי. תהליך מדויק עם יעדים ברורים ומפת דרכים אישית — שמביא אותך אל היעד.</p>
                     </div>
-                    <div class="lp-method">
+                    <div class="lp-method" data-reveal style="--rd:110ms">
                         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5c0 1.3.5 2.4 1.3 3.3.5.6.7 1.2.7 2v3.7a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V13.3c0-.8.2-1.4.7-2A5 5 0 0 0 12 3z"/><path d="M9.5 21h5"/></svg></div>
                         <h3>כלים מוכחים</h3>
                         <p>שילוב קואצ'ינג, NLP, פסיכולוגיה חיובית, חוכמת היהדות ותרפיה באמנות — לפי מה שנכון לך.</p>
                     </div>
-                    <div class="lp-method">
+                    <div class="lp-method" data-reveal style="--rd:220ms">
                         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-6.5-4-9-8.3A4.7 4.7 0 0 1 12 6.5a4.7 4.7 0 0 1 9 5.7c-2.5 4.3-9 8.3-9 8.3z"/></svg></div>
                         <h3>יחס אישי וחם</h3>
                         <p>מרחב דיסקרטי, מקבל ולא שיפוטי, שבו מותר להיות אמיתי/ת — ובדיוק משם מתחיל השינוי.</p>
@@ -554,24 +638,24 @@
         <!-- Process -->
         <section class="lp-sec">
             <div class="lp-sec-inner">
-                <h2>איך נעבוד יחד</h2>
-                <p class="lp-sub">שלושה צעדים פשוטים מכאן אל השינוי</p>
+                <h2 data-reveal>איך נעבוד יחד</h2>
+                <p class="lp-sub" data-reveal>שלושה צעדים פשוטים מכאן אל השינוי</p>
                 <div class="lp-steps">
-                    <div class="lp-step">
+                    <div class="lp-step" data-reveal="right" style="--rd:0ms">
                         <div class="num">1</div>
                         <div>
                             <h3>שיחת היכרות — ללא עלות</h3>
                             <p>נכיר, אבין מה מביא אותך ולאן היית רוצה להגיע, ונבדוק יחד שיש בינינו כימיה. בלי התחייבות.</p>
                         </div>
                     </div>
-                    <div class="lp-step">
+                    <div class="lp-step" data-reveal="right" style="--rd:110ms">
                         <div class="num">2</div>
                         <div>
                             <h3>תהליך אישי בקליניקה</h3>
                             <p>סדרת מפגשים פנים אל פנים בקליניקה בנתיבות — כל מפגש מקדם אותך צעד ממשי קדימה.</p>
                         </div>
                     </div>
-                    <div class="lp-step">
+                    <div class="lp-step" data-reveal="right" style="--rd:220ms">
                         <div class="num">3</div>
                         <div>
                             <h3>כלים שנשארים איתך</h3>
@@ -585,8 +669,8 @@
         <!-- Clinic -->
         <section class="lp-sec alt">
             <div class="lp-clinic-inner">
-                <div class="lp-clinic-text">
-                    <h2>הקליניקה</h2>
+                <div class="lp-clinic-text" data-reveal="right">
+                    <h2 data-reveal>הקליניקה</h2>
                     <p>מרחב שקט, נעים ודיסקרטי — מקום שבו אפשר לעצור, לנשום ולהתמקד בעצמך. הפגישות מתקיימות פנים אל פנים, באווירה חמה ומזמינה.</p>
                     <div class="lp-clinic-meta">
                         <span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6 7-11.5a7 7 0 0 0-14 0c0 5.5 7 11.5 7 11.5z"/><circle cx="12" cy="10" r="2.6"/></svg></span> אריק איינשטיין 48, נתיבות</span>
@@ -594,7 +678,7 @@
                         <a href="tel:+972522298022"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.2l1.6 4-2.1 1.5a12 12 0 0 0 5.3 5.3l1.5-2.1 4 1.6V21a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg></span> חייגו: 052-229-8022</a>
                     </div>
                 </div>
-                <iframe
+                <iframe data-reveal="left"
                     class="lp-map"
                     title="מפת הקליניקה — אריק איינשטיין 48, נתיבות"
                     src="https://maps.google.com/maps?q=%D7%90%D7%A8%D7%99%D7%A7%20%D7%90%D7%99%D7%99%D7%A0%D7%A9%D7%98%D7%99%D7%99%D7%9F%2048%20%D7%A0%D7%AA%D7%99%D7%91%D7%95%D7%AA&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -606,11 +690,11 @@
         <!-- About -->
         <section class="lp-sec">
             <div class="lp-about-inner">
-                <div class="lp-about-img">
+                <div class="lp-about-img" data-reveal="zoom">
                     <img src="Gallery/tzlil-about-round.jpg" alt="צליל בר">
                 </div>
-                <div class="lp-about-text">
-                    <h2>נעים להכיר, צליל בר</h2>
+                <div class="lp-about-text" data-reveal="right">
+                    <h2 data-reveal>נעים להכיר, צליל בר</h2>
                     <p class="tag">מנטורית ומאמנת אישית | למעלה משני עשורים של ניסיון</p>
                     <p>מזה למעלה משני עשורים אני מלווה אנשים בתהליכי שינוי, צמיחה והתפתחות אישית. אני מאמינה שלכל אחד ואחת יש בתוכם את הכוחות לחיים טובים יותר — ותפקידי הוא לעזור לך לגלות אותם ולתרגם אותם למציאות.</p>
                     <div class="lp-creds">
@@ -627,7 +711,7 @@
         <!-- Testimonials -->
         <section class="tt-section">
             <div class="tt-inner">
-                <h2>
+                <h2 data-reveal>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
@@ -635,12 +719,12 @@
                 </h2>
                 <div class="tt-grid">
                     <div class="tt-col">
-                        <img src="testimonials/Coaching/3.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
-                        <img src="testimonials/Coaching/1.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
+                        <img data-reveal="zoom" style="--rd:0ms" src="testimonials/Coaching/3.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
+                        <img data-reveal="zoom" style="--rd:90ms" src="testimonials/Coaching/1.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
                     </div>
                     <div class="tt-col">
-                        <img src="testimonials/Coaching/4.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
-                        <img src="testimonials/Coaching/2.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
+                        <img data-reveal="zoom" style="--rd:180ms" src="testimonials/Coaching/4.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
+                        <img data-reveal="zoom" style="--rd:270ms" src="testimonials/Coaching/2.png" alt="עדות ממטופלת של צליל בר" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -648,7 +732,7 @@
 
         <!-- CTA band -->
         <section class="lp-cta-band">
-            <h2>הצעד הראשון קל מכפי שנדמה לך</h2>
+            <h2 data-reveal>הצעד הראשון קל מכפי שנדמה לך</h2>
             <p>שיחת היכרות ללא עלות וללא התחייבות — נבדוק יחד אם זה מתאים לך</p>
             <a href="#lead" class="lp-btn lp-btn-white">אני רוצה שיחת היכרות</a>
         </section>
@@ -656,9 +740,9 @@
         <!-- Lead form -->
         <section class="lp-form-sec" id="lead">
             <div class="lp-form-wrap">
-                <h2>השאירו פרטים</h2>
-                <p class="lp-sub">אחזור אליכם תוך 24 שעות לתיאום שיחת היכרות</p>
-                <form class="contact-form lp-lead-form">
+                <h2 data-reveal>השאירו פרטים</h2>
+                <p class="lp-sub" data-reveal>אחזור אליכם תוך 24 שעות לתיאום שיחת היכרות</p>
+                <form class="contact-form lp-lead-form" data-reveal>
                     <div class="fg">
                         <label for="name">שם מלא</label>
                         <input type="text" id="name" name="name" required>
@@ -697,6 +781,26 @@
     </a>
 
     <script src="script.js"></script>
+    <!-- Scroll reveal -->
+    <script>
+    (function () {
+        var els = document.querySelectorAll('[data-reveal]');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(els, function (el) { el.classList.add('is-in'); });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-in');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+    })();
+    </script>
     <!-- Accessibility Widget - EqualWeb -->
     <script>
     window.interdeal = {
