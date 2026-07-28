@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מסע מעצים לאומן עם צליל בר</title>
+    <meta name="description" content="מסע מודרך לאומן — תפילה בציון רבי נחמן, סיורים מודרכים, סדנאות העצמה ועבודה תודעתית. חוויה רוחנית ומעצימה בליווי צליל בר.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="רימון - מרכז אימון למצוינות">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:title" content="מסע מעצים לאומן עם צליל בר">
+    <meta property="og:description" content="תפילה, סיורים מודרכים וסדנאות העצמה — מסע רוחני שמחזירים ממנו הביתה גרסה חזקה יותר שלך.">
+    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:url" content="https://rimoncoaching.com/uman-journey.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== Landing Page — מסע לאומן ===== */
+        .uj-header {
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+        }
+        .uj-header .uj-logo img {
+            height: 66px; width: auto; display: block;
+            background: rgba(255,255,255,0.92);
+            border-radius: 50%;
+            padding: 4px;
+        }
+        .uj-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.25s ease;
+        }
+        .uj-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.35); }
+        .uj-wa svg { width: 20px; height: 20px; fill: #fff; }
+
+        /* ===== Hero — sky & plane ===== */
+        .uj-hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 2rem 90px;
+            background: linear-gradient(180deg, #12263f 0%, #1e3a5f 34%, #3a6a96 62%, #c9a227 135%);
+            overflow: hidden;
+        }
+        /* stars */
+        .uj-star {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: twinkle 3.5s ease-in-out infinite;
+        }
+        @keyframes twinkle { 0%,100%{opacity:.25} 50%{opacity:.9} }
+        /* clouds */
+        .uj-cloud {
+            position: absolute;
+            background: rgba(255,255,255,0.10);
+            border-radius: 100px;
+            filter: blur(2px);
+            animation: cloudDrift 60s linear infinite;
+        }
+        .uj-cloud::before, .uj-cloud::after {
+            content: '';
+            position: absolute;
+            background: inherit;
+            border-radius: 50%;
+        }
+        .uj-cloud.c1 { width: 220px; height: 48px; top: 30%; animation-duration: 75s; }
+        .uj-cloud.c1::before { width: 90px; height: 90px; top: -40px; right: 35px; }
+        .uj-cloud.c1::after  { width: 60px; height: 60px; top: -24px; right: 110px; }
+        .uj-cloud.c2 { width: 160px; height: 36px; top: 55%; animation-duration: 95s; animation-delay: -30s; }
+        .uj-cloud.c2::before { width: 64px; height: 64px; top: -28px; right: 28px; }
+        .uj-cloud.c2::after  { width: 44px; height: 44px; top: -18px; right: 80px; }
+        @keyframes cloudDrift {
+            from { transform: translateX(-30vw); }
+            to   { transform: translateX(130vw); }
+        }
+        /* plane flying along a path */
+        .uj-plane-wrap {
+            position: absolute;
+            top: 16%;
+            right: -140px;
+            animation: planeFly 16s linear infinite;
+            filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+        }
+        @keyframes planeFly {
+            0%   { transform: translate(0, 0) rotate(-6deg); }
+            50%  { transform: translate(calc(-50vw - 70px), -40px) rotate(-2deg); }
+            100% { transform: translate(calc(-100vw - 300px), -14px) rotate(-6deg); }
+        }
+        .uj-plane { width: 130px; height: auto; }
+        /* dashed trail behind the plane */
+        .uj-trail {
+            position: absolute;
+            top: 21%;
+            right: 0; left: 0;
+            height: 3px;
+            background-image: linear-gradient(90deg, rgba(255,255,255,0.35) 55%, transparent 45%);
+            background-size: 22px 2px;
+            opacity: .35;
+            pointer-events: none;
+        }
+        .uj-hero-inner {
+            position: relative;
+            max-width: 780px;
+            z-index: 2;
+        }
+        .uj-kicker {
+            display: inline-block;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.35);
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
+            border-radius: 30px;
+            margin-bottom: 1.4rem;
+            letter-spacing: 0.05em;
+            backdrop-filter: blur(4px);
+        }
+        .uj-hero h1 {
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+        .uj-hero h1 .l1 {
+            display: block;
+            font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 0.3rem;
+        }
+        .uj-hero h1 .l2 {
+            display: block;
+            font-size: clamp(2.6rem, 6vw, 4.6rem);
+            font-weight: 700;
+            color: #ffd75e;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 26px rgba(0,0,0,0.35);
+        }
+        .uj-hero h1 .l3 {
+            display: block;
+            font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+            font-weight: 600;
+            color: #fff;
+            margin-top: 0.4rem;
+        }
+        .uj-hero .uj-lead {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.18rem;
+            line-height: 1.85;
+            max-width: 620px;
+            margin: 0 auto 2.4rem;
+        }
+        .uj-cta-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .uj-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.4rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.08rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+        .uj-btn-gold { background: var(--primary-color); color: #fff; position: relative; overflow: hidden; }
+        .uj-btn-gold:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+        .uj-btn-gold::after {
+            content: '';
+            position: absolute; top: 0; left: -60%;
+            width: 40%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+            transform: skewX(-20deg);
+            animation: sheen 5s ease-in-out infinite;
+        }
+        @keyframes sheen { 0%,72% { left: -60%; } 100% { left: 130%; } }
+        .uj-btn-wa { background: #25D366; color: #fff; }
+        .uj-btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(37,211,102,0.4); }
+        .uj-btn-wa svg { width: 22px; height: 22px; fill: #fff; }
+
+        /* Trust bar */
+        .uj-trust { background: var(--text-color); padding: 1.1rem 2rem; }
+        .uj-trust-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem 1.6rem;
+        }
+        .uj-trust-inner span {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.92rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: transform .25s ease, color .25s ease;
+        }
+        .uj-trust-inner span::before { content: '✦'; color: var(--primary-color); }
+        .uj-trust-inner span:hover { transform: translateY(-2px); color: #fff; }
+
+        /* Sections */
+        .uj-sec { padding: 80px 2rem; }
+        .uj-sec.alt { background: var(--background-alt); }
+        .uj-sec-inner { max-width: 1050px; margin: 0 auto; }
+        .uj-sec h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            color: var(--text-color);
+            margin-bottom: 0.6rem;
+        }
+        .uj-sec .uj-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.08rem;
+            max-width: 720px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Experience cards */
+        .uj-exp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.3rem;
+        }
+        .uj-exp {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 2rem 1.7rem;
+            border-top: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .uj-exp:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .uj-exp .ic {
+            width: 62px; height: 62px;
+            margin: 0 auto 1rem;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary-dark);
+            transition: transform .4s cubic-bezier(.34,1.56,.64,1), background .3s ease, color .3s ease;
+        }
+        .uj-exp:hover .ic { transform: scale(1.12) rotate(-7deg); background: var(--primary-color); color: #fff; }
+        .uj-exp .ic svg { width: 30px; height: 30px; }
+        .uj-exp h3 { font-size: 1.12rem; color: var(--text-color); margin-bottom: 0.5rem; }
+        .uj-exp p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
+
+        /* For whom */
+        .uj-pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+        .uj-pain {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.6rem;
+            border-right: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .uj-pain:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .uj-pain .ic { flex-shrink: 0; color: var(--primary-color); line-height: 0; }
+        .uj-pain .ic svg { width: 26px; height: 26px; }
+        .uj-pain p { margin: 0; color: var(--text-color); font-weight: 500; font-size: 0.98rem; }
+
+        /* Journey steps */
+        .uj-steps { display: flex; flex-direction: column; gap: 1.2rem; max-width: 780px; margin: 0 auto; }
+        .uj-step {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 1.3rem;
+            align-items: start;
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .uj-step:hover { transform: translateX(-7px); box-shadow: var(--shadow-md); }
+        .uj-step .num {
+            width: 48px; height: 48px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.25rem;
+        }
+        .uj-step h3 { color: var(--text-color); font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .uj-step p { color: var(--text-secondary); font-size: 0.96rem; margin: 0; }
+
+        /* About */
+        .uj-about-inner {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .uj-about-img img {
+            width: 230px; height: 230px;
+            object-fit: cover; object-position: top;
+            border-radius: 50%;
+            border: 6px solid var(--primary-light);
+            animation: floaty 6.5s ease-in-out infinite;
+        }
+        @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .uj-about-text h2 { text-align: right; margin-bottom: 0.3rem; }
+        .uj-about-text .tag { color: var(--primary-dark); font-weight: 600; margin-bottom: 1rem; }
+        .uj-about-text p { color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
+        .uj-creds { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .uj-creds span {
+            background: var(--primary-light); color: var(--primary-dark);
+            border-radius: 20px; padding: 0.3rem 0.9rem; font-size: 0.83rem; font-weight: 600;
+        }
+
+        /* CTA band */
+        .uj-cta-band {
+            background: linear-gradient(140deg, #12263f, #1e3a5f 55%, #3a6a96);
+            padding: 76px 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .uj-cta-band h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-bottom: 0.8rem; }
+        .uj-cta-band p { color: rgba(255,255,255,0.85); font-size: 1.12rem; margin-bottom: 2rem; }
+
+        /* Lead form */
+        .uj-form-sec { padding: 80px 2rem; background: var(--background-alt); }
+        .uj-form-wrap { max-width: 560px; margin: 0 auto; }
+        .uj-form-wrap h2 { text-align: center; margin-bottom: 0.5rem; }
+        .uj-form-wrap .uj-sub { margin-bottom: 2rem; }
+        .uj-lead-form { background: #fff; border-radius: var(--radius-lg); padding: 2.2rem; box-shadow: var(--shadow-md); }
+        .uj-lead-form .fg { margin-bottom: 1.1rem; }
+        .uj-lead-form label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-color); }
+        .uj-lead-form input, .uj-lead-form textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+        .uj-lead-form input:focus, .uj-lead-form textarea:focus { outline: none; border-color: var(--primary-color); }
+        .uj-lead-form button {
+            width: 100%;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.25s ease;
+        }
+        .uj-lead-form button:hover { background: var(--primary-dark); }
+        .uj-form-note { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; }
+
+        /* Footer */
+        .uj-footer {
+            background: var(--text-color);
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+            padding: 2.2rem 2rem;
+            font-size: 0.9rem;
+        }
+        .uj-footer a { color: var(--primary-color); text-decoration: none; }
+        .uj-footer .legal { margin-top: 0.8rem; font-size: 0.8rem; }
+        .uj-footer .legal a { color: rgba(255,255,255,0.6); margin: 0 0.4rem; }
+
+        /* Floating WhatsApp */
+        .uj-float {
+            position: fixed;
+            bottom: 20px; right: 20px;
+            z-index: 50;
+            width: 58px; height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            animation: waPulse 2.8s ease-in-out infinite;
+            transition: transform 0.2s ease;
+        }
+        .uj-float:hover { transform: scale(1.08); }
+        .uj-float svg { width: 32px; height: 32px; fill: #fff; }
+        @keyframes waPulse {
+            0%,100% { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5); }
+            50%     { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 15px rgba(37,211,102,0); }
+        }
+
+        /* Motion: scroll reveal */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+            transition-delay: var(--rd, 0ms);
+        }
+        [data-reveal="right"] { transform: translateX(38px); }
+        [data-reveal="zoom"]  { transform: scale(.93); }
+        [data-reveal].is-in   { opacity: 1; transform: none; }
+
+        /* Hero entrance */
+        .uj-kicker, .uj-hero h1 .l1, .uj-hero h1 .l2, .uj-hero h1 .l3, .uj-lead, .uj-cta-row {
+            animation: heroIn .9s cubic-bezier(.22,.61,.36,1) both;
+        }
+        .uj-kicker { animation-delay: .05s; }
+        .uj-hero h1 .l1 { animation-delay: .18s; }
+        .uj-hero h1 .l2 { animation-delay: .32s; }
+        .uj-hero h1 .l3 { animation-delay: .46s; }
+        .uj-lead { animation-delay: .60s; }
+        .uj-cta-row { animation-delay: .74s; }
+        @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+        @media (max-width: 900px) {
+            .uj-exp-grid { grid-template-columns: 1fr; }
+            .uj-pain-grid { grid-template-columns: 1fr; }
+            .uj-about-inner { grid-template-columns: 1fr; text-align: center; }
+            .uj-about-img img { margin: 0 auto; }
+            .uj-about-text h2 { text-align: center; }
+            .uj-creds { justify-content: center; }
+            .uj-plane { width: 90px; }
+        }
+        @media (max-width: 480px) {
+            .uj-header .uj-logo img { height: 52px; }
+            .uj-sec, .uj-form-sec { padding: 55px 1.3rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            [data-reveal], [data-reveal].is-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .uj-kicker, .uj-hero h1 span, .uj-lead, .uj-cta-row,
+            .uj-plane-wrap, .uj-cloud, .uj-star, .uj-float,
+            .uj-about-img img, .uj-btn-gold::after { animation: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="uj-header">
+        <div class="uj-logo">
+            <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+        </div>
+        <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="uj-wa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            שיחה מהירה
+        </a>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="uj-hero">
+            <!-- stars -->
+            <span class="uj-star" style="top:12%; right:14%; animation-delay:.4s;"></span>
+            <span class="uj-star" style="top:20%; right:30%; animation-delay:1.4s;"></span>
+            <span class="uj-star" style="top:9%;  right:55%; animation-delay:2.2s;"></span>
+            <span class="uj-star" style="top:26%; right:70%; animation-delay:.9s;"></span>
+            <span class="uj-star" style="top:14%; right:84%; animation-delay:1.8s;"></span>
+            <span class="uj-star" style="top:33%; right:8%;  animation-delay:2.7s;"></span>
+            <!-- clouds -->
+            <div class="uj-cloud c1"></div>
+            <div class="uj-cloud c2"></div>
+            <!-- plane -->
+            <div class="uj-plane-wrap" aria-hidden="true">
+                <svg class="uj-plane" viewBox="0 0 120 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 26c0-3 2.5-5 6-5h62l24-16c1.6-1 3.6-1.2 5.4-.5l2.9 1.1c1.9.7 2.4 3.1 1 4.5L88 26h14c4.6 0 9 1.8 12 5-3 3.2-7.4 5-12 5H24l-10 8H8l5-12H6c-1.2 0-2-1-2-2v-4z" fill="#f4f6f9"/>
+                    <path d="M24 36h78c4.6 0 9-1.8 12-5-1.3-1.4-2.9-2.5-4.6-3.3L24 36z" fill="#d7dee8"/>
+                    <circle cx="34" cy="26" r="2.3" fill="#1e3a5f"/>
+                    <circle cx="44" cy="26" r="2.3" fill="#1e3a5f"/>
+                    <circle cx="54" cy="26" r="2.3" fill="#1e3a5f"/>
+                    <circle cx="64" cy="26" r="2.3" fill="#1e3a5f"/>
+                    <path d="M96 5l2.9 1.1c1.9.7 2.4 3.1 1 4.5L88 26h-9L96 5z" fill="#c9a227"/>
+                </svg>
+            </div>
+            <div class="uj-trail" aria-hidden="true"></div>
+
+            <div class="uj-hero-inner">
+                <span class="uj-kicker">✈ מסע מודרך · אומן, אוקראינה</span>
+                <h1>
+                    <span class="l1">יש נסיעות שרואים בהן עולם</span>
+                    <span class="l2">ויש מסע שפוגשים בו את עצמך</span>
+                    <span class="l3">מסע מעצים לאומן עם צליל בר</span>
+                </h1>
+                <p class="uj-lead">תפילה בציון רבי נחמן מברסלב, סיורים מודרכים, סדנאות העצמה ועבודה תודעתית — בקבוצה אינטימית ובליווי צמוד, מהמראה ועד הנחיתה. חוזרים הביתה עם לב מלא וכלים לחיים.</p>
+                <div class="uj-cta-row">
+                    <a href="#lead" class="uj-btn uj-btn-gold">אני רוצה פרטים על המסע</a>
+                    <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="uj-btn uj-btn-wa">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        דברו איתי בוואטסאפ
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust -->
+        <div class="uj-trust">
+            <div class="uj-trust-inner" data-reveal>
+                <span>ליווי מלא מההמראה ועד הנחיתה</span>
+                <span>קבוצה אינטימית ותומכת</span>
+                <span>סיורים מודרכים בעברית</span>
+                <span>סדנאות העצמה ועבודה תודעתית</span>
+                <span>שילוב חוכמת היהדות וכלים מנטליים</span>
+            </div>
+        </div>
+
+        <!-- What awaits -->
+        <section class="uj-sec">
+            <div class="uj-sec-inner">
+                <h2 data-reveal>מה מחכה לך במסע</h2>
+                <p class="uj-sub" data-reveal>זה לא עוד טיול מאורגן — זה תהליך. כל יום במסע בנוי כחוויה שמחברת בין המקום, הלב והתודעה.</p>
+                <div class="uj-exp-grid">
+                    <div class="uj-exp" data-reveal style="--rd:0ms">
+                        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v14H5V7l7-4z"/><path d="M9 21v-6h6v6"/><path d="M12 3v4"/></svg></div>
+                        <h3>תפילה בציון רבי נחמן</h3>
+                        <p>רגעים של התבודדות ותפילה במקום שאליו מגיעים מכל העולם — עם הכנה רוחנית ומרחב אישי לכל אחד ואחת.</p>
+                    </div>
+                    <div class="uj-exp" data-reveal style="--rd:110ms">
+                        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2 5.2-5.2 2 2-5.2 5.2-2z"/></svg></div>
+                        <h3>סיורים מודרכים</h3>
+                        <p>הסיפורים, ההיסטוריה והמורשת של אומן וברסלב — בהדרכה חיה בעברית שהופכת כל אתר לחוויה.</p>
+                    </div>
+                    <div class="uj-exp" data-reveal style="--rd:220ms">
+                        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg></div>
+                        <h3>סדנאות העצמה</h3>
+                        <p>סדנאות חווייתיות בהנחיית צליל — עבודה על אמונה, כוחות פנימיים ותודעה, בהשראת המקום והרגע.</p>
+                    </div>
+                    <div class="uj-exp" data-reveal style="--rd:0ms">
+                        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-6.5-4-9-8.3A4.7 4.7 0 0 1 12 6.5a4.7 4.7 0 0 1 9 5.7c-2.5 4.3-9 8.3-9 8.3z"/></svg></div>
+                        <h3>קבוצה תומכת</h3>
+                        <p>קבוצה אינטימית שהופכת למשפחה — שיחות לילה, צחוק, דמעות וחיבורים שנשארים הרבה אחרי הנחיתה.</p>
+                    </div>
+                    <div class="uj-exp" data-reveal style="--rd:110ms">
+                        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 18h5"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.6.5 1.3 1.4 1.3 2.4h5c0-1 .7-1.9 1.3-2.4A6 6 0 0 0 12 3z"/></svg></div>
+                        <h3>עבודה תודעתית</h3>
+                        <p>תרגילים וכלים מעולם הקואצ'ינג, ה-NLP וחוכמת היהדות — להפוך את ההשראה של המסע לשינוי אמיתי בבית.</p>
+                    </div>
+                    <div class="uj-exp" data-reveal style="--rd:220ms">
+                        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                        <h3>הכל מאורגן בשבילך</h3>
+                        <p>טיסות, לינה, כשרות והסעות — הלוגיסטיקה עלינו. המשימה היחידה שלך: להגיע עם לב פתוח.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For whom -->
+        <section class="uj-sec alt">
+            <div class="uj-sec-inner">
+                <p class="uj-sub" data-reveal style="margin-bottom:0.8rem;">לא צריך להיות "ברסלב" ולא צריך ניסיון קודם. צריך רק רצון אמיתי.</p>
+                <h2 data-reveal style="margin-bottom:3rem;">המסע הזה בשבילך אם…</h2>
+                <div class="uj-pain-grid">
+                    <div class="uj-pain" data-reveal style="--rd:0ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg></span><p>יש געגוע למשהו עמוק יותר — עצירה, נשימה וחיבור מחדש לעצמך</p></div>
+                    <div class="uj-pain" data-reveal style="--rd:80ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6 7-11.5a7 7 0 0 0-14 0c0 5.5 7 11.5 7 11.5z"/><circle cx="12" cy="10" r="2.6"/></svg></span><p>תמיד רצית להגיע לאומן — אבל לא לבד, אלא עם ליווי ומשמעות</p></div>
+                    <div class="uj-pain" data-reveal style="--rd:160ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg></span><p>נמצאים בצומת דרכים ומחפשים בהירות, אמונה וכוחות מחודשים</p></div>
+                    <div class="uj-pain" data-reveal style="--rd:240ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-6.5-4-9-8.3A4.7 4.7 0 0 1 12 6.5a4.7 4.7 0 0 1 9 5.7c-2.5 4.3-9 8.3-9 8.3z"/></svg></span><p>רוצה לחוות רוחניות אמיתית — בגובה העיניים, עם צחוק ולב פתוח</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps -->
+        <section class="uj-sec">
+            <div class="uj-sec-inner">
+                <h2 data-reveal>איך נראה המסע</h2>
+                <p class="uj-sub" data-reveal>מהרגע שנרשמים ועד שחוזרים הביתה — הכל מלווה, מאורגן ומדויק</p>
+                <div class="uj-steps">
+                    <div class="uj-step" data-reveal="right" style="--rd:0ms">
+                        <div class="num">1</div>
+                        <div>
+                            <h3>שיחת היכרות והרשמה</h3>
+                            <p>שיחה אישית עם צליל — להכיר, להבין מה מביא אותך למסע ולוודא שזה מתאים. אחר כך שומרים מקום.</p>
+                        </div>
+                    </div>
+                    <div class="uj-step" data-reveal="right" style="--rd:110ms">
+                        <div class="num">2</div>
+                        <div>
+                            <h3>הכנה למסע</h3>
+                            <p>מפגש הכנה מקדים — היכרות עם הקבוצה, הכנה רוחנית ולוגיסטית, וכל התשובות לשאלות.</p>
+                        </div>
+                    </div>
+                    <div class="uj-step" data-reveal="right" style="--rd:220ms">
+                        <div class="num">3</div>
+                        <div>
+                            <h3>המסע עצמו</h3>
+                            <p>ימים מלאים של תפילה, סיורים, סדנאות ורגעים אישיים — בקצב נכון, עם זמן לנשום ולהרגיש.</p>
+                        </div>
+                    </div>
+                    <div class="uj-step" data-reveal="right" style="--rd:330ms">
+                        <div class="num">4</div>
+                        <div>
+                            <h3>חוזרים הביתה — עם כלים</h3>
+                            <p>מפגש סיכום ועיבוד אחרי החזרה — כדי שההשראה מהמסע תהפוך לשינוי אמיתי בשגרה.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="uj-sec alt">
+            <div class="uj-about-inner">
+                <div class="uj-about-img" data-reveal="zoom">
+                    <img src="Gallery/tzlil-about-round.jpg" alt="צליל בר">
+                </div>
+                <div class="uj-about-text" data-reveal="right">
+                    <h2>המסע בליווי צליל בר</h2>
+                    <p class="tag">מנטורית ומאמנת אישית | למעלה משני עשורים של ניסיון</p>
+                    <p>אני מלווה אנשים בתהליכי צמיחה והתפתחות כבר יותר מעשרים שנה — ומאמינה שמסע אמיתי לא נמדד בקילומטרים, אלא במרחק שעוברים בפנים. באומן, המקום עושה חצי מהעבודה. את החצי השני נעשה יחד — בסדנאות, בשיחות וברגעים שביניהם.</p>
+                    <div class="uj-creds">
+                        <span>M.B.A בר-אילן</span>
+                        <span>M.A ספיר</span>
+                        <span>NLP Master-Trainer</span>
+                        <span>חוכמת היהדות</span>
+                        <span>הנחיית קבוצות</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA band -->
+        <section class="uj-cta-band">
+            <h2 data-reveal>המקומות במסע מוגבלים</h2>
+            <p data-reveal>קבוצה אינטימית בלבד — כדי שכל אחד ואחת יקבלו את המקום שמגיע להם</p>
+            <a href="#lead" class="uj-btn uj-btn-gold" data-reveal>לשמירת מקום ופרטים</a>
+        </section>
+
+        <!-- Lead form -->
+        <section class="uj-form-sec" id="lead">
+            <div class="uj-form-wrap">
+                <h2 data-reveal>רוצים לשמוע עוד על המסע?</h2>
+                <p class="uj-sub" data-reveal>השאירו פרטים ואחזור אליכם עם כל המידע — מועדים, מחיר ותוכנית מלאה</p>
+                <form class="contact-form uj-lead-form" data-reveal>
+                    <div class="fg">
+                        <label for="name">שם מלא</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="fg">
+                        <label for="phone">טלפון</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="fg">
+                        <label for="email">אימייל</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="fg">
+                        <label for="message">משהו שחשוב שאדע? (לא חובה)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">שלחו לי פרטים על המסע</button>
+                    <p class="uj-form-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:-2px;margin-left:3px;"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>הפרטים נשמרים אצלי בלבד ולא מועברים לאף גורם</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="uj-footer">
+        <p>© 2026 רימון — מרכז אימון למצוינות · צליל בר</p>
+        <div class="legal">
+            <a href="index.html">לאתר המלא</a> ·
+            <a href="privacy.html">מדיניות פרטיות</a> ·
+            <a href="terms.html">תקנון ותנאי שימוש</a> ·
+            <a href="accessibility.html">הצהרת נגישות</a>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="uj-float" aria-label="שיחת וואטסאפ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+    <!-- Scroll reveal -->
+    <script>
+    (function () {
+        var els = document.querySelectorAll('[data-reveal]');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(els, function (el) { el.classList.add('is-in'); });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-in');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+    })();
+    </script>
+    <!-- Accessibility Widget - EqualWeb -->
+    <script>
+    window.interdeal = {
+        get sitekey (){ return "2d6687b74564a1ab0ebbe18e4394728a"} ,
+        get domains(){
+            return {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            }
+        },
+        "Position": "left",
+        "Menulang": "HE",
+        "draggable": true,
+        "btnStyle": {
+            "vPosition": ["60%","60%"],
+            "margin": ["0","0"],
+            "scale": ["0.5","0.5"],
+            "color": {"main": "#1876c9","second": "#ffffff"},
+            "icon": {"outline": false,"outlineColor": "#ffffff","type": 1,"shape": "circle"}
+        }
+    };
+    (function(doc, head, body){
+        var coreCall         = doc.createElement('script');
+        coreCall.src         = interdeal.domains.js + 'core/5.2.8/accessibility.js';
+        coreCall.defer       = true;
+        coreCall.integrity   = 'sha512-ka0NgF7zDksnhoZ5ZCKlm+t0F7KTih5lCfXwuzQDnrwu/EdKZSsJotoJvQPd0cuVmV63s0q2cgoUjeki688PuQ==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
+</body>
+</html>
