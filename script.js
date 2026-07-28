@@ -109,7 +109,7 @@ document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(ele
 });
 
 // Form submission handling — sends via FormSubmit
-const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/tzlilbcoach@gmail.com';
+const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/9974dd52447a3ce1ebbbda00362be4db';
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
