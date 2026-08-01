@@ -439,9 +439,9 @@
         }
         .we-log-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.6rem;
-            margin-bottom: 2.2rem;
+            grid-template-columns: 1fr;
+            max-width: 620px;
+            margin: 0 auto 2.2rem;
         }
         .we-log-card {
             background: var(--we-paper);
@@ -565,7 +565,6 @@
             .we-work-head { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 2rem 1.6rem 1.4rem; }
             .we-work-num { font-size: 4.2rem; }
             .we-block { padding: 1.5rem 1.6rem 1.7rem; }
-            .we-log-grid { grid-template-columns: 1fr; }
         }
 
         /* ===== Motion: scroll reveal ===== */
@@ -689,9 +688,9 @@
         <!-- Trust strip -->
         <div class="we-strip">
             <div class="we-strip-inner" data-reveal>
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 2-.8 2-2 0-.6-.2-1-.6-1.4-.4-.4-.6-.8-.6-1.4 0-1.2.9-2 2-2h2.2A4 4 0 0 0 21 10c-.5-4-4.4-7-9-7z"/><circle cx="7.5" cy="11" r="0.6"/><circle cx="9.5" cy="7.5" r="0.6"/><circle cx="13.5" cy="6.5" r="0.6"/></svg>מגוון סדנאות חווייתיות</span>
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="16.5" cy="9" r="2.6"/><path d="M16 15.2c2.6.3 4.5 2.1 4.5 4.8"/></svg>קבוצות של 25–30 נשים</span>
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7"/><path d="M2 8h20v4H2z"/><path d="M12 8v12"/><path d="M12 8c-2.5 0-4.5-1.2-4.5-3S9.5 3.2 12 8z"/><path d="M12 8c2.5 0 4.5-1.2 4.5-3S14.5 3.2 12 8z"/></svg>כל הציוד והחומרים עליי</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>מגוון סדנאות חווייתיות</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg>תוכן מותאם לכל קבוצה</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M8.8 13.5L7 21l5-2.4L17 21l-1.8-7.5"/></svg>למעלה משני עשורים של ניסיון</span>
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.6 5.5 5.5 0 0 1 21.5 12c-2.5 4.4-9.5 9-9.5 9z"/></svg>כלים שנשארים גם אחרי המפגש</span>
             </div>
         </div>
@@ -822,14 +821,6 @@
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>העברת התוכן המקצועי — הרצאה, הנחיה ומצגת מלווה</li>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>הגעה שעה וחצי לפני לעיצוב שולחנות ויצירת אווירה</li>
                             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>אספקת כל הציוד והחומרים הנדרשים לפעילות</li>
-                        </ul>
-                    </div>
-                    <div class="we-log-card" data-reveal style="--rd:110ms">
-                        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M10 21v-6h4v6"/></svg></span>מה נדרש מהמזמין</h3>
-                        <ul>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>מרחב מתאים לפעילות</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>שולחנות עבודה, כיסאות, מקרן ומסך</li>
-                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>כיבוד ושתייה עבור המשתתפות</li>
                         </ul>
                     </div>
                 </div>
