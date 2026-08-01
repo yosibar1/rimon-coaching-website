@@ -230,6 +230,7 @@
             margin: 2.4rem 0 0;
         }
         .we-axis .node {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -579,6 +580,48 @@
         [data-reveal="zoom"]  { transform: scale(.93); }
         [data-reveal].is-in   { opacity: 1; transform: none; }
 
+        /* Axis choreography: nodes pop in one after another, arrows slide between */
+        .we-axis .node, .we-axis .arr { opacity: 0; }
+        .we-axis .node:nth-child(1) { --nd: 0s; }
+        .we-axis .arr:nth-child(2)  { --nd: 0.5s; }
+        .we-axis .node:nth-child(3) { --nd: 0.65s; }
+        .we-axis .arr:nth-child(4)  { --nd: 1.15s; }
+        .we-axis .node:nth-child(5) { --nd: 1.3s; }
+        .we-axis.is-in .node {
+            animation: weNodePop .65s cubic-bezier(.34,1.56,.64,1) forwards;
+            animation-delay: var(--nd);
+        }
+        .we-axis.is-in .arr {
+            animation: weArrSlide .45s cubic-bezier(.22,.61,.36,1) forwards;
+            animation-delay: var(--nd);
+        }
+        .we-axis .node::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(201, 162, 39, 0.55);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .we-axis.is-in .node::after {
+            animation: weNodeRing .8s ease-out forwards;
+            animation-delay: calc(var(--nd) + .3s);
+        }
+        @keyframes weNodePop {
+            0%   { opacity: 0; transform: scale(.25) rotate(-10deg); }
+            60%  { opacity: 1; }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+        @keyframes weArrSlide {
+            from { opacity: 0; transform: translateX(16px); }
+            to   { opacity: 1; transform: none; }
+        }
+        @keyframes weNodeRing {
+            0%   { opacity: .85; transform: scale(.82); }
+            100% { opacity: 0; transform: scale(1.45); }
+        }
+
         /* Hero entrance sequence (on load) */
         .we-hero .we-kicker,
         .we-hero h1 .hl-small,
@@ -624,6 +667,8 @@
             .we-hero .we-cta-row,
             .we-float,
             .we-btn-gold::after { animation: none !important; }
+            .we-axis .node, .we-axis .arr { opacity: 1 !important; animation: none !important; }
+            .we-axis .node::after { display: none !important; }
         }
     </style>
 </head>
@@ -700,12 +745,12 @@
                 <h2 data-reveal>לא עוד "סדנת העצמה" תיאורטית</h2>
                 <p data-reveal>אלו אינן סדנאות המסתפקות בהעברת ידע, אלא תהליך חווייתי ומעצים. הייחודיות טמונה בחיבור הסינרגטי שבין המיינדסט (Mindset) — עולמות האימון, ה-NLP וחוכמת היהדות — לבין חוויה והתנסות מעשית, ההופכות את התובנות לעוגן יציב ובר-קיימא שהמשתתפות לוקחות עמן הביתה.</p>
                 <p data-reveal>בבסיס כל הסדנאות עומדת תובנה אחת פשוטה — המחשבות והדיבור שלנו מנווטים את המעשים וקובעים את המציאות שלנו:</p>
-                <div class="we-axis">
-                    <div class="node" data-reveal="zoom" style="--rd:0ms">מחשבה</div>
-                    <span class="arr" data-reveal style="--rd:120ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg></span>
-                    <div class="node" data-reveal="zoom" style="--rd:240ms">דיבור</div>
-                    <span class="arr" data-reveal style="--rd:360ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg></span>
-                    <div class="node" data-reveal="zoom" style="--rd:480ms">מעשה</div>
+                <div class="we-axis" data-reveal>
+                    <div class="node">מחשבה</div>
+                    <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg></span>
+                    <div class="node">דיבור</div>
+                    <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg></span>
+                    <div class="node">מעשה</div>
                 </div>
                 <p class="we-axis-caption" data-reveal>ומהתובנה — אל החוויה: כל סדנה ממירה את התכנים לעבודה מעשית והתנסות באווירה של שקט, רוגע, תקווה ואור — ויסות מתחים, חיזוק תחושת המסוגלות וחיבור מחדש לכוחות הפנימיים.</p>
             </div>
