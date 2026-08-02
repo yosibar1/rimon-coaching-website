@@ -528,6 +528,121 @@
             margin-bottom: 2.2rem;
         }
 
+        /* ===== Lead popup ===== */
+        .we-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+        }
+        .we-modal.show { display: flex; }
+        .we-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(42, 23, 48, 0.62);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        .we-modal.show .we-modal-backdrop { opacity: 1; }
+        .we-modal-card {
+            position: relative;
+            background: #fff;
+            border-radius: 22px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 92vh;
+            overflow-y: auto;
+            padding: 2.4rem 2.2rem 2rem;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            transform: scale(.92) translateY(16px);
+            opacity: 0;
+            transition: transform .35s cubic-bezier(.22,.61,.36,1), opacity .3s ease;
+        }
+        .we-modal.show .we-modal-card { transform: none; opacity: 1; }
+        .we-modal-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--we-gold), var(--we-rose));
+            border-radius: 22px 22px 0 0;
+        }
+        .we-modal-close {
+            position: absolute;
+            top: 0.9rem;
+            left: 0.9rem;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: var(--we-rose-soft);
+            color: var(--we-plum);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .25s ease, transform .25s ease;
+        }
+        .we-modal-close:hover { background: var(--we-gold-soft); transform: rotate(90deg); }
+        .we-modal-close svg { width: 16px; height: 16px; }
+        .we-modal h3 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            color: var(--we-plum);
+            font-size: 1.28rem;
+            line-height: 1.4;
+            margin: 0 0 0.7rem;
+            padding-left: 1.8rem;
+        }
+        .we-modal-intro {
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .we-modal .fg { margin-bottom: 0.95rem; text-align: right; }
+        .we-modal label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--we-plum);
+            margin-bottom: 0.3rem;
+        }
+        .we-modal input,
+        .we-modal textarea {
+            width: 100%;
+            border: 1px solid #e5dde8;
+            border-radius: 10px;
+            padding: 0.7rem 0.9rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: #fbf9fc;
+            color: var(--text-color);
+            transition: border-color .25s ease, box-shadow .25s ease;
+        }
+        .we-modal input:focus,
+        .we-modal textarea:focus {
+            outline: none;
+            border-color: var(--we-gold);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+        }
+        .we-modal button.we-btn-gold {
+            width: 100%;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            margin-top: 0.3rem;
+        }
+        @media (max-width: 480px) {
+            .we-modal { padding: 0.9rem; }
+            .we-modal-card { padding: 2rem 1.4rem 1.5rem; }
+            .we-modal h3 { font-size: 1.15rem; }
+        }
+
         /* ===== Floating WhatsApp ===== */
         .we-float {
             position: fixed;
@@ -991,6 +1106,37 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
+    <!-- Lead popup -->
+    <div class="we-modal" id="we-modal" role="dialog" aria-modal="true" aria-labelledby="we-modal-title">
+        <div class="we-modal-backdrop"></div>
+        <div class="we-modal-card">
+            <button type="button" class="we-modal-close" aria-label="סגירת החלון">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+            </button>
+            <h3 id="we-modal-title">יועצת ראש העיר למעמד האישה, שלום לך</h3>
+            <p class="we-modal-intro">ראשית — מחזקת את ידייך על פועלך למען הנשים בעירך. על מנת שנוכל לדייק ככל שניתן את הצרכים שלכן, אשמח אם תשאירי פרטים ונקבע מועד לשיחה קצרה.</p>
+            <form id="we-lead-form">
+                <div class="fg">
+                    <label for="wem-name">שם מלא</label>
+                    <input type="text" id="wem-name" name="name" required>
+                </div>
+                <div class="fg">
+                    <label for="wem-phone">טלפון</label>
+                    <input type="tel" id="wem-phone" name="phone" required>
+                </div>
+                <div class="fg">
+                    <label for="wem-email">אימייל</label>
+                    <input type="email" id="wem-email" name="email">
+                </div>
+                <div class="fg">
+                    <label for="wem-message">משהו שחשוב שאדע? (לא חובה)</label>
+                    <textarea id="wem-message" name="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="we-btn we-btn-gold">לתיאום שיחה קצרה</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <!-- Mobile accordion for workshop cards -->
     <script>
@@ -1085,6 +1231,84 @@
         });
         if (mq.addEventListener) { mq.addEventListener('change', setup); } else { mq.addListener(setup); }
         setup();
+    })();
+    </script>
+    <!-- Lead popup: open on any contact link, submit via FormSubmit -->
+    <script>
+    (function () {
+        var modal = document.getElementById('we-modal');
+        if (!modal) return;
+        var closeBtn = modal.querySelector('.we-modal-close');
+        var backdrop = modal.querySelector('.we-modal-backdrop');
+        var form = document.getElementById('we-lead-form');
+        var lastFocus = null;
+
+        function openModal() {
+            lastFocus = document.activeElement;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            setTimeout(function () { document.getElementById('wem-name').focus(); }, 380);
+        }
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('a[href="#contact"]'), function (a) {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                openModal();
+            });
+        });
+        closeBtn.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var btn = form.querySelector('button[type="submit"]');
+            var originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'שולח...';
+            fetch('https://formsubmit.co/ajax/9974dd52447a3ce1ebbbda00362be4db', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    name: document.getElementById('wem-name').value,
+                    phone: document.getElementById('wem-phone').value,
+                    email: document.getElementById('wem-email').value,
+                    message: document.getElementById('wem-message').value,
+                    _subject: 'פנייה חדשה — סדנאות העצמה נשית',
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            })
+            .then(function (r) { if (!r.ok) throw new Error('send failed'); return r.json(); })
+            .then(function (d) { if (d.success === 'false' || d.success === false) throw new Error('not delivered'); })
+            .then(function () {
+                btn.textContent = 'נשלח בהצלחה!';
+                btn.style.background = '#22c55e';
+                form.reset();
+                setTimeout(function () {
+                    closeModal();
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 1800);
+            })
+            .catch(function () {
+                btn.textContent = 'שגיאה בשליחה — נסו שוב';
+                btn.style.background = '#dc2626';
+                setTimeout(function () {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            });
+        });
     })();
     </script>
     <!-- Scroll reveal -->
