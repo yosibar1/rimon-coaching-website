@@ -555,7 +555,9 @@
             max-width: 500px;
             width: 100%;
             max-height: 92vh;
+            max-height: 92dvh;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             padding: 2.4rem 2.2rem 2rem;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
             transform: scale(.92) translateY(16px);
@@ -637,10 +639,26 @@
             font-family: inherit;
             margin-top: 0.3rem;
         }
-        @media (max-width: 480px) {
-            .we-modal { padding: 0.9rem; }
-            .we-modal-card { padding: 2rem 1.4rem 1.5rem; }
-            .we-modal h3 { font-size: 1.15rem; }
+        @media (max-width: 560px) {
+            .we-modal { padding: 0; align-items: flex-end; }
+            .we-modal-card {
+                max-width: none;
+                border-radius: 20px 20px 0 0;
+                max-height: 88vh;
+                max-height: 88dvh;
+                padding: 1.6rem 1.3rem calc(1.3rem + env(safe-area-inset-bottom, 0px));
+                transform: translateY(48px);
+            }
+            .we-modal.show .we-modal-card { transform: none; }
+            .we-modal-card::before { border-radius: 20px 20px 0 0; }
+            .we-modal h3 { font-size: 1.1rem; padding-left: 2.4rem; margin-bottom: 0.5rem; }
+            .we-modal-intro { font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+            .we-modal .fg { margin-bottom: 0.65rem; }
+            .we-modal label { font-size: 0.84rem; margin-bottom: 0.25rem; }
+            .we-modal input,
+            .we-modal textarea { padding: 0.6rem 0.8rem; font-size: 16px; }
+            .we-modal textarea { min-height: 64px; }
+            .we-modal button.we-btn-gold { padding: 0.85rem 2rem; }
         }
 
         /* ===== Floating WhatsApp ===== */
@@ -1247,7 +1265,10 @@
             lastFocus = document.activeElement;
             modal.classList.add('show');
             document.body.style.overflow = 'hidden';
-            setTimeout(function () { document.getElementById('wem-name').focus(); }, 380);
+            /* פוקוס אוטומטי רק בעכבר — במגע זה מקפיץ מקלדת ושובר את הפריסה */
+            if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                setTimeout(function () { document.getElementById('wem-name').focus(); }, 380);
+            }
         }
         function closeModal() {
             modal.classList.remove('show');
@@ -1276,15 +1297,19 @@
             fetch('https://formsubmit.co/ajax/9974dd52447a3ce1ebbbda00362be4db', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({
-                    name: document.getElementById('wem-name').value,
-                    phone: document.getElementById('wem-phone').value,
-                    email: document.getElementById('wem-email').value,
-                    message: document.getElementById('wem-message').value,
-                    _subject: 'פנייה חדשה — סדנאות העצמה נשית',
-                    _template: 'table',
-                    _captcha: 'false'
-                })
+                body: JSON.stringify((function () {
+                    var payload = {
+                        name: document.getElementById('wem-name').value,
+                        phone: document.getElementById('wem-phone').value,
+                        message: document.getElementById('wem-message').value,
+                        _subject: 'פנייה חדשה — סדנאות העצמה נשית',
+                        _template: 'table',
+                        _captcha: 'false'
+                    };
+                    var em = document.getElementById('wem-email').value.trim();
+                    if (em) payload.email = em;
+                    return payload;
+                })())
             })
             .then(function (r) { if (!r.ok) throw new Error('send failed'); return r.json(); })
             .then(function (d) { if (d.success === 'false' || d.success === false) throw new Error('not delivered'); })
