@@ -1251,7 +1251,7 @@
         setup();
     })();
     </script>
-    <!-- Lead popup: open on any contact link, submit via FormSubmit -->
+    <!-- Lead popup: open on any contact link, submit via Web3Forms -->
     <script>
     (function () {
         var modal = document.getElementById('we-modal');
@@ -1294,17 +1294,17 @@
             var originalText = btn.textContent;
             btn.disabled = true;
             btn.textContent = 'שולח...';
-            fetch('https://formsubmit.co/ajax/9974dd52447a3ce1ebbbda00362be4db', {
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify((function () {
                     var payload = {
+                        access_key: 'efda6075-e9c5-456e-89e5-7237de5d7f6c',
+                        subject: 'פנייה חדשה — סדנאות העצמה נשית',
+                        from_name: 'אתר רימון',
                         name: document.getElementById('wem-name').value,
                         phone: document.getElementById('wem-phone').value,
-                        message: document.getElementById('wem-message').value,
-                        _subject: 'פנייה חדשה — סדנאות העצמה נשית',
-                        _template: 'table',
-                        _captcha: 'false'
+                        message: document.getElementById('wem-message').value
                     };
                     var em = document.getElementById('wem-email').value.trim();
                     if (em) payload.email = em;

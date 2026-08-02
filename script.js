@@ -108,8 +108,9 @@ document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(ele
     observer.observe(element);
 });
 
-// Form submission handling — sends via FormSubmit
-const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/9974dd52447a3ce1ebbbda00362be4db';
+// Form submission handling — sends via Web3Forms
+const CONTACT_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = 'efda6075-e9c5-456e-89e5-7237de5d7f6c';
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -128,13 +129,13 @@ if (contactForm) {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
+                access_key: WEB3FORMS_KEY,
+                subject: 'פנייה חדשה מאתר רימון',
+                from_name: 'אתר רימון',
                 name: this.querySelector('#name').value,
                 email: this.querySelector('#email').value,
                 phone: this.querySelector('#phone') ? this.querySelector('#phone').value : '',
-                message: this.querySelector('#message').value,
-                _subject: 'פנייה חדשה מאתר רימון',
-                _template: 'table',
-                _captcha: 'false'
+                message: this.querySelector('#message').value
             })
         })
         .then(response => {
