@@ -410,6 +410,7 @@
             line-height: 1.85;
             margin: 0;
         }
+        .we-acc-chev { display: none; }
         .we-work.candle   { --wc: #d08a2e; }
         .we-work.concrete { --wc: #9a7b5f; }
         .we-work.vision   { --wc: #d95677; }
@@ -566,6 +567,44 @@
             .we-work-head { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 2rem 1.6rem 1.4rem; }
             .we-work-num { font-size: 4.2rem; }
             .we-block { padding: 1.5rem 1.6rem 1.7rem; }
+
+            /* מצב אקורדיון (מופעל ע"י JS במובייל) */
+            .acc-on .we-work { margin-bottom: 1rem; }
+            .acc-on .we-work-head {
+                flex-direction: row;
+                align-items: center;
+                gap: 0.9rem;
+                padding: 1.25rem 1.4rem;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .acc-on .we-work-head > div { min-width: 0; }
+            .acc-on .we-work-ic { width: 48px; height: 48px; border-radius: 14px; }
+            .acc-on .we-work-ic svg { width: 24px; height: 24px; }
+            .acc-on .we-work-head h3 { font-size: 1.12rem; margin-bottom: 0.15rem; }
+            .acc-on .we-work-head .tech { font-size: 0.84rem; line-height: 1.5; }
+            .acc-on .we-work-num { display: none; }
+            .acc-on .we-acc-chev {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-inline-start: auto;
+                flex-shrink: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: color-mix(in srgb, var(--wc) 12%, #fff);
+                color: var(--wc);
+            }
+            .acc-on .we-acc-chev svg { width: 16px; height: 16px; transition: transform .35s ease; }
+            .acc-on .we-work.open .we-acc-chev svg { transform: rotate(180deg); }
+            .acc-on .we-work-body {
+                overflow: hidden;
+                max-height: 0;
+                border-top: 1px solid transparent;
+                transition: max-height .45s cubic-bezier(.22,.61,.36,1);
+            }
+            .acc-on .we-work.open .we-work-body { border-top-color: rgba(58, 33, 64, 0.08); }
         }
 
         /* ===== Motion: scroll reveal ===== */
@@ -669,6 +708,8 @@
             .we-btn-gold::after { animation: none !important; }
             .we-axis .node, .we-axis .arr { opacity: 1 !important; animation: none !important; }
             .we-axis .node::after { display: none !important; }
+            .acc-on .we-work-body { transition: none !important; }
+            .acc-on .we-acc-chev svg { transition: none !important; }
         }
     </style>
 </head>
@@ -791,6 +832,7 @@
                             <h3>להדליק את האור הפנימי</h3>
                             <p class="tech">חיזוק החוסן ותרפיה באמצעות עיצוב נרות טבעיים</p>
                         </div>
+                        <span class="we-acc-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
                     </div>
                     <div class="we-work-body">
                         <div class="we-block">
@@ -812,6 +854,7 @@
                             <h3>עיצוב תודעת שפע</h3>
                             <p class="tech">חיזוק תודעה מצמיחה בשילוב תרפיה ביצירה עם בטון פולימרי</p>
                         </div>
+                        <span class="we-acc-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
                     </div>
                     <div class="we-work-body">
                         <div class="we-block">
@@ -833,6 +876,7 @@
                             <h3>התמונה המנצחת</h3>
                             <p class="tech">לוח חזון ותרפיה באמצעות טכניקת הקולאז' והפוטומונטאז'</p>
                         </div>
+                        <span class="we-acc-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
                     </div>
                     <div class="we-work-body">
                         <div class="we-block">
@@ -930,6 +974,101 @@
     </a>
 
     <script src="script.js"></script>
+    <!-- Mobile accordion for workshop cards -->
+    <script>
+    (function () {
+        var mq = window.matchMedia('(max-width: 768px)');
+        var section = document.querySelector('.we-workshops');
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.we-work'));
+        if (!section || !cards.length) return;
+
+        function head(c) { return c.querySelector('.we-work-head'); }
+        function body(c) { return c.querySelector('.we-work-body'); }
+
+        function setup() {
+            if (mq.matches) {
+                section.classList.add('acc-on');
+                cards.forEach(function (c) {
+                    var h = head(c);
+                    h.setAttribute('role', 'button');
+                    h.setAttribute('tabindex', '0');
+                    h.setAttribute('aria-expanded', c.classList.contains('open') ? 'true' : 'false');
+                });
+            } else {
+                section.classList.remove('acc-on');
+                cards.forEach(function (c) {
+                    c.classList.remove('open');
+                    body(c).style.maxHeight = '';
+                    var h = head(c);
+                    h.removeAttribute('role');
+                    h.removeAttribute('tabindex');
+                    h.removeAttribute('aria-expanded');
+                });
+            }
+        }
+
+        /* מצמיד את הכרטיס שנלחץ לאותו מקום במסך בזמן שהקודם מתקפל */
+        function anchor(el) {
+            var top0 = el.getBoundingClientRect().top;
+            var t0 = performance.now();
+            (function step() {
+                var dy = el.getBoundingClientRect().top - top0;
+                if (dy) window.scrollBy(0, dy);
+                if (performance.now() - t0 < 520) requestAnimationFrame(step);
+            })();
+        }
+
+        function pin(c) {
+            var b = body(c);
+            if (b.style.maxHeight === 'none') { b.style.maxHeight = b.scrollHeight + 'px'; void b.offsetHeight; }
+        }
+        function close(c) {
+            var b = body(c);
+            pin(c);
+            b.style.maxHeight = b.scrollHeight + 'px';
+            void b.offsetHeight;
+            b.style.maxHeight = '0px';
+            c.classList.remove('open');
+            head(c).setAttribute('aria-expanded', 'false');
+        }
+        function open(c) {
+            var b = body(c);
+            b.style.maxHeight = b.scrollHeight + 'px';
+            c.classList.add('open');
+            head(c).setAttribute('aria-expanded', 'true');
+            b.addEventListener('transitionend', function fn(e) {
+                if (e.propertyName === 'max-height') {
+                    if (c.classList.contains('open')) b.style.maxHeight = 'none';
+                    b.removeEventListener('transitionend', fn);
+                }
+            });
+        }
+        function toggle(c) {
+            if (!mq.matches) return;
+            var h = head(c);
+            if (c.classList.contains('open')) {
+                close(c);
+                anchor(h);
+                return;
+            }
+            cards.forEach(function (x) {
+                if (x !== c && x.classList.contains('open')) close(x);
+            });
+            open(c);
+            anchor(h);
+        }
+
+        cards.forEach(function (c) {
+            var h = head(c);
+            h.addEventListener('click', function () { toggle(c); });
+            h.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(c); }
+            });
+        });
+        if (mq.addEventListener) { mq.addEventListener('change', setup); } else { mq.addListener(setup); }
+        setup();
+    })();
+    </script>
     <!-- Scroll reveal -->
     <script>
     (function () {
