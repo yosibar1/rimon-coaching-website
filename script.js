@@ -110,7 +110,7 @@ document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(ele
 
 // Form submission handling — sends via Web3Forms
 const CONTACT_ENDPOINT = 'https://api.web3forms.com/submit';
-const WEB3FORMS_KEY = 'efda6075-e9c5-456e-89e5-7237de5d7f6c';
+const WEB3FORMS_KEY = '79ff1faf-8748-424d-8d3d-163b93a1d042';
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
