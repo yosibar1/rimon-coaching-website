@@ -258,39 +258,41 @@
 
         /* ===== Audience ===== */
         .we-audience {
-            padding: 90px 2rem;
+            padding: 55px 2rem;
             background: var(--we-rose-soft);
         }
         .we-audience-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
         .we-audience h2 {
             font-family: 'Rubik', 'Heebo', sans-serif;
             color: var(--we-plum);
-            font-size: clamp(1.7rem, 3vw, 2.4rem);
-            margin-bottom: 0.7rem;
+            font-size: clamp(1.5rem, 2.6vw, 2rem);
+            margin-bottom: 0.4rem;
         }
         .we-audience .sub {
             color: var(--text-secondary);
-            margin-bottom: 2.6rem;
+            font-size: 0.97rem;
+            margin-bottom: 1.6rem;
         }
         .we-chips {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.9rem;
+            gap: 0.7rem;
         }
         .we-chips span {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.55rem;
             background: #fff;
             border: 1px solid rgba(232, 95, 122, 0.22);
             border-radius: 50px;
-            padding: 0.75rem 1.5rem;
+            padding: 0.55rem 1.15rem;
             font-weight: 600;
-            font-size: 0.97rem;
+            font-size: 0.9rem;
             color: var(--we-plum);
             box-shadow: 0 4px 14px rgba(58, 33, 64, 0.06);
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            white-space: nowrap;
         }
         .we-chips span::before {
             content: '';
@@ -560,7 +562,23 @@
             .we-hero .we-lead { margin-left: auto; margin-right: auto; }
             .we-cta-row { justify-content: center; }
             .we-strip-inner { flex-direction: column; align-items: flex-start; gap: 0.7rem; max-width: 320px; }
-            .we-rationale, .we-workshops, .we-logistics, .we-audience { padding-top: 70px; padding-bottom: 70px; }
+            .we-rationale, .we-workshops, .we-logistics { padding-top: 70px; padding-bottom: 70px; }
+            .we-audience { padding: 42px 0; }
+            .we-audience h2, .we-audience .sub { padding: 0 1.5rem; }
+            .we-audience .sub { margin-bottom: 1.1rem; }
+            .we-chips {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding: 0.4rem 1.5rem 0.8rem;
+                scroll-snap-type: x proximity;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+                mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+            }
+            .we-chips::-webkit-scrollbar { display: none; }
+            .we-chips span { flex-shrink: 0; scroll-snap-align: start; }
             .we-axis { gap: 0.7rem; }
             .we-axis .node { width: 96px; height: 96px; font-size: 1.05rem; }
             .we-axis .arr svg { width: 22px; height: 22px; }
