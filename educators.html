@@ -215,40 +215,70 @@
         .ed-damage div:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(22, 50, 74, 0.1); }
         .ed-damage svg { width: 20px; height: 20px; color: var(--ed-coral); flex-shrink: 0; margin-top: 0.15rem; }
 
-        /* ===== Shift (transformation) ===== */
-        .ed-shift {
+        /* ===== Voices from the teachers' room ===== */
+        .ed-quotes {
             padding: 70px 2rem 90px;
             background: #fff;
             text-align: center;
         }
-        .ed-shift-inner { max-width: 860px; margin: 0 auto; }
-        .ed-shift p.ed-shift-sub { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2.2rem; }
-        .ed-shift-flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
+        .ed-quotes-inner { max-width: 960px; margin: 0 auto; }
+        .ed-quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.3rem;
+            margin-top: 2.4rem;
+            text-align: right;
         }
-        .ed-state {
-            border-radius: 60px;
-            padding: 1rem 2.2rem;
-            font-family: 'Rubik', 'Heebo', sans-serif;
-            font-weight: 700;
-            font-size: clamp(1.05rem, 2vw, 1.35rem);
+        .ed-quote {
+            position: relative;
+            margin: 0;
+            background: var(--ed-blue-soft);
+            border: 1px solid rgba(63, 124, 184, 0.18);
+            border-radius: 18px 18px 4px 18px;
+            padding: 1.4rem 1.6rem 1.1rem;
+            transition: transform .25s ease, box-shadow .25s ease;
         }
-        .ed-state.from {
-            background: #eef1f4;
+        .ed-quote:nth-child(even) {
+            background: #fdfaf3;
+            border-color: rgba(201, 162, 39, 0.25);
+            border-radius: 18px 18px 18px 4px;
+        }
+        .ed-quote:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(22, 50, 74, 0.1); }
+        .ed-quote .qmark {
+            display: inline-flex;
+            color: var(--ed-gold);
+            margin-bottom: 0.4rem;
+        }
+        .ed-quote .qmark svg { width: 26px; height: 26px; opacity: 0.85; }
+        .ed-quote p {
+            color: var(--ed-ink);
+            font-size: 1.02rem;
+            line-height: 1.8;
+            font-weight: 500;
+            margin: 0 0 0.7rem;
+        }
+        .ed-quote .who {
             color: var(--text-muted);
-            border: 1.5px dashed #c9d2da;
+            font-size: 0.85rem;
         }
-        .ed-state.to {
-            background: linear-gradient(135deg, #dcb63a, var(--ed-gold));
-            color: #14283c;
-            box-shadow: 0 14px 34px rgba(201, 162, 39, 0.35);
+        .ed-quote .who::before { content: '— '; }
+        .ed-quote-wide {
+            grid-column: 1 / -1;
+            max-width: 560px;
+            justify-self: center;
+            width: 100%;
         }
-        .ed-shift-arr { color: var(--ed-gold); display: flex; }
-        .ed-shift-arr svg { width: 34px; height: 34px; }
+        .ed-quotes-bridge {
+            margin: 2.4rem auto 0;
+            max-width: 720px;
+            color: var(--text-secondary);
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+        .ed-quotes-bridge strong {
+            color: var(--ed-ink);
+            border-bottom: 2px solid var(--ed-gold);
+        }
 
         /* ===== Goals ===== */
         .ed-goals { padding: 90px 2rem; background: var(--ed-paper); }
@@ -508,10 +538,9 @@
             .ed-lead { margin-left: auto; margin-right: auto; }
             .ed-cta-row { justify-content: center; }
             .ed-strip-inner { flex-direction: column; align-items: flex-start; gap: 0.7rem; max-width: 340px; }
-            .ed-challenge, .ed-goals, .ed-axes, .ed-model { padding-top: 70px; padding-bottom: 70px; }
+            .ed-challenge, .ed-goals, .ed-axes, .ed-model, .ed-quotes { padding-top: 70px; padding-bottom: 70px; }
             .ed-damage { grid-template-columns: 1fr; }
-            .ed-shift-flow { flex-direction: column; gap: 0.9rem; }
-            .ed-shift-arr { transform: rotate(-90deg); }
+            .ed-quotes-grid { grid-template-columns: 1fr; }
 
             /* מצב אקורדיון לצירים (מופעל ע"י JS במובייל) */
             .acc-on .ed-axis { margin-bottom: 1rem; }
@@ -575,29 +604,6 @@
         .ed-hero .ed-cta-row  { animation-delay: .64s; }
         @keyframes edHeroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
-        /* Shift choreography: states pop in, arrow slides between */
-        .ed-shift-flow .ed-state, .ed-shift-flow .ed-shift-arr { opacity: 0; }
-        .ed-shift-flow .ed-state.from { --nd: 0s; }
-        .ed-shift-flow .ed-shift-arr  { --nd: 0.45s; }
-        .ed-shift-flow .ed-state.to   { --nd: 0.6s; }
-        .ed-shift-flow.is-in .ed-state {
-            animation: edPop .6s cubic-bezier(.34,1.56,.64,1) forwards;
-            animation-delay: var(--nd);
-        }
-        .ed-shift-flow.is-in .ed-shift-arr {
-            animation: edArr .45s cubic-bezier(.22,.61,.36,1) forwards;
-            animation-delay: var(--nd);
-        }
-        @keyframes edPop {
-            0%   { opacity: 0; transform: scale(.4); }
-            60%  { opacity: 1; }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        @keyframes edArr {
-            from { opacity: 0; transform: translateX(16px); }
-            to   { opacity: 1; transform: none; }
-        }
-
         /* Sheen sweep across the gold CTA */
         .ed-btn-gold { position: relative; overflow: hidden; }
         .ed-btn-gold::after {
@@ -630,7 +636,6 @@
             .ed-hero .ed-cta-row,
             .ed-float,
             .ed-btn-gold::after { animation: none !important; }
-            .ed-shift-flow .ed-state, .ed-shift-flow .ed-shift-arr { opacity: 1 !important; animation: none !important; }
             .acc-on .ed-axis-body { transition: none !important; }
             .acc-on .ed-acc-chev svg { transition: none !important; }
         }
@@ -719,16 +724,39 @@
             </div>
         </section>
 
-        <!-- Shift -->
-        <section class="ed-shift">
-            <div class="ed-shift-inner">
-                <h2 class="ed-h2" data-reveal>שינוי אמיתי מתחיל בתפיסת התפקיד</h2>
-                <p class="ed-shift-sub" data-reveal>על מנת להוביל לשינוי אמיתי ומתמשך, נדרש מעבר אסטרטגי ויסודי בתפיסת התפקיד של המורה:</p>
-                <div class="ed-shift-flow" data-reveal>
-                    <span class="ed-state from">"עבודה והישרדות"</span>
-                    <span class="ed-shift-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg></span>
-                    <span class="ed-state to">"שליחות ומנהיגות אישית"</span>
+        <!-- Voices from the teachers' room -->
+        <section class="ed-quotes">
+            <div class="ed-quotes-inner">
+                <span class="ed-sec-tag" data-reveal>קולות מחדר המורים</span>
+                <h2 class="ed-h2" data-reveal>מכירים את המשפטים האלה?</h2>
+                <div class="ed-quotes-grid">
+                    <blockquote class="ed-quote" data-reveal="zoom" style="--rd:0ms">
+                        <span class="qmark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.7 6.5C7.2 7.6 5 10.3 5 14v3.5h5.5V12H7.9c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2zm8.5 0c-3.5 1.1-5.7 3.8-5.7 7.5v3.5H19V12h-2.6c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2z"/></svg></span>
+                        <p>אני נכנסת לכיתה עם חומר מעולה — ויוצאת מרגישה שניהלתי קרב, לא שיעור.</p>
+                        <footer class="who">מחנכת בחטיבת ביניים</footer>
+                    </blockquote>
+                    <blockquote class="ed-quote" data-reveal="zoom" style="--rd:90ms">
+                        <span class="qmark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.7 6.5C7.2 7.6 5 10.3 5 14v3.5h5.5V12H7.9c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2zm8.5 0c-3.5 1.1-5.7 3.8-5.7 7.5v3.5H19V12h-2.6c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2z"/></svg></span>
+                        <p>פעם הייתה בי אש. היום אני בעיקר סופר את הימים עד החופש הגדול.</p>
+                        <footer class="who">מורה בתיכון</footer>
+                    </blockquote>
+                    <blockquote class="ed-quote" data-reveal="zoom" style="--rd:180ms">
+                        <span class="qmark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.7 6.5C7.2 7.6 5 10.3 5 14v3.5h5.5V12H7.9c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2zm8.5 0c-3.5 1.1-5.7 3.8-5.7 7.5v3.5H19V12h-2.6c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2z"/></svg></span>
+                        <p>בין ההורים בוואטסאפ, הישיבות והדוחות — לא נשאר לי כוח לדבר שבשבילו באתי: ללמד.</p>
+                        <footer class="who">רכזת שכבה</footer>
+                    </blockquote>
+                    <blockquote class="ed-quote" data-reveal="zoom" style="--rd:270ms">
+                        <span class="qmark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.7 6.5C7.2 7.6 5 10.3 5 14v3.5h5.5V12H7.9c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2zm8.5 0c-3.5 1.1-5.7 3.8-5.7 7.5v3.5H19V12h-2.6c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2z"/></svg></span>
+                        <p>אני רואה מורים טובים עוזבים אחד אחרי השני, ושואלת את עצמי כמה זמן אני נשארת.</p>
+                        <footer class="who">מורה למתמטיקה</footer>
+                    </blockquote>
+                    <blockquote class="ed-quote ed-quote-wide" data-reveal="zoom" style="--rd:360ms">
+                        <span class="qmark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10.7 6.5C7.2 7.6 5 10.3 5 14v3.5h5.5V12H7.9c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2zm8.5 0c-3.5 1.1-5.7 3.8-5.7 7.5v3.5H19V12h-2.6c.2-2.3 1.5-3.7 3.4-4.3l-.6-1.2z"/></svg></span>
+                        <p>אני אוהב את התלמידים שלי. את עצמי בסוף היום — קצת פחות.</p>
+                        <footer class="who">מחנך בבית ספר יסודי</footer>
+                    </blockquote>
                 </div>
+                <p class="ed-quotes-bridge" data-reveal>המשפטים האלה לא נעלמים מעצמם. בדיוק בשבילם נבנתה התוכנית — כדי להפוך <strong>"עבודה והישרדות"</strong> ל<strong>"שליחות ומנהיגות אישית"</strong>.</p>
             </div>
         </section>
 
