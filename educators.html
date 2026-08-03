@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תוכניות הכשרה לצוותי חינוך — מנהיגות, חוסן ושינוי State | רימון - מרכז אימון למצוינות</title>
+    <meta name="description" content="תוכנית הכשרה לצוותי חינוך: הפיכת שחיקת מורים למנוע צמיחה — מנהיגות אישית, ניהול State רגשי ומיומנויות השפעה. לרשתות חינוך, בתי ספר ומכללות. בהנחיית צליל בר.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="רימון - מרכז אימון למצוינות">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:title" content="תוכניות הכשרה לצוותי חינוך | רימון">
+    <meta property="og:description" content="הפיכת שחיקת מורים למנוע צמיחה — מנהיגות, חוסן ומיומנויות השפעה לצוותי חינוך">
+    <meta property="og:image" content="https://rimoncoaching.com/og-image.png">
+    <meta property="og:url" content="https://rimoncoaching.com/educators.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ============================================================
+           צוותי חינוך — דף ייעודי
+           שפה: כחול-צפחה עמוק (לוח כיתה) · זהב · Rubik לכותרות
+           ============================================================ */
+        :root {
+            --ed-ink: #16324a;
+            --ed-ink-deep: #0e2233;
+            --ed-blue: #3f7cb8;
+            --ed-blue-soft: #eaf1f7;
+            --ed-gold: #c9a227;
+            --ed-gold-soft: #f7f1de;
+            --ed-paper: #f8fafb;
+            --ed-coral: #c05b4d;
+            --ed-teal: #35809a;
+        }
+
+        /* ===== Hero ===== */
+        .ed-hero {
+            position: relative;
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            padding: 180px 2rem 110px;
+            background:
+                radial-gradient(900px 500px at 12% -10%, rgba(63, 124, 184, 0.28), transparent 60%),
+                radial-gradient(700px 420px at 92% 112%, rgba(201, 162, 39, 0.16), transparent 60%),
+                linear-gradient(160deg, var(--ed-ink), #0f2334 55%, #132c40);
+            overflow: hidden;
+        }
+        .ed-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+            background-size: 46px 46px;
+            mask-image: radial-gradient(80% 80% at 50% 40%, #000 30%, transparent 100%);
+            -webkit-mask-image: radial-gradient(80% 80% at 50% 40%, #000 30%, transparent 100%);
+            pointer-events: none;
+        }
+        .ed-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1150px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .ed-hero-text { max-width: 700px; }
+        .ed-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: #f3d98a;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            margin-bottom: 1.4rem;
+        }
+        .ed-kicker::before {
+            content: '';
+            width: 42px;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, #f3d98a);
+        }
+        .ed-kicker svg { width: 16px; height: 16px; }
+        .ed-hero h1 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            line-height: 1.28;
+            margin-bottom: 1.3rem;
+        }
+        .ed-hero h1 .hl-small {
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1.1rem, 2vw, 1.45rem);
+            font-weight: 500;
+            margin-bottom: 0.7rem;
+        }
+        .ed-hero h1 .hl-big {
+            display: block;
+            color: #fff;
+            font-size: clamp(2rem, 4.4vw, 3.4rem);
+            font-weight: 700;
+        }
+        .ed-hero h1 .hl-big em { font-style: normal; color: #f3d98a; }
+        .ed-lead {
+            color: rgba(255, 255, 255, 0.88);
+            font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+            line-height: 1.85;
+            max-width: 600px;
+            margin-bottom: 2.3rem;
+        }
+        .ed-cta-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .ed-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.95rem 2.3rem;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+        .ed-btn-gold {
+            background: linear-gradient(135deg, #dcb63a, var(--ed-gold));
+            color: #14283c;
+            box-shadow: 0 10px 28px rgba(201, 162, 39, 0.35);
+        }
+        .ed-btn-gold:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(201, 162, 39, 0.45); }
+        .ed-btn-ghost {
+            border: 1.5px solid rgba(255, 255, 255, 0.6);
+            color: #fff;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(4px);
+        }
+        .ed-btn-ghost:hover { background: rgba(255, 255, 255, 0.16); transform: translateY(-3px); }
+        .ed-btn-ghost svg { width: 19px; height: 19px; fill: #25D366; }
+
+        /* ===== Trust strip ===== */
+        .ed-strip { background: var(--ed-ink-deep); padding: 1.35rem 2rem; }
+        .ed-strip-inner {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem 2.8rem;
+        }
+        .ed-strip span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.96rem;
+            font-weight: 500;
+        }
+        .ed-strip svg { width: 19px; height: 19px; color: #f3d98a; flex-shrink: 0; }
+
+        /* ===== Section helpers ===== */
+        .ed-sec-tag {
+            display: inline-block;
+            color: var(--ed-blue);
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            margin-bottom: 0.9rem;
+        }
+        .ed-h2 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            color: var(--ed-ink);
+            font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+            margin-bottom: 1.2rem;
+        }
+
+        /* ===== Challenge ===== */
+        .ed-challenge {
+            position: relative;
+            padding: 100px 2rem 80px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .ed-challenge-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+        .ed-challenge p {
+            color: var(--text-secondary);
+            font-size: 1.08rem;
+            line-height: 1.95;
+            margin-bottom: 1.1rem;
+        }
+        .ed-damage {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2.4rem auto 0;
+            max-width: 760px;
+            text-align: right;
+        }
+        .ed-damage div {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            background: var(--ed-blue-soft);
+            border: 1px solid rgba(63, 124, 184, 0.18);
+            border-radius: 14px;
+            padding: 1.1rem 1.3rem;
+            color: var(--ed-ink);
+            font-weight: 500;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .ed-damage div:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(22, 50, 74, 0.1); }
+        .ed-damage svg { width: 20px; height: 20px; color: var(--ed-coral); flex-shrink: 0; margin-top: 0.15rem; }
+
+        /* ===== Shift (transformation) ===== */
+        .ed-shift {
+            padding: 70px 2rem 90px;
+            background: #fff;
+            text-align: center;
+        }
+        .ed-shift-inner { max-width: 860px; margin: 0 auto; }
+        .ed-shift p.ed-shift-sub { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2.2rem; }
+        .ed-shift-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .ed-state {
+            border-radius: 60px;
+            padding: 1rem 2.2rem;
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+        }
+        .ed-state.from {
+            background: #eef1f4;
+            color: var(--text-muted);
+            border: 1.5px dashed #c9d2da;
+        }
+        .ed-state.to {
+            background: linear-gradient(135deg, #dcb63a, var(--ed-gold));
+            color: #14283c;
+            box-shadow: 0 14px 34px rgba(201, 162, 39, 0.35);
+        }
+        .ed-shift-arr { color: var(--ed-gold); display: flex; }
+        .ed-shift-arr svg { width: 34px; height: 34px; }
+
+        /* ===== Goals ===== */
+        .ed-goals { padding: 90px 2rem; background: var(--ed-paper); }
+        .ed-goals-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .ed-goals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.6rem;
+            text-align: right;
+        }
+        .ed-goal {
+            background: #fff;
+            border: 1px solid rgba(22, 50, 74, 0.08);
+            border-radius: 18px;
+            padding: 2rem 1.8rem;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .ed-goal:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(22, 50, 74, 0.12); }
+        .ed-goal .ic {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--ed-gold-soft);
+            color: var(--ed-gold);
+            margin-bottom: 1.1rem;
+            transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+        }
+        .ed-goal:hover .ic { transform: scale(1.12) rotate(-6deg); }
+        .ed-goal .ic svg { width: 27px; height: 27px; }
+        .ed-goal h3 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            color: var(--ed-ink);
+            font-size: 1.18rem;
+            margin-bottom: 0.6rem;
+        }
+        .ed-goal p { color: var(--text-secondary); font-size: 0.96rem; line-height: 1.8; margin: 0; }
+
+        /* ===== Axes showcase (dark) ===== */
+        .ed-axes {
+            position: relative;
+            padding: 100px 2rem;
+            background:
+                radial-gradient(900px 420px at 88% -5%, rgba(63, 124, 184, 0.2), transparent 60%),
+                radial-gradient(700px 400px at 6% 105%, rgba(201, 162, 39, 0.12), transparent 60%),
+                var(--ed-ink-deep);
+            overflow: hidden;
+        }
+        .ed-axes-inner { max-width: 1060px; margin: 0 auto; }
+        .ed-axes-head { text-align: center; margin-bottom: 3.4rem; }
+        .ed-axes-head .ed-sec-tag { color: #f3d98a; }
+        .ed-axes-head h2 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            color: #fff;
+            font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+            margin-bottom: 0.8rem;
+        }
+        .ed-axes-head p { color: rgba(255, 255, 255, 0.72); font-size: 1.05rem; }
+
+        .ed-axis {
+            position: relative;
+            background: var(--ed-paper);
+            border-radius: 22px;
+            margin-bottom: 2.2rem;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .ed-axis:hover { transform: translateY(-6px); box-shadow: 0 34px 70px rgba(0, 0, 0, 0.45); }
+        .ed-axis::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--ac), transparent 85%);
+        }
+        .ed-axis-num {
+            position: absolute;
+            top: 0.6rem;
+            left: 1.4rem;
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--ac);
+            opacity: 0.13;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .ed-axis-head {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            padding: 2.1rem 2.4rem 1.5rem;
+        }
+        .ed-axis-ic {
+            flex-shrink: 0;
+            width: 66px;
+            height: 66px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: color-mix(in srgb, var(--ac) 13%, #fff);
+            color: var(--ac);
+            transition: transform 0.4s cubic-bezier(.34, 1.56, .64, 1);
+        }
+        .ed-axis:hover .ed-axis-ic { transform: scale(1.1) rotate(-6deg); }
+        .ed-axis-ic svg { width: 32px; height: 32px; }
+        .ed-axis-head .tag {
+            display: inline-block;
+            color: var(--ac);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.2rem;
+        }
+        .ed-axis-head h3 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            color: var(--ed-ink);
+            font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+            margin: 0;
+        }
+        .ed-axis-body {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            border-top: 1px solid rgba(22, 50, 74, 0.08);
+        }
+        .ed-block { padding: 1.7rem 2.4rem 2rem; }
+        .ed-block:first-child { border-left: 1px solid rgba(22, 50, 74, 0.08); }
+        .ed-block h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--ed-ink);
+            font-size: 1.02rem;
+            margin-bottom: 0.7rem;
+        }
+        .ed-block h4 svg { width: 19px; height: 19px; color: var(--ac); flex-shrink: 0; }
+        .ed-block p { color: var(--text-secondary); font-size: 0.97rem; line-height: 1.85; margin: 0; }
+        .ed-block .ed-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: var(--ac);
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+        }
+        .ed-axis.a1 { --ac: #c9a227; }
+        .ed-axis.a2 { --ac: #c05b4d; }
+        .ed-axis.a3 { --ac: #35809a; }
+        .ed-acc-chev { display: none; }
+
+        /* ===== Work model ===== */
+        .ed-model { padding: 95px 2rem 80px; background: #fff; }
+        .ed-model-inner { max-width: 1060px; margin: 0 auto; text-align: center; }
+        .ed-model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.6rem;
+            text-align: right;
+        }
+        .ed-format {
+            position: relative;
+            background: var(--ed-paper);
+            border: 1px solid rgba(22, 50, 74, 0.08);
+            border-radius: 18px;
+            padding: 2rem 1.8rem;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .ed-format:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(22, 50, 74, 0.12); }
+        .ed-format .num {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ed-gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--ed-gold-soft);
+            margin-bottom: 0.9rem;
+        }
+        .ed-format h3 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            color: var(--ed-ink);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+        .ed-format p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.75; margin: 0; }
+        .ed-model-note {
+            background: linear-gradient(135deg, var(--ed-blue-soft), #fff);
+            border: 1px solid rgba(63, 124, 184, 0.2);
+            border-right: 4px solid var(--ed-blue);
+            border-radius: 14px;
+            padding: 1.4rem 1.8rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 2.4rem auto 0;
+            text-align: right;
+        }
+        .ed-model-note strong { color: var(--ed-ink); }
+
+        /* ===== CTA band ===== */
+        .ed-cta-band {
+            position: relative;
+            padding: 90px 2rem;
+            text-align: center;
+            background:
+                radial-gradient(700px 300px at 50% 120%, rgba(201, 162, 39, 0.22), transparent 65%),
+                linear-gradient(135deg, var(--ed-ink-deep), #1d4468);
+            overflow: hidden;
+        }
+        .ed-cta-band h2 {
+            font-family: 'Rubik', 'Heebo', sans-serif;
+            color: #fff;
+            font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+            margin-bottom: 0.9rem;
+        }
+        .ed-cta-band p { color: rgba(255, 255, 255, 0.82); font-size: 1.1rem; margin-bottom: 2.2rem; }
+
+        /* ===== Floating WhatsApp ===== */
+        .ed-float {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 90;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+        }
+        .ed-float svg { width: 30px; height: 30px; fill: #fff; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1000px) {
+            .ed-goals-grid, .ed-model-grid { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+            .ed-axis-body { grid-template-columns: 1fr; }
+            .ed-block:first-child { border-left: none; border-bottom: 1px solid rgba(22, 50, 74, 0.08); }
+        }
+        @media (max-width: 768px) {
+            .ed-hero { min-height: auto; padding: 150px 1.5rem 80px; }
+            .ed-hero-text { text-align: center; max-width: 100%; margin: 0 auto; }
+            .ed-kicker::before { display: none; }
+            .ed-lead { margin-left: auto; margin-right: auto; }
+            .ed-cta-row { justify-content: center; }
+            .ed-strip-inner { flex-direction: column; align-items: flex-start; gap: 0.7rem; max-width: 340px; }
+            .ed-challenge, .ed-goals, .ed-axes, .ed-model { padding-top: 70px; padding-bottom: 70px; }
+            .ed-damage { grid-template-columns: 1fr; }
+            .ed-shift-flow { flex-direction: column; gap: 0.9rem; }
+            .ed-shift-arr { transform: rotate(-90deg); }
+
+            /* מצב אקורדיון לצירים (מופעל ע"י JS במובייל) */
+            .acc-on .ed-axis { margin-bottom: 1rem; }
+            .acc-on .ed-axis-head {
+                gap: 0.9rem;
+                padding: 1.25rem 1.4rem;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .acc-on .ed-axis-head > div { min-width: 0; }
+            .acc-on .ed-axis-ic { width: 48px; height: 48px; border-radius: 14px; }
+            .acc-on .ed-axis-ic svg { width: 24px; height: 24px; }
+            .acc-on .ed-axis-head h3 { font-size: 1.08rem; }
+            .acc-on .ed-axis-num { display: none; }
+            .acc-on .ed-acc-chev {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-inline-start: auto;
+                flex-shrink: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: color-mix(in srgb, var(--ac) 12%, #fff);
+                color: var(--ac);
+            }
+            .acc-on .ed-acc-chev svg { width: 16px; height: 16px; transition: transform .35s ease; }
+            .acc-on .ed-axis.open .ed-acc-chev svg { transform: rotate(180deg); }
+            .acc-on .ed-axis-body {
+                overflow: hidden;
+                max-height: 0;
+                border-top: 1px solid transparent;
+                transition: max-height .45s cubic-bezier(.22,.61,.36,1);
+            }
+            .acc-on .ed-axis.open .ed-axis-body { border-top-color: rgba(22, 50, 74, 0.08); }
+            .ed-block { padding: 1.5rem 1.6rem 1.7rem; }
+        }
+
+        /* ===== Motion: scroll reveal ===== */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+            transition-delay: var(--rd, 0ms);
+        }
+        [data-reveal="right"] { transform: translateX(38px); }
+        [data-reveal="left"]  { transform: translateX(-38px); }
+        [data-reveal="zoom"]  { transform: scale(.93); }
+        [data-reveal].is-in   { opacity: 1; transform: none; }
+
+        /* Hero entrance sequence (on load) */
+        .ed-hero .ed-kicker,
+        .ed-hero h1 .hl-small,
+        .ed-hero h1 .hl-big,
+        .ed-hero .ed-lead,
+        .ed-hero .ed-cta-row { animation: edHeroIn .9s cubic-bezier(.22,.61,.36,1) both; }
+        .ed-hero .ed-kicker   { animation-delay: .08s; }
+        .ed-hero h1 .hl-small { animation-delay: .2s; }
+        .ed-hero h1 .hl-big   { animation-delay: .34s; }
+        .ed-hero .ed-lead     { animation-delay: .5s; }
+        .ed-hero .ed-cta-row  { animation-delay: .64s; }
+        @keyframes edHeroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+        /* Shift choreography: states pop in, arrow slides between */
+        .ed-shift-flow .ed-state, .ed-shift-flow .ed-shift-arr { opacity: 0; }
+        .ed-shift-flow .ed-state.from { --nd: 0s; }
+        .ed-shift-flow .ed-shift-arr  { --nd: 0.45s; }
+        .ed-shift-flow .ed-state.to   { --nd: 0.6s; }
+        .ed-shift-flow.is-in .ed-state {
+            animation: edPop .6s cubic-bezier(.34,1.56,.64,1) forwards;
+            animation-delay: var(--nd);
+        }
+        .ed-shift-flow.is-in .ed-shift-arr {
+            animation: edArr .45s cubic-bezier(.22,.61,.36,1) forwards;
+            animation-delay: var(--nd);
+        }
+        @keyframes edPop {
+            0%   { opacity: 0; transform: scale(.4); }
+            60%  { opacity: 1; }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes edArr {
+            from { opacity: 0; transform: translateX(16px); }
+            to   { opacity: 1; transform: none; }
+        }
+
+        /* Sheen sweep across the gold CTA */
+        .ed-btn-gold { position: relative; overflow: hidden; }
+        .ed-btn-gold::after {
+            content: '';
+            position: absolute; top: 0; left: -60%;
+            width: 40%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+            transform: skewX(-20deg);
+            animation: edSheen 5s ease-in-out infinite;
+        }
+        @keyframes edSheen { 0%, 72% { left: -60%; } 100% { left: 130%; } }
+
+        /* Breathing ring on the floating WhatsApp button */
+        .ed-float { animation: edPulse 2.8s ease-in-out infinite; }
+        @keyframes edPulse {
+            0%, 100% { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5); }
+            50%      { box-shadow: 0 6px 20px rgba(37,211,102,0.45), 0 0 0 15px rgba(37,211,102,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            [data-reveal], [data-reveal].is-in {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .ed-hero .ed-kicker,
+            .ed-hero h1 .hl-small,
+            .ed-hero h1 .hl-big,
+            .ed-hero .ed-lead,
+            .ed-hero .ed-cta-row,
+            .ed-float,
+            .ed-btn-gold::after { animation: none !important; }
+            .ed-shift-flow .ed-state, .ed-shift-flow .ed-shift-arr { opacity: 1 !important; animation: none !important; }
+            .acc-on .ed-axis-body { transition: none !important; }
+            .acc-on .ed-acc-chev svg { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">דלג לתוכן הראשי</a>
+    <header>
+        <nav aria-label="ניווט ראשי">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+                </a>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">בית</a></li>
+                <li><a href="index.html#about">אודות</a></li>
+                <li><a href="index.html#services">שירותים</a></li>
+                <li><a href="workshops.html" class="active">סדנאות</a></li>
+                <li><a href="workshops-art.html">סדנאות אמנות</a></li>
+                <li><a href="articles.html">מאמרים</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
+                <li><a href="#contact">צרו קשר</a></li>
+            </ul>
+            <a href="https://wa.me/972522298022" target="_blank" class="header-whatsapp" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#25D366">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            <button class="menu-toggle" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <div class="menu-overlay"></div>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="ed-hero">
+            <div class="ed-hero-inner">
+                <div class="ed-hero-text">
+                    <span class="ed-kicker">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M5 10.5V15c0 1.5 3 3.5 7 3.5s7-2 7-3.5v-4.5"/><path d="M22 8v6"/></svg>
+                        לצוותי חינוך · מנהיגות · חוסן
+                    </span>
+                    <h1>
+                        <span class="hl-small">האתגר האמיתי בחינוך אינו רק פדגוגיה — הוא ההון האנושי</span>
+                        <span class="hl-big">מנהיגות, חוסן <em>ושינוי State</em> לצוותי חינוך</span>
+                    </h1>
+                    <p class="ed-lead">תוכנית הכשרה חווייתית למורים ולצוותי ניהול — שהופכת שחיקה למנוע צמיחה, ומחזירה את תחושת השליחות לחדר המורים ואל הכיתות.</p>
+                    <div class="ed-cta-row">
+                        <a href="#contact" class="ed-btn ed-btn-gold">לתיאום פגישת היכרות</a>
+                        <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="ed-btn ed-btn-ghost">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            דברו איתי בוואטסאפ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust strip -->
+        <div class="ed-strip">
+            <div class="ed-strip-inner" data-reveal>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg>תוכנית מותאמת לכל רשת ובית ספר</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>קואצ'ינג, NLP ופסיכולוגיה חיובית</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>בשילוב מחקרי Harvard Business Review</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M8.8 13.5L7 21l5-2.4L17 21l-1.8-7.5"/></svg>למעלה משני עשורים של ניסיון</span>
+            </div>
+        </div>
+
+        <!-- Challenge -->
+        <section class="ed-challenge">
+            <div class="ed-challenge-inner">
+                <span class="ed-sec-tag" data-reveal>הרקע והאתגר</span>
+                <h2 class="ed-h2" data-reveal>שחיקת מורים היא חפרפרת תת-קרקעית</h2>
+                <p data-reveal>בעולם החינוך המודרני, האתגר הניהולי המרכזי אינו טמון רק בפדגוגיה, אלא בשמירה על ההון האנושי של הארגון. שחיקת מורים היא תופעה הולכת ומתרחבת — ובמידה שאינה מזוהה ומטופלת, היא פועלת בשקט מתחת לפני השטח:</p>
+                <div class="ed-damage">
+                    <div data-reveal style="--rd:0ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/></svg>מכרסמת במוטיבציה של הצוות — בשקט ולאורך זמן</div>
+                    <div data-reveal style="--rd:80ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10.5c.8-1 2.2-1.7 4-1.7s3.2.7 4 1.7"/><circle cx="12" cy="12" r="9"/><path d="M9 15.5c.8 1 1.8 1.5 3 1.5s2.2-.5 3-1.5"/><path d="M9 8.5h.01M15 8.5h.01"/></svg>משפיעה לרעה על האקלים בחדר המורים</div>
+                    <div data-reveal style="--rd:160ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>מעודדת עזיבה של מורים טובים</div>
+                    <div data-reveal style="--rd:240ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H4a1 1 0 0 1-1-1V3"/><path d="M20 8l-5.5 5.5-3-3L7 15"/></svg>מחלחלת אל הכיתות ואל הישגי התלמידים</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shift -->
+        <section class="ed-shift">
+            <div class="ed-shift-inner">
+                <h2 class="ed-h2" data-reveal>שינוי אמיתי מתחיל בתפיסת התפקיד</h2>
+                <p class="ed-shift-sub" data-reveal>על מנת להוביל לשינוי אמיתי ומתמשך, נדרש מעבר אסטרטגי ויסודי בתפיסת התפקיד של המורה:</p>
+                <div class="ed-shift-flow" data-reveal>
+                    <span class="ed-state from">"עבודה והישרדות"</span>
+                    <span class="ed-shift-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg></span>
+                    <span class="ed-state to">"שליחות ומנהיגות אישית"</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals -->
+        <section class="ed-goals">
+            <div class="ed-goals-inner">
+                <span class="ed-sec-tag" data-reveal>מטרות התוכנית</span>
+                <h2 class="ed-h2" data-reveal>שלוש מטרות, שינוי אחד עמוק</h2>
+                <div class="ed-goals-grid">
+                    <div class="ed-goal" data-reveal style="--rd:0ms">
+                        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v3l2 2"/></svg></span>
+                        <h3>חשיפת השחיקה הסמויה</h3>
+                        <p>איתור מוקדי השחיקה בצוות והפיכתם למנוע לצמיחה — פיתוח חוסן ומנהיגות על בסיס מודלים מנהיגותיים מובילים.</p>
+                    </div>
+                    <div class="ed-goal" data-reveal style="--rd:110ms">
+                        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-6 3.5 12 2.5-6H21"/></svg></span>
+                        <h3>ניהול ה-State הרגשי</h3>
+                        <p>כלים מעשיים מעולמות הקואצ'ינג, ה-NLP, הפסיכולוגיה החיובית וחוכמת היהדות — המאפשרים למורה לנהל את מצבו הרגשי בזמן אמת, גם תחת עומס.</p>
+                    </div>
+                    <div class="ed-goal" data-reveal style="--rd:220ms">
+                        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l14-6v14L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+                        <h3>שדרוג מיומנויות ההשפעה</h3>
+                        <p>שיפור דרמטי בעמידה מול קהל, ניהול הקשב בכיתה, טיפול בהתנגדויות ותקשורת מיטיבה — בין חברי הצוות, עם התלמידים ועם ההורים.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Axes showcase -->
+        <section class="ed-axes">
+            <div class="ed-axes-inner">
+                <div class="ed-axes-head">
+                    <span class="ed-sec-tag" data-reveal>צירי התוכן</span>
+                    <h2 data-reveal>שלושה צירים, תוכנית אחת</h2>
+                    <p data-reveal>כל ציר משלב תכנים מעשיים עם אימפקט מדיד על חדר המורים והכיתה</p>
+                </div>
+
+                <article class="ed-axis a1" data-reveal>
+                    <span class="ed-axis-num">01</span>
+                    <div class="ed-axis-head">
+                        <span class="ed-axis-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2 5.2-5.2 2 2-5.2 5.2-2z"/></svg></span>
+                        <div>
+                            <span class="tag">ציר א'</span>
+                            <h3>מנהיגות ושינוי State מבוסס ערכים</h3>
+                        </div>
+                        <span class="ed-acc-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </div>
+                    <div class="ed-axis-body">
+                        <div class="ed-block">
+                            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>התכנים</h4>
+                            <p>חיבור מחדש לחזון המקצועי, זיהוי עוגני שחיקה אישיים וארגוניים, וטכניקות מעולמות הטיפול וההתפתחות האישית להתבוננות פנימית ולוויסות רגשי תחת לחץ — בשילוב מחקרים עדכניים מתוך Harvard Business Review על פיתוח מנהיגות אישית, הנעה עצמית וניהול אנרגיה ארגונית במצבי שחיקה.</p>
+                        </div>
+                        <div class="ed-block">
+                            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H4a1 1 0 0 1-1-1V3"/><path d="M7 14l4-4 3 3 6-6"/><path d="M16 7h4v4"/></svg>האימפקט</h4>
+                            <p>מעבר ממצב הישרדותי לתחושת שליחות ממוקדת. פיתוח חוסן פנימי אצל המורה — שמשפיע באופן ישיר על האקלים הבית-ספרי.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ed-axis a2" data-reveal>
+                    <span class="ed-axis-num">02</span>
+                    <div class="ed-axis-head">
+                        <span class="ed-axis-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3.5"/><path d="M8.5 21.5h7"/></svg></span>
+                        <div>
+                            <span class="tag">ציר ב'</span>
+                            <h3>הוראה כפרפורמנס: סטוריטלינג ואמנות הנאום</h3>
+                        </div>
+                        <span class="ed-acc-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </div>
+                    <div class="ed-axis-body">
+                        <div class="ed-block">
+                            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>התכנים</h4>
+                            <p>טכניקות מתקדמות לניהול והחזקת קשב בעידן הדיגיטלי, נוכחות כריזמטית במרחב הכיתתי, אומנות הסטוריטלינג ושימוש אפקטיבי בקול ובשפת גוף מנהיגותית — בהשענה על מחקרי HBR בתחום ה-Executive Presence ומיומנויות ההשפעה של מנהיגים בכירים.</p>
+                        </div>
+                        <div class="ed-block">
+                            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H4a1 1 0 0 1-1-1V3"/><path d="M7 14l4-4 3 3 6-6"/><path d="M16 7h4v4"/></svg>האימפקט</h4>
+                            <p>יצירת עניין וקשב בקרב התלמידים, צמצום בעיות משמעת באופן פסיבי, הגברת מעורבות התלמידים בלמידה וחיזוק הסמכות המקצועית של המורה.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ed-axis a3" data-reveal>
+                    <span class="ed-axis-num">03</span>
+                    <div class="ed-axis-head">
+                        <span class="ed-axis-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01"/><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+                        <div>
+                            <span class="tag">ציר ג'</span>
+                            <h3>מיומנויות לתקשורת איכותית, מצמיחה ומאפשרת</h3>
+                        </div>
+                        <span class="ed-acc-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </div>
+                    <div class="ed-axis-body">
+                        <div class="ed-block">
+                            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>התכנים</h4>
+                            <p>מיפוי וזיהוי סגנונות תקשורת שונים בכיתה ובצוות, מודלים ליצירת כימיה תת-מודעת מהירה, וכלים להובלת שיח מניע לפעולה.</p>
+                            <a class="ed-link" href="workshop-communication-styles.html">מבוסס גם על סדנת סגנונות התקשורת — לעמוד הסדנה ←</a>
+                        </div>
+                        <div class="ed-block">
+                            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H4a1 1 0 0 1-1-1V3"/><path d="M7 14l4-4 3 3 6-6"/><path d="M16 7h4v4"/></svg>האימפקט</h4>
+                            <p>שפה ארגונית אחידה ומקדמת, מניעת מאבקי כוח, ויכולת לפתור קונפליקטים מול צוות, תלמידים והורים — בצורה שקטה ומקצועית.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Work model -->
+        <section class="ed-model">
+            <div class="ed-model-inner">
+                <span class="ed-sec-tag" data-reveal>מודל העבודה</span>
+                <h2 class="ed-h2" data-reveal>איך זה יכול להיראות אצלכם</h2>
+                <div class="ed-model-grid">
+                    <div class="ed-format" data-reveal style="--rd:0ms">
+                        <span class="num">1</span>
+                        <h3>סדרת סדנאות עומק</h3>
+                        <p>מפגשים אינטנסיביים וחווייתיים לצוות החינוכי כולו — ממוקדים בצירי התוכן שנבחרו יחד.</p>
+                    </div>
+                    <div class="ed-format" data-reveal style="--rd:110ms">
+                        <span class="num">2</span>
+                        <h3>ליווי ממוקד לצוותי ניהול</h3>
+                        <p>עבודה קרובה עם הנהלת בית הספר או הרשת — חיזוק המנהיגות שמובילה את השינוי מבפנים.</p>
+                    </div>
+                    <div class="ed-format" data-reveal style="--rd:220ms">
+                        <span class="num">3</span>
+                        <h3>קורס הכשרה מקיף</h3>
+                        <p>תהליך עומק רב-מפגשי הפרוס על פני תקופה — להטמעה יסודית של הכלים בשגרת בית הספר.</p>
+                    </div>
+                </div>
+                <p class="ed-model-note" data-reveal>התוכנית <strong>מותאמת אישית לצורכי הרשת או בית הספר</strong>. מתווה מדויק, היקף שעות ותמחור יגובשו יחד — בהמשך לפגישת היכרות ואיפיון משותפת.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="ed-cta-band">
+            <h2 data-reveal>ההון האנושי הוא הנכס החשוב ביותר של בית הספר</h2>
+            <p data-reveal>נתאם פגישת היכרות קצרה ונבנה יחד תוכנית מותאמת לצוות שלכם</p>
+            <a href="#contact" class="ed-btn ed-btn-gold" data-reveal>לתיאום פגישת היכרות</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title fade-in">בואו נדבר</h2>
+            <p class="section-subtitle fade-in">השאירו פרטים ואחזור אליכם תוך 24 שעות</p>
+
+            <form class="contact-form fade-in">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">שם מלא</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">אימייל</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder=" ">
+                    <label for="phone">טלפון</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
+                    <label for="message">ספרו לי במה אוכל לעזור...</label>
+                </div>
+                <button type="submit" class="btn">שליחה</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Rimon Logo.png" alt="רימון - מרכז אימון למצוינות">
+            </div>
+            <div class="footer-links">
+                <a href="index.html#home">בית</a>
+                <a href="index.html#about">אודות</a>
+                <a href="index.html#services">שירותים</a>
+                <a href="workshops.html">סדנאות</a>
+                <a href="workshops-art.html">סדנאות אמנות</a>
+                <a href="articles.html">מאמרים</a>
+                <a href="gallery.html">גלריה</a>
+                <a href="#contact">צרו קשר</a>
+            </div>
+            <div class="footer-links" style="margin-top:0.5rem;"><a href="privacy.html">מדיניות פרטיות</a><a href="terms.html">תקנון ותנאי שימוש</a><a href="accessibility.html">הצהרת נגישות</a></div>
+            <p class="copyright">© 2026 רימון - מרכז אימון למצוינות | כל הזכויות שמורות</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/972522298022" target="_blank" rel="noopener" class="ed-float" aria-label="שיחת וואטסאפ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+    <!-- Mobile accordion for axis cards -->
+    <script>
+    (function () {
+        var mq = window.matchMedia('(max-width: 768px)');
+        var section = document.querySelector('.ed-axes');
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.ed-axis'));
+        if (!section || !cards.length) return;
+
+        function head(c) { return c.querySelector('.ed-axis-head'); }
+        function body(c) { return c.querySelector('.ed-axis-body'); }
+
+        function setup() {
+            if (mq.matches) {
+                section.classList.add('acc-on');
+                cards.forEach(function (c) {
+                    var h = head(c);
+                    h.setAttribute('role', 'button');
+                    h.setAttribute('tabindex', '0');
+                    h.setAttribute('aria-expanded', c.classList.contains('open') ? 'true' : 'false');
+                });
+            } else {
+                section.classList.remove('acc-on');
+                cards.forEach(function (c) {
+                    c.classList.remove('open');
+                    body(c).style.maxHeight = '';
+                    var h = head(c);
+                    h.removeAttribute('role');
+                    h.removeAttribute('tabindex');
+                    h.removeAttribute('aria-expanded');
+                });
+            }
+        }
+
+        /* מצמיד את הכרטיס שנלחץ לאותו מקום במסך בזמן שהקודם מתקפל */
+        function anchor(el) {
+            var top0 = el.getBoundingClientRect().top;
+            var t0 = performance.now();
+            (function step() {
+                var dy = el.getBoundingClientRect().top - top0;
+                if (dy) window.scrollBy(0, dy);
+                if (performance.now() - t0 < 520) requestAnimationFrame(step);
+            })();
+        }
+
+        function close(c) {
+            var b = body(c);
+            if (b.style.maxHeight === 'none') { b.style.maxHeight = b.scrollHeight + 'px'; void b.offsetHeight; }
+            b.style.maxHeight = b.scrollHeight + 'px';
+            void b.offsetHeight;
+            b.style.maxHeight = '0px';
+            c.classList.remove('open');
+            head(c).setAttribute('aria-expanded', 'false');
+        }
+        function open(c) {
+            var b = body(c);
+            b.style.maxHeight = b.scrollHeight + 'px';
+            c.classList.add('open');
+            head(c).setAttribute('aria-expanded', 'true');
+            b.addEventListener('transitionend', function fn(e) {
+                if (e.propertyName === 'max-height') {
+                    if (c.classList.contains('open')) b.style.maxHeight = 'none';
+                    b.removeEventListener('transitionend', fn);
+                }
+            });
+        }
+        function toggle(c) {
+            if (!mq.matches) return;
+            var h = head(c);
+            if (c.classList.contains('open')) {
+                close(c);
+                anchor(h);
+                return;
+            }
+            cards.forEach(function (x) {
+                if (x !== c && x.classList.contains('open')) close(x);
+            });
+            open(c);
+            anchor(h);
+        }
+
+        cards.forEach(function (c) {
+            var h = head(c);
+            h.addEventListener('click', function (e) {
+                if (e.target.closest('a')) return;
+                toggle(c);
+            });
+            h.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(c); }
+            });
+        });
+        if (mq.addEventListener) { mq.addEventListener('change', setup); } else { mq.addListener(setup); }
+        setup();
+    })();
+    </script>
+    <!-- Scroll reveal -->
+    <script>
+    (function () {
+        var els = document.querySelectorAll('[data-reveal]');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(els, function (el) { el.classList.add('is-in'); });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-in');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+    })();
+    </script>
+    <!-- Accessibility Widget - EqualWeb -->
+    <script>
+    window.interdeal = {
+        get sitekey (){ return "2d6687b74564a1ab0ebbe18e4394728a"} ,
+        get domains(){
+            return {
+                "js": "https://cdn.equalweb.com/",
+                "acc": "https://access.equalweb.com/"
+            }
+        },
+        "Position": "left",
+        "Menulang": "HE",
+        "draggable": true,
+        "btnStyle": {
+            "vPosition": ["80%","80%"],
+            "margin": ["0","0"],
+            "scale": ["0.5","0.5"],
+            "color": {"main": "#1876c9","second": "#ffffff"},
+            "icon": {"outline": false,"outlineColor": "#ffffff","type": 1,"shape": "circle"}
+        }
+    };
+    (function(doc, head, body){
+        var coreCall         = doc.createElement('script');
+        coreCall.src         = interdeal.domains.js + 'core/5.2.8/accessibility.js';
+        coreCall.defer       = true;
+        coreCall.integrity   = 'sha512-ka0NgF7zDksnhoZ5ZCKlm+t0F7KTih5lCfXwuzQDnrwu/EdKZSsJotoJvQPd0cuVmV63s0q2cgoUjeki688PuQ==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+    </script>
+</body>
+</html>

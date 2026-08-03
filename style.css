@@ -2404,9 +2404,9 @@ body.lightbox-open header {
 /* ===== Audience links (workshops page top) ===== */
 .audience-links {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 1.25rem;
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 0 auto 4.5rem;
 }
 
