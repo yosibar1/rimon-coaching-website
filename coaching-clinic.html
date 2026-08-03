@@ -62,9 +62,9 @@
         /* Hero — full-bleed banner */
         .lp-hero {
             position: relative;
-            /* גובה תואם ליחס התמונה (2560/1300 = 50.8vw) — התמונה נכנסת בשלמותה בלי חיתוך; תקרת 86vh למסכים רחבים */
-            background: #e9edf0 url('Gallery/clinic-hero-desktop.jpg') center center / cover no-repeat;
-            height: min(50.8vw, 86vh);
+            /* התמונה נכנסת בשלמותה (contain), מעוגנת לשמאל — הרווח בצד הבהיר מתמזג עם הרקע */
+            background: #e9edf0 url('Gallery/clinic-hero-desktop.jpg') left center / contain no-repeat;
+            height: min(46vw, 78vh);
             min-height: 440px;
             display: flex;
             align-items: center;
