@@ -740,6 +740,17 @@ header.scrolled .logo img {
     box-shadow: var(--shadow-lg);
 }
 
+/* עיגול נקי — בלי מסגרת מלבנית (תמונת האודות העגולה) */
+.image-frame.round::before,
+.image-frame.round::after {
+    display: none;
+}
+
+.image-frame.round img {
+    border-radius: 50%;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
+}
+
 .about-content {
     flex: 1;
 }
