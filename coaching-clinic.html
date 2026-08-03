@@ -62,19 +62,34 @@
         /* Hero — full-bleed banner */
         .lp-hero {
             position: relative;
-            /* התמונה נכנסת בשלמותה (contain), מעוגנת לשמאל — הרווח בצד הבהיר מתמזג עם הרקע */
-            background: #e9edf0 url('Gallery/clinic-hero-desktop.jpg') left center / contain no-repeat;
-            height: min(46vw, 78vh);
+            /* קומפוזיציה נעולה: התמונה חיה בבלוק ממורכז עד 1456px (::after) — במסכים רחבים היא לא נמתחת, והקצוות דוהים לרקע */
+            background: #e9edf0;
+            height: min(50.8vw, 740px);
+            overflow: hidden;
             min-height: 440px;
             display: flex;
             align-items: center;
             padding: 120px 2rem 44px;
             overflow: hidden;
         }
+        .lp-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(100%, 1456px);
+            background: url('Gallery/clinic-hero-desktop.jpg') center center / contain no-repeat;
+            z-index: 0;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+        }
         .lp-hero::before {
             content: '';
             position: absolute;
             inset: 0;
+            z-index: 1;
             /* lighten the right side (RTL text zone) so dark text stays legible */
             background: linear-gradient(to left,
                 rgba(255,255,255,0.95) 0%,
@@ -84,6 +99,7 @@
         }
         .lp-hero-inner {
             position: relative;
+            z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
@@ -448,6 +464,7 @@
                 padding: 0 0 46px;
                 background: linear-gradient(165deg, var(--cream) 0%, var(--primary-light) 100%);
             }
+            .lp-hero::after { display: none; }
             .lp-hero::before {
                 content: '';
                 display: block;
