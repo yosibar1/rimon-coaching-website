@@ -772,7 +772,7 @@ header.scrolled .logo img {
 
 .image-frame.round img {
     display: block;
-    max-width: 320px;
+    max-width: 250px;
     border-radius: 50%;
     border: 5px solid var(--background);
     box-shadow: none;
