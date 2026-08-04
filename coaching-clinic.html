@@ -455,6 +455,25 @@
         .lp-float:hover { transform: scale(1.08); }
         .lp-float svg { width: 32px; height: 32px; fill: #fff; }
 
+        @media (min-width: 901px) {
+            /* דסקטופ: "הגיע הזמן לעשות את השינוי" כמשפט אחד, צבע אחיד כהה שיושב על האפור */
+            .lp-hero-text h1 .hl-small,
+            .lp-hero-text h1 .hl-big {
+                display: inline;
+                font-size: clamp(2.3rem, 3.5vw, 3.1rem);
+                font-weight: 700;
+                color: var(--text-color);
+                letter-spacing: -0.01em;
+                animation-delay: .18s;
+            }
+            .lp-hero-text h1 .hl-sub {
+                font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+                font-weight: 600;
+                color: var(--text-secondary);
+                margin-top: 0.9rem;
+            }
+        }
+
         @media (max-width: 900px) {
             /* stack: clean photo band on top, text below on brand background */
             .lp-hero {
