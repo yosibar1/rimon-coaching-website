@@ -385,6 +385,73 @@
         .lp-cta-band .lp-btn-white { background: #fff; color: var(--primary-dark); }
         .lp-cta-band .lp-btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
 
+        /* FAQ */
+        .lp-faq { padding: 80px 2rem; background: var(--background-alt); }
+        .lp-faq-inner { max-width: 760px; margin: 0 auto; }
+        .lp-faq h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            color: var(--text-color);
+            margin-bottom: 0.6rem;
+        }
+        .lp-faq .lp-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.08rem;
+            margin: 0 auto 2.6rem;
+        }
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            margin-bottom: 0.9rem;
+            overflow: hidden;
+            transition: box-shadow .25s ease, border-color .25s ease;
+        }
+        .faq-item.open { border-color: rgba(201, 162, 39, 0.45); box-shadow: var(--shadow-md); }
+        .faq-q {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.15rem 1.4rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-align: right;
+        }
+        .faq-q .chev {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            transition: transform .35s ease, background .25s ease, color .25s ease;
+        }
+        .faq-q .chev svg { width: 15px; height: 15px; }
+        .faq-item.open .faq-q .chev { transform: rotate(180deg); background: var(--primary-color); color: #fff; }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s cubic-bezier(.22,.61,.36,1);
+        }
+        .faq-a p {
+            padding: 0 1.4rem 1.3rem;
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            font-size: 0.98rem;
+        }
+
         /* Lead form */
         .lp-form-sec { padding: 80px 2rem; background: var(--background-alt); }
         .lp-form-wrap { max-width: 560px; margin: 0 auto; }
@@ -592,6 +659,8 @@
             .lp-float,
             .lp-about-img img,
             .lp-btn-primary::after { animation: none !important; }
+            .faq-a { transition: none !important; }
+            .faq-q .chev { transition: none !important; }
         }
     </style>
 </head>
@@ -778,6 +847,62 @@
             </div>
         </section>
 
+        <!-- FAQ -->
+        <section class="lp-faq">
+            <div class="lp-faq-inner">
+                <h2 data-reveal>שאלות שכולם שואלים</h2>
+                <p class="lp-sub" data-reveal>ואם נשארה שאלה — שיחת ההיכרות היא בדיוק המקום לשאול</p>
+
+                <div class="faq-item" data-reveal style="--rd:0ms">
+                    <button type="button" class="faq-q" aria-expanded="false">
+                        במה אימון אישי שונה מטיפול פסיכולוגי?
+                        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>אימון ממוקד בהווה ובעתיד: מגדירים יחד יעדים, מאתרים את מה שעוצר אתכם ובונים כלים מעשיים להתקדמות — בקצב שלכם. זהו תהליך של צמיחה והתפתחות, לא טיפול נפשי, והוא אינו מחליף ליווי טיפולי במקרים שבהם יש בו צורך.</p></div>
+                </div>
+
+                <div class="faq-item" data-reveal style="--rd:70ms">
+                    <button type="button" class="faq-q" aria-expanded="false">
+                        כמה זמן נמשך תהליך אימון?
+                        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>התהליך קצר וממוקד מטרה — לא נמשך על פני שנים. היקף המפגשים והקצב נקבעים יחד כבר בתחילת הדרך, בהתאם ליעדים שלכם, כך שיודעים בדיוק לאן הולכים.</p></div>
+                </div>
+
+                <div class="faq-item" data-reveal style="--rd:140ms">
+                    <button type="button" class="faq-q" aria-expanded="false">
+                        איפה מתקיימים המפגשים?
+                        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>בקליניקה — מרחב שקט, פרטי ונעים — או בשיחת זום, לפי מה שנוח לכם. אפשר גם לשלב בין השניים לאורך התהליך.</p></div>
+                </div>
+
+                <div class="faq-item" data-reveal style="--rd:210ms">
+                    <button type="button" class="faq-q" aria-expanded="false">
+                        מה קורה בשיחת ההיכרות ללא העלות?
+                        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>זו שיחת טלפון קצרה שבה נכיר, תספרו מה מעסיק אתכם ונבדוק יחד אם התהליך מתאים — עוד לפני הגעה לקליניקה או פגישת זום. בלי לחץ ובלי התחייבות.</p></div>
+                </div>
+
+                <div class="faq-item" data-reveal style="--rd:280ms">
+                    <button type="button" class="faq-q" aria-expanded="false">
+                        איך אדע שהתהליך מתאים לי?
+                        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>אם יש תחושת תקיעות, צומת דרכים, שחיקה — או רצון לשינוי שכבר מדברים עליו זמן רב — כנראה שיש עם מה לעבוד. בשיחת ההיכרות נבדוק את זה יחד ובכנות; אם אין התאמה, אגיד בפתיחות.</p></div>
+                </div>
+
+                <div class="faq-item" data-reveal style="--rd:350ms">
+                    <button type="button" class="faq-q" aria-expanded="false">
+                        האם המפגשים דיסקרטיים?
+                        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+                    </button>
+                    <div class="faq-a"><p>לחלוטין. התהליך אישי ופרטי, וכל מה שעולה בו נשאר בינינו. גם הפרטים שאתם משאירים בטופס נשמרים אצלי בלבד ולא מועברים לאף גורם.</p></div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA band -->
         <section class="lp-cta-band">
             <h2 data-reveal>הצעד הראשון קל מכפי שנדמה לך</h2>
@@ -830,6 +955,51 @@
     </a>
 
     <script src="script.js"></script>
+    <!-- FAQ accordion -->
+    <script>
+    (function () {
+        var items = Array.prototype.slice.call(document.querySelectorAll('.faq-item'));
+        if (!items.length) return;
+        function close(item) {
+            var a = item.querySelector('.faq-a');
+            a.style.maxHeight = a.scrollHeight + 'px';
+            void a.offsetHeight;
+            a.style.maxHeight = '0px';
+            item.classList.remove('open');
+            item.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        }
+        function open(item) {
+            var a = item.querySelector('.faq-a');
+            a.style.maxHeight = a.scrollHeight + 'px';
+            item.classList.add('open');
+            item.querySelector('.faq-q').setAttribute('aria-expanded', 'true');
+            a.addEventListener('transitionend', function fn(e) {
+                if (e.propertyName === 'max-height') {
+                    if (item.classList.contains('open')) a.style.maxHeight = 'none';
+                    a.removeEventListener('transitionend', fn);
+                }
+            });
+        }
+        items.forEach(function (item) {
+            item.querySelector('.faq-q').addEventListener('click', function () {
+                if (item.classList.contains('open')) {
+                    var a = item.querySelector('.faq-a');
+                    if (a.style.maxHeight === 'none') { a.style.maxHeight = a.scrollHeight + 'px'; void a.offsetHeight; }
+                    close(item);
+                    return;
+                }
+                items.forEach(function (x) {
+                    if (x !== item && x.classList.contains('open')) {
+                        var xa = x.querySelector('.faq-a');
+                        if (xa.style.maxHeight === 'none') { xa.style.maxHeight = xa.scrollHeight + 'px'; void xa.offsetHeight; }
+                        close(x);
+                    }
+                });
+                open(item);
+            });
+        });
+    })();
+    </script>
     <!-- Scroll reveal -->
     <script>
     (function () {
