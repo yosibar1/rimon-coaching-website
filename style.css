@@ -740,15 +740,46 @@ header.scrolled .logo img {
     box-shadow: var(--shadow-lg);
 }
 
-/* עיגול נקי — בלי מסגרת מלבנית (תמונת האודות העגולה) */
-.image-frame.round::before,
-.image-frame.round::after {
+/* עיגול עם מסגרת בצבעי האתר (תמונת האודות העגולה) */
+.image-frame.round {
+    padding: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--accent-color) 60%, var(--gold));
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
+}
+
+.image-frame.round::before {
     display: none;
 }
 
-.image-frame.round img {
+.image-frame.round::after {
+    display: block;
+    position: absolute;
+    inset: -16px;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: 2px dashed rgba(201, 162, 39, 0.55);
     border-radius: 50%;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
+    z-index: 0;
+    animation: roundFrameSpin 40s linear infinite;
+}
+
+@keyframes roundFrameSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.image-frame.round img {
+    display: block;
+    max-width: 320px;
+    border-radius: 50%;
+    border: 5px solid var(--background);
+    box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .image-frame.round::after { animation: none; }
 }
 
 .about-content {
