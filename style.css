@@ -694,13 +694,13 @@ header.scrolled .logo img {
 .about-wrapper {
     display: flex;
     align-items: center;
-    gap: 6rem;
-    max-width: 1200px;
+    gap: 4rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .about-image {
-    flex: 1;
+    flex: 0 0 auto;
 }
 
 .image-frame {
