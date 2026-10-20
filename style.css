@@ -2517,3 +2517,73 @@ body.lightbox-open header {
         gap: 1rem;
     }
 }
+
+/* Booking button (header) — links to the online calendar */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1.15rem;
+    background: var(--gold);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(201, 162, 39, 0.3);
+    transition: var(--transition-base);
+}
+
+.header-book:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(201, 162, 39, 0.4);
+}
+
+.header-book:focus-visible {
+    outline: 3px solid var(--primary-dark);
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .header-actions {
+        gap: 0.25rem;
+    }
+
+    .header-book {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.85rem;
+    }
+
+    .header-book svg {
+        display: none;
+    }
+}
+
+/* CTA: two buttons side by side, stacked on small screens */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-ghost-white {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: none;
+}
+
+.btn-ghost-white:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    box-shadow: none;
+}
